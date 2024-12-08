@@ -27,6 +27,7 @@ struct GreetingApp: View {
                     .cornerRadius(10)
             }
         }
+        .navigationTitle("挨拶アプリ")
     }
 }
 
