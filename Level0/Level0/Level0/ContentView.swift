@@ -24,6 +24,7 @@ struct ContentView: View {
                 }
                 .onDelete(perform: deleteItems)
             }
+            .navigationTitle("純正アプリ")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()

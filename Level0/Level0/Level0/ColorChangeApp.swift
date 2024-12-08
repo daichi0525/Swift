@@ -8,8 +8,27 @@
 import SwiftUI
 
 struct ColorChangeApp: View {
+    @State private var color: Color = .red
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Rectangle()
+                .fill(color)
+                .frame(height: 200)
+                .padding()
+            
+            Button(action: {
+                color = color == .red ? .blue : .red
+            }) {
+                Text("背景色を変更")
+                    .font(.title)
+                    .padding()
+                    .background( color == .red ? Color.blue : .red)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+        }
+        .navigationTitle("色変化アプリ")
     }
 }
 

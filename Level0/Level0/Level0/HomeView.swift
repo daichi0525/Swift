@@ -8,14 +8,33 @@
 import SwiftUI
 
 struct HomeView: View {
+    let apps: [AppInfo] = [
+        AppInfo(title: "純正アプリ", destination: AnyView(ContentView())),
+        AppInfo(title: "挨拶アプリ", destination: AnyView(GreetingApp())),
+        AppInfo(title: "色変化アプリ", destination: AnyView(ColorChangeApp())),
+    ]
+
     var body: some View {
-        NavigationView {
-            // 1. 挨拶アプリ (GreetingApp)
-            NavigationLink("挨拶アプリ") {
-                GreetingApp()
+        NavigationStack {
+            List(apps) { app in
+                NavigationLink(destination: app.destination) {
+                    ScrollView {
+                        HStack {
+                            Text("\(apps.firstIndex(where: { $0.id == app.id })! + 0)")
+                            Text(app.title)
+                        }
+                    }
+                }
             }
+            .navigationTitle("アプリ一覧")
         }
     }
+}
+
+struct AppInfo: Identifiable {
+    let id = UUID()
+    let title: String
+    let destination: AnyView
 }
 
 #Preview {
