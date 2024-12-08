@@ -16,7 +16,7 @@ struct HomeView: View {
         AppInfo(title: "数字表示アプリ", destination: AnyView(NumberDisplayApp())),
         AppInfo(title: "簡単な電卓", destination: AnyView(SimpleCalculator())),
         AppInfo(title: "日付表示アプリ", destination: AnyView(DateDisplayApp())),
-        AppInfo(title: "ボタンカウンター", destination: AnyView(NumberDisplayApp())),
+        AppInfo(title: "ボタンカウンター", destination: AnyView(ButtonCounterApp())),
         AppInfo(title: "シンプルメモ", destination: AnyView(NumberDisplayApp())),
         AppInfo(title: "簡単なスライドショー", destination: AnyView(NumberDisplayApp())),
         AppInfo(title: "テキスト表示", destination: AnyView(NumberDisplayApp())),
