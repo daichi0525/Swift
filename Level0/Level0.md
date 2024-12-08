@@ -1,6 +1,11 @@
 # Level0
 
+<details>
+
 # 目次
+
+<details><summary>目次詳細はこちら</summary>
+
 - [Level0](#level0)
 - [目次](#目次)
 - [構築手順](#構築手順)
@@ -9,12 +14,14 @@
 - [アプリ機能の作成](#アプリ機能の作成)
 	- [挨拶アプリ (GreetingApp)](#挨拶アプリ-greetingapp)
 	- [色変化アプリ (ColorChangeApp)](#色変化アプリ-colorchangeapp)
-	- [](#)
-	- [](#-1)
-	- [](#-2)
-	- [](#-3)
-	- [](#-4)
-	- [](#-5)
+	- [名前表示アプリ (NameDisplayApp)](#名前表示アプリ-namedisplayapp)
+	- [数字表示アプリ (NumberDisplayApp)](#数字表示アプリ-numberdisplayapp)
+	- [簡単な電卓 (SimpleCalculator)](#簡単な電卓-simplecalculator)
+	- [日付表示アプリ (DateDisplayApp)](#日付表示アプリ-datedisplayapp)
+	- [ボタンカウンター (ButtonCounterApp)](#ボタンカウンター-buttoncounterapp)
+	- [8. シンプルメモ (SimpleMemoApp)](#8-シンプルメモ-simplememoapp)
+
+</details>
 
 # 構築手順
 
@@ -192,7 +199,7 @@
 
 ## 色変化アプリ (ColorChangeApp)
 
-<!-- <details> -->
+<details>
 
 | No | アプリ名(日本語) | 物理名 | 難易度(10段階) | 所要時間(日数) | 機能 | おすすめポイント | その他必要なものや特記事項 |
 |---|---|---|---|---|---|---|---|
@@ -288,6 +295,8 @@
 
 </details>
 
+</details>
+
 ## 名前表示アプリ (NameDisplayApp)
 
 <details>
@@ -296,25 +305,67 @@
 |---|---|---|---|---|---|---|---|
 | 3 | 名前表示アプリ | NameDisplayApp | 0 | 1h | 入力した名前を表示 | 入力と表示の基本を学べる | - |
 
-1. 
-2. 〜〜 作成完了
+1. NameDisplayApp.swiftの作成と実装
+   ```swift
+   import SwiftUI
+   
+   struct NameDisplayApp: View {
+       @State private var name = ""
+       
+       var body: some View {
+           VStack {
+               Text("名前")
+                   .padding(.leading)
+                   .frame(maxWidth: .infinity, alignment: .leading)
+               
+               TextField("名前を入力", text: $name )
+                   .padding()
+                   .textFieldStyle(RoundedBorderTextFieldStyle())
+               
+               Text("こんにちは、 \n\(name)さん!")
+                   .font(.title)
+                   .padding()
+           }
+           .padding()
+           .navigationTitle("名前表示アプリ")
+       }
+   }
+   
+   #Preview {
+       NameDisplayApp()
+   }
+   ```
+2. HomeView.swiftの実装
+   1. AppInfo構造体のインスタンスを作成します。
+   2. `AppInfo(title: "名前表示アプリ", destination: AnyView(NameDisplayApp())),`
+3. 動作確認
+   1. ![alt text](5.gif)
+4. 名前表示アプリ (NameDisplayApp) 作成完了
 
 </details>
 
-## 
+## 数字表示アプリ (NumberDisplayApp)
 
-<details>
+<!-- <details> -->
 
 | No | アプリ名(日本語) | 物理名 | 難易度(10段階) | 所要時間(日数) | 機能 | おすすめポイント | その他必要なものや特記事項 |
 |---|---|---|---|---|---|---|---|
 | 4 | 数字表示アプリ | NumberDisplayApp | 0 | 1h | 数字を表示 | 画面に数値を表示する方法を学べる | - |
 
-1. 
-2. 1
+1. NumberDisplayApp.swiftの作成と実装
+   ```swift
+
+   ```
+2. HomeView.swiftの実装
+   1. AppInfo構造体のインスタンスを作成します。
+   2. `AppInfo(title: "数字表示アプリ", destination: AnyView(NumberDisplayApp())),`
+3. 動作確認
+   1. ![alt text](6.gif)
+4. 数字表示アプリ (NumberDisplayApp) 作成完了
 
 </details>
 
-## 
+## 簡単な電卓 (SimpleCalculator)
 
 <details>
 
@@ -322,12 +373,20 @@
 |---|---|---|---|---|---|---|---|
 | 5 | 簡単な電卓 | SimpleCalculator | 0 | 1h | 1+1などの基本的な計算 | 基本的な計算機能を学べる | - |
 
-1. 
-2. 1
+1. SimpleCalculator.swiftの作成と実装
+   ```swift
+
+   ```
+2. HomeView.swiftの実装
+   1. AppInfo構造体のインスタンスを作成します。
+   2. `AppInfo(title: "簡単な電卓", destination: AnyView(SimpleCalculator())),`
+3. 動作確認
+   1. ![alt text](7.gif)
+4. 簡単な電卓 (SimpleCalculator) 作成完了
 
 </details>
 
-## 
+## 日付表示アプリ (DateDisplayApp)
 
 <details>
 
@@ -335,12 +394,20 @@
 |---|---|---|---|---|---|---|---|
 | 6 | 日付表示アプリ | DateDisplayApp | 0 | 1h | 現在の日付を表示 | 日付と時間の取得方法を学べる | - |
 
-1. 
-2. 1
+1. DateDisplayApp.swiftの作成と実装
+   ```swift
+
+   ```
+2. HomeView.swiftの実装
+   1. AppInfo構造体のインスタンスを作成します。
+   2. `AppInfo(title: "日付表示アプリ", destination: AnyView(DateDisplayApp())),`
+3. 動作確認
+   1. ![alt text](8.gif)
+4. 日付表示アプリ (DateDisplayApp) 作成完了
 
 </details>
 
-## 
+## ボタンカウンター (ButtonCounterApp)
 
 <details>
 
@@ -348,12 +415,20 @@
 |---|---|---|---|---|---|---|---|
 | 7 | ボタンカウンター | ButtonCounterApp | 0 | 1h | ボタンを押すとカウントアップ | ボタンのイベント処理を学べる | - |
 
-1. 
-2. 1
+1. ButtonCounterApp.swiftの作成と実装
+   ```swift
+
+   ```
+2. HomeView.swiftの実装
+   1. AppInfo構造体のインスタンスを作成します。
+   2. `AppInfo(title: "ボタンカウンター", destination: AnyView(ButtonCounterApp())),`
+3. 動作確認
+   1. ![alt text](9.gif)
+4. ボタンカウンター (ButtonCounterApp) 作成完了
 
 </details>
 
-## 
+## 8. シンプルメモ (SimpleMemoApp)
 
 <details>
 
@@ -361,7 +436,15 @@
 |---|---|---|---|---|---|---|---|
 | 8 | シンプルメモ | SimpleMemoApp | 0 | 1h | メモを1つ保存 | 簡単な文字列の保存方法を学べる | UserDefaults利用 |
 
-1. 
-2. 1
+1. SimpleMemoApp.swiftの作成と実装
+   ```swift
+
+   ```
+2. HomeView.swiftの実装
+   1. AppInfo構造体のインスタンスを作成します。
+   2. `AppInfo(title: "シンプルメモ", destination: AnyView(SimpleMemoApp())),`
+3. 動作確認
+   1. ![alt text](10.gif)
+4. 8. シンプルメモ (SimpleMemoApp) 作成完了
 
 </details>

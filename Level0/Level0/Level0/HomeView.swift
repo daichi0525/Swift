@@ -12,6 +12,7 @@ struct HomeView: View {
         AppInfo(title: "純正アプリ", destination: AnyView(ContentView())),
         AppInfo(title: "挨拶アプリ", destination: AnyView(GreetingApp())),
         AppInfo(title: "色変化アプリ", destination: AnyView(ColorChangeApp())),
+        AppInfo(title: "名前表示アプリ", destination: AnyView(NameDisplayApp())),
     ]
 
     var body: some View {
