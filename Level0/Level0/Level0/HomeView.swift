@@ -14,8 +14,8 @@ struct HomeView: View {
         AppInfo(title: "色変化アプリ", destination: AnyView(ColorChangeApp())),
         AppInfo(title: "名前表示アプリ", destination: AnyView(NameDisplayApp())),
         AppInfo(title: "数字表示アプリ", destination: AnyView(NumberDisplayApp())),
-        AppInfo(title: "簡単な電卓", destination: AnyView(NumberDisplayApp())),
-        AppInfo(title: "日付表示アプリ", destination: AnyView(NumberDisplayApp())),
+        AppInfo(title: "簡単な電卓", destination: AnyView(SimpleCalculator())),
+        AppInfo(title: "日付表示アプリ", destination: AnyView(DateDisplayApp())),
         AppInfo(title: "ボタンカウンター", destination: AnyView(NumberDisplayApp())),
         AppInfo(title: "シンプルメモ", destination: AnyView(NumberDisplayApp())),
         AppInfo(title: "簡単なスライドショー", destination: AnyView(NumberDisplayApp())),
@@ -37,7 +37,7 @@ struct HomeView: View {
                     }
                 }
             }
-            .navigationTitle("アプリ一覧")
+            .navigationTitle("アプリ一覧(Level0)")
         }
     }
 }

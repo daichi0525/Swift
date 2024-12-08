@@ -346,7 +346,7 @@
 
 ## 数字表示アプリ (NumberDisplayApp)
 
-<!-- <details> -->
+<details>
 
 | No | アプリ名(日本語) | 物理名 | 難易度(10段階) | 所要時間(日数) | 機能 | おすすめポイント | その他必要なものや特記事項 |
 |---|---|---|---|---|---|---|---|
@@ -415,7 +415,52 @@
 
 1. SimpleCalculator.swiftの作成と実装
    ```swift
-
+   import SwiftUI
+   
+   struct SimpleCalculator: View {
+       @State private var result = 0
+       @State private var number1 = 0
+       @State private var number2 = 0
+       
+       var body: some View {
+           VStack {
+               HStack {
+                   TextField("数値1", value: $number1, formatter: NumberFormatter())
+                       .textFieldStyle(RoundedBorderTextFieldStyle())
+                       .padding()
+                   
+                   Text("+")
+                       .font(.title)
+                       .padding()
+                   
+                   TextField("数値2", value: $number2, formatter: NumberFormatter())
+                       .textFieldStyle(RoundedBorderTextFieldStyle())
+                       .padding()
+               }
+               
+               Button(action: {
+                   result = number1 + number2
+               }) {
+                   Text("計算")
+                       .font(.title)
+                       .padding()
+                       .background(Color.blue)
+                       .foregroundColor(.white)
+                       .cornerRadius(10)
+               }
+               
+               Text("結果: \(result)")
+                   .font(.title)
+                   .padding()
+           }
+           .keyboardType(.decimalPad)
+           .padding()
+       }
+   }
+   
+   #Preview {
+       SimpleCalculator()
+   }
    ```
 2. HomeView.swiftの実装
    1. AppInfo構造体のインスタンスを作成します。
@@ -436,7 +481,56 @@
 
 1. DateDisplayApp.swiftの作成と実装
    ```swift
-
+   import SwiftUI
+   
+   struct DateDisplayApp: View {
+       @State private var dateText = ""
+       @State private var nowDate = Date()
+       @State private var currentDate = Date()
+       private let dateFormatter = DateFormatter()
+       
+       init() {
+           dateFormatter.dateFormat = "YYYY/MM/dd(E) HH:mm:ss.S"
+           dateFormatter.locale = Locale(identifier: "ja_JP")
+       }
+       
+       var body: some View {
+           VStack {
+               Text(dateText.isEmpty ? "\(dateFormatter.string(from: nowDate))" : dateText)
+                   .onAppear {
+                       Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+                           self.nowDate = Date()
+                           dateText = "\(dateFormatter.string(from: nowDate))"
+                       }
+                   }
+                   .padding(.all, 20)
+               HStack {
+                   DatePicker("", selection: $currentDate)
+                       .font(.title3)
+                       .padding()
+                   Button(action: {
+                       currentDate = Date()
+                   }) {
+                       Text("更新")
+                           .font(.title3)
+                           .padding(.horizontal, 20 )
+                           .background(Color.orange)
+                           .foregroundColor(.white)
+                           .cornerRadius(30)
+                   }
+               }
+               .frame(alignment: .trailing)
+               .padding()
+               Spacer()
+           }
+           .navigationTitle("日付表示アプリ")
+       }
+   }
+   
+   
+   #Preview {
+       DateDisplayApp()
+   }
    ```
 2. HomeView.swiftの実装
    1. AppInfo構造体のインスタンスを作成します。
@@ -449,7 +543,7 @@
 
 ## ボタンカウンター (ButtonCounterApp)
 
-<details>
+<!-- <details> -->
 
 | No | アプリ名(日本語) | 物理名 | 難易度(10段階) | 所要時間(日数) | 機能 | おすすめポイント | その他必要なものや特記事項 |
 |---|---|---|---|---|---|---|---|
