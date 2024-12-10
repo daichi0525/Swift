@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Level0</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      /* max-width: 180em; */
+      max-width: auto;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="level0">Level0</h1>
+<details>
+<h1 id="目次">目次</h1>
+<details>
+<summary>
+目次詳細はこちら
+</summary>
+<ul>
+<li><a href="#level0">Level0</a></li>
+<li><a href="#目次">目次</a></li>
+<li><a href="#構築手順">構築手順</a>
+<ul>
+<li><a href="#プロジェクト作成">プロジェクト作成</a></li>
+<li><a href="#home画面作成">Home画面作成</a></li>
+</ul></li>
+<li><a href="#アプリ機能の作成">アプリ機能の作成</a>
+<ul>
+<li><a href="#挨拶アプリ-greetingapp">挨拶アプリ (GreetingApp)</a></li>
+<li><a href="#色変化アプリ-colorchangeapp">色変化アプリ
+(ColorChangeApp)</a></li>
+<li><a href="#名前表示アプリ-namedisplayapp">名前表示アプリ
+(NameDisplayApp)</a></li>
+<li><a href="#数字表示アプリ-numberdisplayapp">数字表示アプリ
+(NumberDisplayApp)</a></li>
+<li><a href="#簡単な電卓-simplecalculator">簡単な電卓
+(SimpleCalculator)</a></li>
+<li><a href="#日付表示アプリ-datedisplayapp">日付表示アプリ
+(DateDisplayApp)</a></li>
+<li><a href="#ボタンカウンター-buttoncounterapp">ボタンカウンター
+(ButtonCounterApp)</a></li>
+<li><a href="#8-シンプルメモ-simplememoapp">8. シンプルメモ
+(SimpleMemoApp)</a></li>
+</ul></li>
+</ul>
+</details>
+<h1 id="構築手順">構築手順</h1>
+<details>
+<summary>
+Level0アプリ一覧
+</summary>
+<table>
+<colgroup>
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+</colgroup>
+<thead>
+<tr>
+<th>No</th>
+<th>アプリ名(日本語)</th>
+<th>物理名</th>
+<th>難易度(10段階)</th>
+<th>所要時間(日数)</th>
+<th>機能</th>
+<th>おすすめポイント</th>
+<th>その他必要なものや特記事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="#挨拶アプリ-greetingapp">挨拶アプリ</a></td>
+<td>GreetingApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンを押すと挨拶を表示</td>
+<td>シンプルなUI操作を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="#色変化アプリ-colorchangeapp">色変化アプリ</a></td>
+<td>ColorChangeApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンで背景色を変更</td>
+<td>基本的なUI操作とイベント処理を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="#名前表示アプリ-namedisplayapp">名前表示アプリ</a></td>
+<td>NameDisplayApp</td>
+<td>0</td>
+<td>1h</td>
+<td>入力した名前を表示</td>
+<td>入力と表示の基本を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="#数字表示アプリ-numberdisplayapp">数字表示アプリ</a></td>
+<td>NumberDisplayApp</td>
+<td>0</td>
+<td>1h</td>
+<td>数字を表示</td>
+<td>画面に数値を表示する方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="#簡単な電卓-simplecalculator">簡単な電卓</a></td>
+<td>SimpleCalculator</td>
+<td>0</td>
+<td>1h</td>
+<td>1+1などの基本的な計算</td>
+<td>基本的な計算機能を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="#日付表示アプリ-datedisplayapp">日付表示アプリ</a></td>
+<td>DateDisplayApp</td>
+<td>0</td>
+<td>1h</td>
+<td>現在の日付を表示</td>
+<td>日付と時間の取得方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a
+href="#ボタンカウンター-buttoncounterapp">ボタンカウンター</a></td>
+<td>ButtonCounterApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンを押すとカウントアップ</td>
+<td>ボタンのイベント処理を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="#シンプルメモ-simplememoapp">シンプルメモ</a></td>
+<td>SimpleMemoApp</td>
+<td>0</td>
+<td>1h</td>
+<td>メモを1つ保存</td>
+<td>簡単な文字列の保存方法を学べる</td>
+<td>UserDefaults利用</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a
+href="#簡単なスライドショー-simpleslideshowapp">簡単なスライドショー</a></td>
+<td>SimpleSlideshowApp</td>
+<td>0</td>
+<td>1h</td>
+<td>画像をスライドショーで表示</td>
+<td>画像表示とスライド機能を学べる</td>
+<td>ローカル画像を使用</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="#テキスト表示-textdisplayapp">テキスト表示</a></td>
+<td>TextDisplayApp</td>
+<td>0</td>
+<td>1h</td>
+<td>指定されたテキストを表示</td>
+<td>テキスト表示の基本を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="#数字足し算-simpleadditionapp">数字足し算</a></td>
+<td>SimpleAdditionApp</td>
+<td>0</td>
+<td>1h</td>
+<td>2つの数を足して表示</td>
+<td>数学的処理の基本を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a
+href="#簡単なカウントダウン-simplecountdownapp">簡単なカウントダウン</a></td>
+<td>SimpleCountdownApp</td>
+<td>0</td>
+<td>1h</td>
+<td>タイマーがカウントダウンする</td>
+<td>タイマー機能の使い方を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="#ボタン色変更-buttoncolorchangeapp">ボタン色変更</a></td>
+<td>ButtonColorChangeApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンの色を押すごとに変更</td>
+<td>UIの色変更を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="#ランダムな数字-randomnumberapp">ランダムな数字</a></td>
+<td>RandomNumberApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ランダムな数字を生成して表示</td>
+<td>ランダム処理の基礎を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>15</td>
+<td><a href="#簡単なメニュー-simplemenuapp">簡単なメニュー</a></td>
+<td>SimpleMenuApp</td>
+<td>0</td>
+<td>1h</td>
+<td>メニューから選択肢を選ぶ</td>
+<td>メニュー画面の作成方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>16</td>
+<td><a href="#入力フォーム-inputformapp">入力フォーム</a></td>
+<td>InputFormApp</td>
+<td>0</td>
+<td>1h</td>
+<td>テキスト入力フォームを作成</td>
+<td>入力フォーム作成とデータの取得方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>17</td>
+<td><a href="#画像表示-imagedisplayapp">画像表示</a></td>
+<td>ImageDisplayApp</td>
+<td>0</td>
+<td>1h</td>
+<td>画像を表示</td>
+<td>画像の表示方法を学べる</td>
+<td>ローカル画像を使用</td>
+</tr>
+<tr>
+<td>18</td>
+<td><a href="#タイトル変更-titlechangeapp">タイトル変更</a></td>
+<td>TitleChangeApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンを押すとアプリのタイトルを変更</td>
+<td>アプリ名変更の基本を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>19</td>
+<td><a href="#数字減算-simplesubtractionapp">数字減算</a></td>
+<td>SimpleSubtractionApp</td>
+<td>0</td>
+<td>1h</td>
+<td>2つの数を引き算して表示</td>
+<td>数学的処理の学習</td>
+<td>-</td>
+</tr>
+<tr>
+<td>20</td>
+<td><a href="#時間表示-timedisplayapp">時間表示</a></td>
+<td>TimeDisplayApp</td>
+<td>0</td>
+<td>1h</td>
+<td>現在の時間を表示</td>
+<td>時間の取得方法と表示を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>21</td>
+<td><a href="#クリック音-clicksoundapp">クリック音</a></td>
+<td>ClickSoundApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンをクリックすると音が鳴る</td>
+<td>音の再生方法を学べる</td>
+<td>AVFoundationの利用</td>
+</tr>
+<tr>
+<td>22</td>
+<td><a
+href="#単純な画像回転-simpleimagerotationapp">単純な画像回転</a></td>
+<td>SimpleImageRotationApp</td>
+<td>0</td>
+<td>1h</td>
+<td>画像を回転させる</td>
+<td>画像処理の基礎を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>23</td>
+<td><a href="#アイコン変更-iconchangeapp">アイコン変更</a></td>
+<td>IconChangeApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンを押すとアイコンを変更</td>
+<td>アイコンの変更方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>24</td>
+<td><a href="#スクロールビュー-scrollviewapp">スクロールビュー</a></td>
+<td>ScrollViewApp</td>
+<td>0</td>
+<td>1h</td>
+<td>複数の画像をスクロールできるようにする</td>
+<td>スクロール機能を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>25</td>
+<td><a href="#文字変更-textchangeapp">文字変更</a></td>
+<td>TextChangeApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンを押すと画面の文字が変わる</td>
+<td>文字の変更方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>26</td>
+<td><a href="#ランダム色-randomcolorapp">ランダム色</a></td>
+<td>RandomColorApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ランダムに背景色を変える</td>
+<td>ランダム処理とUIの連携を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>27</td>
+<td><a href="#ボタンカウント-buttoncountapp">ボタンカウント</a></td>
+<td>ButtonCountApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンが押されるたびにカウントアップ</td>
+<td>ボタン操作のカウントを学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>28</td>
+<td><a href="#シンプルタイマー-simpletimerapp">シンプルタイマー</a></td>
+<td>SimpleTimerApp</td>
+<td>0</td>
+<td>1h</td>
+<td>タイマーをセットして経過時間を表示</td>
+<td>タイマーの設定と管理方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>29</td>
+<td><a href="#数字反転アプリ-reversenumberapp">数字反転アプリ</a></td>
+<td>ReverseNumberApp</td>
+<td>0</td>
+<td>1h</td>
+<td>数字を反転して表示</td>
+<td>文字列処理と数字操作を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>30</td>
+<td><a href="#色の名前表示-colornamedisplayapp">色の名前表示</a></td>
+<td>ColorNameDisplayApp</td>
+<td>0</td>
+<td>1h</td>
+<td>色の名前を入力してその色を表示</td>
+<td>色の名前とカラーコードの関係を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>31</td>
+<td><a href="#複数ボタン-multiplebuttonapp">複数ボタン</a></td>
+<td>MultipleButtonApp</td>
+<td>0</td>
+<td>1h</td>
+<td>複数のボタンを表示し、それぞれ反応する</td>
+<td>複数ボタンの操作を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>32</td>
+<td><a href="#数字の順番-numberorderapp">数字の順番</a></td>
+<td>NumberOrderApp</td>
+<td>0</td>
+<td>1h</td>
+<td>数字を並べ替えるゲーム</td>
+<td>数字操作とアルゴリズムの基礎を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>33</td>
+<td><a href="#画像隠しゲーム-hideimagegame">画像隠しゲーム</a></td>
+<td>HideImageGame</td>
+<td>0</td>
+<td>1h</td>
+<td>画像をクリックして隠すゲーム</td>
+<td>イベント処理と画像操作を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>34</td>
+<td><a
+href="#ボタン押下回数-buttonpresscountapp">ボタン押下回数</a></td>
+<td>ButtonPressCountApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンを押した回数を表示</td>
+<td>ボタンのイベント処理を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>35</td>
+<td><a href="#音声録音-voicerecorderapp">音声録音</a></td>
+<td>VoiceRecorderApp</td>
+<td>0</td>
+<td>1h</td>
+<td>音声を録音し再生する</td>
+<td>音声録音機能を学べる</td>
+<td>AVFoundation利用</td>
+</tr>
+<tr>
+<td>36</td>
+<td><a href="#タップ音-tapsoundapp">タップ音</a></td>
+<td>TapSoundApp</td>
+<td>0</td>
+<td>1h</td>
+<td>画面をタップすると音が鳴る</td>
+<td>タップイベントと音再生を学べる</td>
+<td>AVFoundation利用</td>
+</tr>
+<tr>
+<td>37</td>
+<td><a href="#画像反転-imageinvertapp">画像反転</a></td>
+<td>ImageInvertApp</td>
+<td>0</td>
+<td>1h</td>
+<td>画像を反転して表示</td>
+<td>画像操作の基本を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>38</td>
+<td><a href="#文字スクロール-textscrollapp">文字スクロール</a></td>
+<td>TextScrollApp</td>
+<td>0</td>
+<td>1h</td>
+<td>テキストをスクロールして表示</td>
+<td>スクロールの基本を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>39</td>
+<td><a
+href="#アイコン変更ゲーム-iconchangegame">アイコン変更ゲーム</a></td>
+<td>IconChangeGame</td>
+<td>0</td>
+<td>1h</td>
+<td>アイコンが変わるゲーム</td>
+<td>アイコンの変更とゲームロジックを学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>40</td>
+<td><a href="#画像選択ゲーム-imageselectgame">画像選択ゲーム</a></td>
+<td>ImageSelectGame</td>
+<td>0</td>
+<td>1h</td>
+<td>画像をクリックして正解を選ぶゲーム</td>
+<td>画像選択とロジックを学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>41</td>
+<td><a href="#シンプル掲示板-simpleboardapp">シンプル掲示板</a></td>
+<td>SimpleBoardApp</td>
+<td>0</td>
+<td>1h</td>
+<td>入力したテキストを一覧で表示</td>
+<td>テキスト保存と表示の基礎を学べる</td>
+<td>UserDefaults利用</td>
+</tr>
+<tr>
+<td>42</td>
+<td><a href="#時計アプリ-clockapp">時計アプリ</a></td>
+<td>ClockApp</td>
+<td>0</td>
+<td>1h</td>
+<td>現在の時間を表示し更新する</td>
+<td>時計アプリの作成方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>43</td>
+<td><a href="#画像拡大アプリ-imagezoomapp">画像拡大アプリ</a></td>
+<td>ImageZoomApp</td>
+<td>0</td>
+<td>1h</td>
+<td>画像を拡大して表示</td>
+<td>画像の拡大縮小を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>44</td>
+<td><a href="#画像並べ替え-imagearrangeapp">画像並べ替え</a></td>
+<td>ImageArrangeApp</td>
+<td>0</td>
+<td>1h</td>
+<td>画像を並べ替えるゲーム</td>
+<td>画像操作と並べ替えアルゴリズムを学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>45</td>
+<td><a
+href="#シンプルカレンダー-simplecalendarapp">シンプルカレンダー</a></td>
+<td>SimpleCalendarApp</td>
+<td>0</td>
+<td>1h</td>
+<td>月表示のカレンダーを作成</td>
+<td>カレンダーUIの作成方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>46</td>
+<td><a href="#自動カウント-autocounterapp">自動カウント</a></td>
+<td>AutoCounterApp</td>
+<td>0</td>
+<td>1h</td>
+<td>自動でカウントアップする</td>
+<td>自動カウントとタイマー処理を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>47</td>
+<td><a href="#数字計算機-simplecalcapp">数字計算機</a></td>
+<td>SimpleCalcApp</td>
+<td>0</td>
+<td>1h</td>
+<td>基本的な計算機能を持つ</td>
+<td>数学的計算の基本を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>48</td>
+<td><a href="#メッセージ送信-messagesendapp">メッセージ送信</a></td>
+<td>MessageSendApp</td>
+<td>0</td>
+<td>1h</td>
+<td>メッセージを送信するボタン</td>
+<td>メッセージ送信機能を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>49</td>
+<td><a href="#動画再生-videoplayerapp">動画再生</a></td>
+<td>VideoPlayerApp</td>
+<td>0</td>
+<td>1h</td>
+<td>動画を再生する機能</td>
+<td>動画再生機能を学べる</td>
+<td>AVKit利用</td>
+</tr>
+<tr>
+<td>50</td>
+<td><a
+href="#簡単なスライダー-simplesliderapp">簡単なスライダー</a></td>
+<td>SimpleSliderApp</td>
+<td>0</td>
+<td>1h</td>
+<td>スライダーで数値を調整</td>
+<td>スライダーと数値の操作を学べる</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="プロジェクト作成">プロジェクト作成</h2>
+<details>
+<ol type="1">
+<li>Xcode起動</li>
+<li>Create New Project…
+<ol type="1">
+<li><figure>
+<img src="image-1.png" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+<li>ios→App
+<ol type="1">
+<li><figure>
+<img src="image-2.png" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+<li>Level0
+<ol type="1">
+<li><figure>
+<img src="image-3.png" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+<li>ディレクトリ(適当)
+<ol type="1">
+<li><figure>
+<img src="image-4.png" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+<li>Level0App.swiftの修正
+<ol type="1">
+<li>ContentView()のコメントアウト</li>
+<li>HomeView()に変更</li>
+<li><figure>
+<img src="image-5.png" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+<li>HomeView.swiftの作成
+<ol type="1">
+<li><figure>
+<img src="image-6.png" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+<li><figure>
+<img src="image-7.png" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+<li><figure>
+<img src="image-8.png" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+<li>確認と表示
+<ol type="1">
+<li><figure>
+<img src="image-9.png" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+</ol>
+<h2 id="home画面作成">Home画面作成</h2>
+<ol type="1">
+<li><p>NavigationViewを使用</p></li>
+<li><p>HomeView.swiftの実装</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode swift"><code class="sourceCode swift"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> HomeView<span class="op">:</span> <span class="dt">View</span> <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">body</span><span class="op">:</span> some View <span class="op">{</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        NavigationView <span class="op">{</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>            <span class="co">// 1. 挨拶アプリ (GreetingApp)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>            NavigationLink<span class="op">(</span><span class="st">&quot;挨拶アプリ&quot;</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                GreetingApp<span class="op">()</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<ol type="1">
+<li>GreetingApp.swiftが無いのでエラーになる</li>
+<li><figure>
+<img src="image-10.png" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+</ol>
+</details>
+<h1 id="アプリ機能の作成">アプリ機能の作成</h1>
+<h2 id="挨拶アプリ-greetingapp">挨拶アプリ (GreetingApp)</h2>
+<details>
+<table>
+<colgroup>
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+</colgroup>
+<thead>
+<tr>
+<th>No</th>
+<th>アプリ名(日本語)</th>
+<th>物理名</th>
+<th>難易度(10段階)</th>
+<th>所要時間(日数)</th>
+<th>機能</th>
+<th>おすすめポイント</th>
+<th>その他必要なものや特記事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>挨拶アプリ</td>
+<td>GreetingApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンを押すと挨拶を表示</td>
+<td>シンプルなUI操作を学べる</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><p>GreetingApp.swiftの作成</p>
+<ol type="1">
+<li><figure>
+<img src="image-11.png" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+<li><p>GreetingApp.swiftの実装</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode swift"><code class="sourceCode swift"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a> <span class="kw">struct</span> GreetingApp<span class="op">:</span> <span class="dt">View</span> <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">@State</span> <span class="kw">private</span> <span class="kw">var</span> <span class="va">greeting</span> <span class="op">=</span> <span class="st">&quot;こんにちは！&quot;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">body</span><span class="op">:</span> some View <span class="op">{</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        VStack <span class="op">{</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>            Text<span class="op">(</span>greeting<span class="op">)</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>font<span class="op">(.</span>largeTitle<span class="op">)</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>            Button<span class="op">(</span>action<span class="op">:</span> <span class="op">{</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                greeting <span class="op">=</span> <span class="st">&quot;おはようございます！&quot;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>            <span class="op">})</span> <span class="op">{</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                Text<span class="op">(</span><span class="st">&quot;挨拶を変更&quot;</span><span class="op">)</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>font<span class="op">(.</span>title<span class="op">)</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>background<span class="op">(</span>Color<span class="op">.</span>blue<span class="op">)</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>foregroundColor<span class="op">(.</span>white<span class="op">)</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>cornerRadius<span class="op">(</span><span class="dv">10</span><span class="op">)</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<li><p>CanvasでHomeView⇄GreetingApp間の画面遷移と挨拶変更ボタン</p>
+<ol type="1">
+<li>これだと一回しか変えれないな…</li>
+<li><figure>
+<img src="1.gif" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+<li><p>onとoffnのスイッチを使って切替に実装変更</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode swift"><code class="sourceCode swift"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> GreetingApp<span class="op">:</span> <span class="dt">View</span> <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">@State</span> <span class="kw">private</span> <span class="kw">var</span> <span class="va">isOn</span> <span class="op">=</span> <span class="kw">false</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">body</span><span class="op">:</span> some View <span class="op">{</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        VStack <span class="op">{</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>            Text<span class="op">(</span>isOn <span class="op">?</span> <span class="st">&quot;おはようございます！&quot;</span> <span class="op">:</span> <span class="st">&quot;こんにちは！&quot;</span><span class="op">)</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>font<span class="op">(.</span>largeTitle<span class="op">)</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>            Button<span class="op">(</span>action<span class="op">:</span> <span class="op">{</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>                isOn<span class="op">.</span>toggle<span class="op">()</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>            <span class="op">})</span> <span class="op">{</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                Text<span class="op">(</span><span class="st">&quot;挨拶を変更&quot;</span><span class="op">)</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>font<span class="op">(.</span>title<span class="op">)</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>background<span class="op">(</span>Color<span class="op">.</span>blue<span class="op">)</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>foregroundColor<span class="op">(.</span>white<span class="op">)</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>cornerRadius<span class="op">(</span><span class="dv">10</span><span class="op">)</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<li><p>画面遷移と挨拶変更ボタン</p>
+<ol type="1">
+<li><figure>
+<img src="2.gif" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+<li><p>挨拶アプリ (GreetingApp) 作成完了</p></li>
+</ol>
+</details>
+<h2 id="色変化アプリ-colorchangeapp">色変化アプリ (ColorChangeApp)</h2>
+<details>
+<table>
+<colgroup>
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+</colgroup>
+<thead>
+<tr>
+<th>No</th>
+<th>アプリ名(日本語)</th>
+<th>物理名</th>
+<th>難易度(10段階)</th>
+<th>所要時間(日数)</th>
+<th>機能</th>
+<th>おすすめポイント</th>
+<th>その他必要なものや特記事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>色変化アプリ</td>
+<td>ColorChangeApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンで背景色を変更</td>
+<td>基本的なUI操作とイベント処理を学べる</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><p>ColorChangeApp.swiftの作成</p>
+<ol type="1">
+<li><figure>
+<img src="image-12.png" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+<li><figure>
+<img src="image-13.png" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+<li><p>ColorChangeApp.swiftの実装</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode swift"><code class="sourceCode swift"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> ColorChangeApp<span class="op">:</span> <span class="dt">View</span> <span class="op">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">@State</span> <span class="kw">private</span> <span class="kw">var</span> <span class="va">color</span><span class="op">:</span> Color <span class="op">=</span> <span class="op">.</span>red</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">body</span><span class="op">:</span> some View <span class="op">{</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        VStack <span class="op">{</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>            Rectangle<span class="op">()</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>fill<span class="op">(</span>color<span class="op">)</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>frame<span class="op">(</span>height<span class="op">:</span> <span class="dv">200</span><span class="op">)</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>            Button<span class="op">(</span>action<span class="op">:</span> <span class="op">{</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                color <span class="op">=</span> color <span class="op">==</span> <span class="op">.</span>red <span class="op">?</span> <span class="op">.</span>blue <span class="op">:</span> <span class="op">.</span>red</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>            <span class="op">})</span> <span class="op">{</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                Text<span class="op">(</span><span class="st">&quot;背景色を変更&quot;</span><span class="op">)</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>font<span class="op">(.</span>title<span class="op">)</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>background<span class="op">(</span> color <span class="op">==</span> <span class="op">.</span>red <span class="op">?</span> Color<span class="op">.</span>blue <span class="op">:</span> <span class="op">.</span>red<span class="op">)</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>foregroundColor<span class="op">(.</span>white<span class="op">)</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>cornerRadius<span class="op">(</span><span class="dv">10</span><span class="op">)</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span>navigationTitle<span class="op">(</span><span class="st">&quot;色変化アプリ&quot;</span><span class="op">)</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<li><p>背景色変更ボタン</p>
+<ol type="1">
+<li>ちゃんとボタンの色変化しててイイね！</li>
+<li><figure>
+<img src="3.gif" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+<li><p>HomeView.swiftの実装</p>
+<ol type="1">
+<li>iOS16からSwiftUIのNavigationViewが非推奨になるため、NavigationViewからNavigationStackへの移行しました。</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode swift"><code class="sourceCode swift"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">SwiftUI</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> HomeView<span class="op">:</span> <span class="dt">View</span> <span class="op">{</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> <span class="va">apps</span><span class="op">:</span> <span class="op">[</span>AppInfo<span class="op">]</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        AppInfo<span class="op">(</span>title<span class="op">:</span> <span class="st">&quot;挨拶アプリ&quot;</span><span class="op">,</span> destination<span class="op">:</span> AnyView<span class="op">(</span>GreetingApp<span class="op">())),</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        AppInfo<span class="op">(</span>title<span class="op">:</span> <span class="st">&quot;色変化アプリ&quot;</span><span class="op">,</span> destination<span class="op">:</span> AnyView<span class="op">(</span>ColorChangeApp<span class="op">())),</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">]</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">body</span><span class="op">:</span> some View <span class="op">{</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        NavigationStack <span class="op">{</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>            List<span class="op">(</span>apps<span class="op">)</span> <span class="op">{</span> app <span class="cf">in</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                NavigationLink<span class="op">(</span>destination<span class="op">:</span> app<span class="op">.</span>destination<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>                    HStack <span class="op">{</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>                        Text<span class="op">(</span><span class="st">&quot;</span><span class="er">\(</span><span class="st">apps.firstIndex(where: { </span><span class="ss">$</span><span class="st">0.id == app.id })! + 1)&quot;</span><span class="op">)</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>                        Text<span class="op">(</span>app<span class="op">.</span>title<span class="op">)</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>                    <span class="op">}</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span>navigationTitle<span class="op">(</span><span class="st">&quot;アプリ一覧&quot;</span><span class="op">)</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> AppInfo<span class="op">:</span> <span class="dt">Identifiable</span> <span class="op">{</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> <span class="va">id</span> <span class="op">=</span> UUID<span class="op">()</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> <span class="va">title</span><span class="op">:</span> String</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> <span class="va">destination</span><span class="op">:</span> AnyView</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>#Preview <span class="op">{</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    HomeView<span class="op">()</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<li><p>HomeViewの状態</p>
+<ol type="1">
+<li><figure>
+<img src="image-14.png" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+<li><p>ColorChangeAppの状態</p>
+<ol type="1">
+<li><figure>
+<img src="image-15.png" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+<li><p>ScrollViewの追加</p>
+<ol type="1">
+<li>HomeView.swift</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode swift"><code class="sourceCode swift"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ScrollView <span class="op">{</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    HStack <span class="op">{</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        Text<span class="op">(</span><span class="st">&quot;</span><span class="er">\(</span><span class="st">apps.firstIndex(where: { </span><span class="ss">$</span><span class="st">0.id == app.id })! + 1)&quot;</span><span class="op">)</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        Text<span class="op">(</span>app<span class="op">.</span>title<span class="op">)</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<li><p>スクロール表示</p>
+<ol type="1">
+<li>お！！タイトルが自動で上に行く！</li>
+<li><figure>
+<img src="4.gif" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+<li><p>色変化アプリ (ColorChangeApp) 作成完了</p></li>
+</ol>
+</details>
+</details>
+<h2 id="名前表示アプリ-namedisplayapp">名前表示アプリ
+(NameDisplayApp)</h2>
+<details>
+<table>
+<colgroup>
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+</colgroup>
+<thead>
+<tr>
+<th>No</th>
+<th>アプリ名(日本語)</th>
+<th>物理名</th>
+<th>難易度(10段階)</th>
+<th>所要時間(日数)</th>
+<th>機能</th>
+<th>おすすめポイント</th>
+<th>その他必要なものや特記事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>名前表示アプリ</td>
+<td>NameDisplayApp</td>
+<td>0</td>
+<td>1h</td>
+<td>入力した名前を表示</td>
+<td>入力と表示の基本を学べる</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><p>NameDisplayApp.swiftの作成と実装</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode swift"><code class="sourceCode swift"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">SwiftUI</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> NameDisplayApp<span class="op">:</span> <span class="dt">View</span> <span class="op">{</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">@State</span> <span class="kw">private</span> <span class="kw">var</span> <span class="va">name</span> <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">body</span><span class="op">:</span> some View <span class="op">{</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        VStack <span class="op">{</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>            Text<span class="op">(</span><span class="st">&quot;名前&quot;</span><span class="op">)</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>padding<span class="op">(.</span>leading<span class="op">)</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>frame<span class="op">(</span>maxWidth<span class="op">:</span> <span class="op">.</span>infinity<span class="op">,</span> alignment<span class="op">:</span> <span class="op">.</span>leading<span class="op">)</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>            TextField<span class="op">(</span><span class="st">&quot;名前を入力&quot;</span><span class="op">,</span> text<span class="op">:</span> $name <span class="op">)</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>textFieldStyle<span class="op">(</span>RoundedBorderTextFieldStyle<span class="op">())</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>            Text<span class="op">(</span><span class="st">&quot;こんにちは、 </span><span class="sc">\n</span><span class="er">\(</span><span class="st">name)さん!&quot;</span><span class="op">)</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>font<span class="op">(.</span>title<span class="op">)</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span>navigationTitle<span class="op">(</span><span class="st">&quot;名前表示アプリ&quot;</span><span class="op">)</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>#Preview <span class="op">{</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    NameDisplayApp<span class="op">()</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<li><p>HomeView.swiftの実装</p>
+<ol type="1">
+<li>AppInfo構造体のインスタンスを作成します。</li>
+<li><code>AppInfo(title: "名前表示アプリ", destination: AnyView(NameDisplayApp())),</code></li>
+</ol></li>
+<li><p>動作確認</p>
+<ol type="1">
+<li><figure>
+<img src="5.gif" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+<li><p>名前表示アプリ (NameDisplayApp) 作成完了</p></li>
+</ol>
+</details>
+<h2 id="数字表示アプリ-numberdisplayapp">数字表示アプリ
+(NumberDisplayApp)</h2>
+<details>
+<table>
+<colgroup>
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+</colgroup>
+<thead>
+<tr>
+<th>No</th>
+<th>アプリ名(日本語)</th>
+<th>物理名</th>
+<th>難易度(10段階)</th>
+<th>所要時間(日数)</th>
+<th>機能</th>
+<th>おすすめポイント</th>
+<th>その他必要なものや特記事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>数字表示アプリ</td>
+<td>NumberDisplayApp</td>
+<td>0</td>
+<td>1h</td>
+<td>数字を表示</td>
+<td>画面に数値を表示する方法を学べる</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><p>NumberDisplayApp.swiftの作成と実装</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode swift"><code class="sourceCode swift"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">SwiftUI</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> NumberDisplayApp<span class="op">:</span> <span class="dt">View</span> <span class="op">{</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">@State</span> <span class="kw">private</span> <span class="kw">var</span> <span class="va">number</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">body</span><span class="op">:</span> some View <span class="op">{</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        VStack <span class="op">{</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>            Text<span class="op">(</span><span class="st">&quot;数字: </span><span class="er">\(</span><span class="st">number)&quot;</span><span class="op">)</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>font<span class="op">(.</span>largeTitle<span class="op">)</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>            HStack <span class="op">{</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>                Button<span class="op">(</span>action <span class="op">:</span> <span class="op">{</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>                    number <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>                <span class="op">})</span> <span class="op">{</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>                    Text<span class="op">(</span><span class="st">&quot;カウントアップ&quot;</span><span class="op">)</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>font<span class="op">(.</span>headline<span class="op">)</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>background<span class="op">(</span>Color<span class="op">.</span>green<span class="op">)</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>foregroundColor<span class="op">(</span>Color<span class="op">.</span>white<span class="op">)</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>cornerRadius<span class="op">(</span><span class="dv">10</span><span class="op">)</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>                Button<span class="op">(</span>action<span class="op">:</span> <span class="op">{</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>                    number <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>                <span class="op">})</span> <span class="op">{</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>                    Text<span class="op">(</span><span class="st">&quot;カウントダウン&quot;</span><span class="op">)</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>font<span class="op">(.</span>headline<span class="op">)</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>background<span class="op">(</span>Color<span class="op">.</span>red<span class="op">)</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>foregroundColor<span class="op">(</span>Color<span class="op">.</span>white<span class="op">)</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>cornerRadius<span class="op">(</span><span class="dv">10</span><span class="op">)</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span>navigationTitle<span class="op">(</span><span class="st">&quot;数字表示アプリ&quot;</span><span class="op">)</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>        Spacer<span class="op">()</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>#Preview <span class="op">{</span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>    NumberDisplayApp<span class="op">()</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<li><p>HomeView.swiftの実装</p>
+<ol type="1">
+<li>AppInfo構造体のインスタンスを作成します。</li>
+<li><code>AppInfo(title: "数字表示アプリ", destination: AnyView(NumberDisplayApp())),</code></li>
+</ol></li>
+<li><p>動作確認</p>
+<ol type="1">
+<li><figure>
+<img src="6.gif" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+<li><p>数字表示アプリ (NumberDisplayApp) 作成完了</p></li>
+</ol>
+</details>
+<h2 id="簡単な電卓-simplecalculator">簡単な電卓 (SimpleCalculator)</h2>
+<details>
+<table>
+<colgroup>
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+</colgroup>
+<thead>
+<tr>
+<th>No</th>
+<th>アプリ名(日本語)</th>
+<th>物理名</th>
+<th>難易度(10段階)</th>
+<th>所要時間(日数)</th>
+<th>機能</th>
+<th>おすすめポイント</th>
+<th>その他必要なものや特記事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>簡単な電卓</td>
+<td>SimpleCalculator</td>
+<td>0</td>
+<td>1h</td>
+<td>1+1などの基本的な計算</td>
+<td>基本的な計算機能を学べる</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><p>SimpleCalculator.swiftの作成と実装</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode swift"><code class="sourceCode swift"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">SwiftUI</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> SimpleCalculator<span class="op">:</span> <span class="dt">View</span> <span class="op">{</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">@State</span> <span class="kw">private</span> <span class="kw">var</span> <span class="va">result</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">@State</span> <span class="kw">private</span> <span class="kw">var</span> <span class="va">number1</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">@State</span> <span class="kw">private</span> <span class="kw">var</span> <span class="va">number2</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">body</span><span class="op">:</span> some View <span class="op">{</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>        VStack <span class="op">{</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>            HStack <span class="op">{</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>                TextField<span class="op">(</span><span class="st">&quot;数値1&quot;</span><span class="op">,</span> value<span class="op">:</span> $number1<span class="op">,</span> formatter<span class="op">:</span> NumberFormatter<span class="op">())</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>textFieldStyle<span class="op">(</span>RoundedBorderTextFieldStyle<span class="op">())</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>                Text<span class="op">(</span><span class="st">&quot;+&quot;</span><span class="op">)</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>font<span class="op">(.</span>title<span class="op">)</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>                TextField<span class="op">(</span><span class="st">&quot;数値2&quot;</span><span class="op">,</span> value<span class="op">:</span> $number2<span class="op">,</span> formatter<span class="op">:</span> NumberFormatter<span class="op">())</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>textFieldStyle<span class="op">(</span>RoundedBorderTextFieldStyle<span class="op">())</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>            Button<span class="op">(</span>action<span class="op">:</span> <span class="op">{</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>                result <span class="op">=</span> number1 <span class="op">+</span> number2</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>            <span class="op">})</span> <span class="op">{</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>                Text<span class="op">(</span><span class="st">&quot;計算&quot;</span><span class="op">)</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>font<span class="op">(.</span>title<span class="op">)</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>background<span class="op">(</span>Color<span class="op">.</span>blue<span class="op">)</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>foregroundColor<span class="op">(.</span>white<span class="op">)</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>cornerRadius<span class="op">(</span><span class="dv">10</span><span class="op">)</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>            Text<span class="op">(</span><span class="st">&quot;結果: </span><span class="er">\(</span><span class="st">result)&quot;</span><span class="op">)</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>font<span class="op">(.</span>title<span class="op">)</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span>keyboardType<span class="op">(.</span>decimalPad<span class="op">)</span></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>#Preview <span class="op">{</span></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>    SimpleCalculator<span class="op">()</span></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<li><p>HomeView.swiftの実装</p>
+<ol type="1">
+<li>AppInfo構造体のインスタンスを作成します。</li>
+<li><code>AppInfo(title: "簡単な電卓", destination: AnyView(SimpleCalculator())),</code></li>
+</ol></li>
+<li><p>動作確認</p>
+<ol type="1">
+<li><figure>
+<img src="7.gif" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+<li><p>簡単な電卓 (SimpleCalculator) 作成完了</p></li>
+</ol>
+</details>
+<h2 id="日付表示アプリ-datedisplayapp">日付表示アプリ
+(DateDisplayApp)</h2>
+<details>
+<table>
+<colgroup>
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+</colgroup>
+<thead>
+<tr>
+<th>No</th>
+<th>アプリ名(日本語)</th>
+<th>物理名</th>
+<th>難易度(10段階)</th>
+<th>所要時間(日数)</th>
+<th>機能</th>
+<th>おすすめポイント</th>
+<th>その他必要なものや特記事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6</td>
+<td>日付表示アプリ</td>
+<td>DateDisplayApp</td>
+<td>0</td>
+<td>1h</td>
+<td>現在の日付を表示</td>
+<td>日付と時間の取得方法を学べる</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><p>DateDisplayApp.swiftの作成と実装</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode swift"><code class="sourceCode swift"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">SwiftUI</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> DateDisplayApp<span class="op">:</span> <span class="dt">View</span> <span class="op">{</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">@State</span> <span class="kw">private</span> <span class="kw">var</span> <span class="va">dateText</span> <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">@State</span> <span class="kw">private</span> <span class="kw">var</span> <span class="va">nowDate</span> <span class="op">=</span> Date<span class="op">()</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">@State</span> <span class="kw">private</span> <span class="kw">var</span> <span class="va">currentDate</span> <span class="op">=</span> Date<span class="op">()</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="kw">let</span> <span class="va">dateFormatter</span> <span class="op">=</span> DateFormatter<span class="op">()</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">init</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>        dateFormatter<span class="op">.</span>dateFormat <span class="op">=</span> <span class="st">&quot;YYYY/MM/dd(E) HH:mm:ss.S&quot;</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>        dateFormatter<span class="op">.</span>locale <span class="op">=</span> Locale<span class="op">(</span>identifier<span class="op">:</span> <span class="st">&quot;ja_JP&quot;</span><span class="op">)</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">body</span><span class="op">:</span> some View <span class="op">{</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>        VStack <span class="op">{</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>            Text<span class="op">(</span>dateText<span class="op">.</span>isEmpty <span class="op">?</span> <span class="st">&quot;</span><span class="er">\(</span><span class="st">dateFormatter.string(from: nowDate))&quot;</span> <span class="op">:</span> dateText<span class="op">)</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>onAppear <span class="op">{</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>                    Timer<span class="op">.</span>scheduledTimer<span class="op">(</span>withTimeInterval<span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> repeats<span class="op">:</span> <span class="kw">true</span><span class="op">)</span> <span class="op">{</span> _ <span class="cf">in</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">self</span><span class="op">.</span>nowDate <span class="op">=</span> Date<span class="op">()</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>                        dateText <span class="op">=</span> <span class="st">&quot;</span><span class="er">\(</span><span class="st">dateFormatter.string(from: nowDate))&quot;</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>                    <span class="op">}</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>padding<span class="op">(.</span>all<span class="op">,</span> <span class="dv">20</span><span class="op">)</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>            HStack <span class="op">{</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>                DatePicker<span class="op">(</span><span class="st">&quot;&quot;</span><span class="op">,</span> selection<span class="op">:</span> $currentDate<span class="op">)</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>font<span class="op">(.</span>title3<span class="op">)</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>                Button<span class="op">(</span>action<span class="op">:</span> <span class="op">{</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>                    currentDate <span class="op">=</span> Date<span class="op">()</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>                <span class="op">})</span> <span class="op">{</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>                    Text<span class="op">(</span><span class="st">&quot;更新&quot;</span><span class="op">)</span></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>font<span class="op">(.</span>title3<span class="op">)</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>padding<span class="op">(.</span>horizontal<span class="op">,</span> <span class="dv">20</span> <span class="op">)</span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>background<span class="op">(</span>Color<span class="op">.</span>orange<span class="op">)</span></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>foregroundColor<span class="op">(.</span>white<span class="op">)</span></span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>cornerRadius<span class="op">(</span><span class="dv">30</span><span class="op">)</span></span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span>frame<span class="op">(</span>alignment<span class="op">:</span> <span class="op">.</span>trailing<span class="op">)</span></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>            Spacer<span class="op">()</span></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span>navigationTitle<span class="op">(</span><span class="st">&quot;日付表示アプリ&quot;</span><span class="op">)</span></span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a>#Preview <span class="op">{</span></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a>    DateDisplayApp<span class="op">()</span></span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<li><p>HomeView.swiftの実装</p>
+<ol type="1">
+<li>AppInfo構造体のインスタンスを作成します。</li>
+<li><code>AppInfo(title: "日付表示アプリ", destination: AnyView(DateDisplayApp())),</code></li>
+</ol></li>
+<li><p>動作確認</p>
+<ol type="1">
+<li><figure>
+<img src="8.gif" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+<li><p>日付表示アプリ (DateDisplayApp) 作成完了</p></li>
+</ol>
+</details>
+<h2 id="ボタンカウンター-buttoncounterapp">ボタンカウンター
+(ButtonCounterApp)</h2>
+<!-- <details> -->
+<table>
+<colgroup>
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+</colgroup>
+<thead>
+<tr>
+<th>No</th>
+<th>アプリ名(日本語)</th>
+<th>物理名</th>
+<th>難易度(10段階)</th>
+<th>所要時間(日数)</th>
+<th>機能</th>
+<th>おすすめポイント</th>
+<th>その他必要なものや特記事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7</td>
+<td>ボタンカウンター</td>
+<td>ButtonCounterApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンを押すとカウントアップ</td>
+<td>ボタンのイベント処理を学べる</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><p>ButtonCounterApp.swiftの作成と実装</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode swift"><code class="sourceCode swift"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">SwiftUI</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> ButtonCounterApp<span class="op">:</span> <span class="dt">View</span> <span class="op">{</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">@State</span> <span class="kw">private</span> <span class="kw">var</span> <span class="va">number</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">@State</span> <span class="kw">private</span> <span class="kw">var</span> <span class="va">value</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> <span class="va">body</span><span class="op">:</span> some View <span class="op">{</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>        VStack <span class="op">{</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>            Text<span class="op">(</span><span class="st">&quot;数字: </span><span class="er">\(</span><span class="st">number)&quot;</span><span class="op">)</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>font<span class="op">(.</span>largeTitle<span class="op">)</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>            HStack <span class="op">{</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>                Button<span class="op">(</span>action <span class="op">:</span> <span class="op">{</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>                    number <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>                <span class="op">})</span> <span class="op">{</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>                    Text<span class="op">(</span><span class="st">&quot;カウントアップ&quot;</span><span class="op">)</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>font<span class="op">(.</span>headline<span class="op">)</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>background<span class="op">(</span>Color<span class="op">.</span>green<span class="op">)</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>foregroundColor<span class="op">(</span>Color<span class="op">.</span>white<span class="op">)</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>cornerRadius<span class="op">(</span><span class="dv">10</span><span class="op">)</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>                Button<span class="op">(</span>action<span class="op">:</span> <span class="op">{</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>                    number <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>                <span class="op">})</span> <span class="op">{</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>                    Text<span class="op">(</span><span class="st">&quot;カウントダウン&quot;</span><span class="op">)</span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>font<span class="op">(.</span>headline<span class="op">)</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>background<span class="op">(</span>Color<span class="op">.</span>red<span class="op">)</span></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>foregroundColor<span class="op">(</span>Color<span class="op">.</span>white<span class="op">)</span></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>cornerRadius<span class="op">(</span><span class="dv">10</span><span class="op">)</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>        HStack <span class="op">{</span></span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>            Button<span class="op">(</span>action <span class="op">:</span> <span class="op">{</span></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>                number <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>            <span class="op">})</span> <span class="op">{</span></span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>                Text<span class="op">(</span><span class="st">&quot;0&quot;</span><span class="op">)</span></span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>font<span class="op">(.</span>headline<span class="op">)</span></span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>background<span class="op">(</span>Color<span class="op">.</span>pink<span class="op">)</span></span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>foregroundColor<span class="op">(</span>Color<span class="op">.</span>white<span class="op">)</span></span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>                    <span class="op">.</span>cornerRadius<span class="op">(</span><span class="dv">10</span><span class="op">)</span></span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a>                Button<span class="op">(</span>action <span class="op">:</span> <span class="op">{</span></span>
+<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a>                    number <span class="op">+=</span> <span class="dv">10</span></span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a>                <span class="op">})</span> <span class="op">{</span></span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a>                    Text<span class="op">(</span><span class="st">&quot;+10&quot;</span><span class="op">)</span></span>
+<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>font<span class="op">(.</span>headline<span class="op">)</span></span>
+<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>background<span class="op">(</span>Color<span class="op">.</span>green<span class="op">)</span></span>
+<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>foregroundColor<span class="op">(</span>Color<span class="op">.</span>white<span class="op">)</span></span>
+<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>cornerRadius<span class="op">(</span><span class="dv">10</span><span class="op">)</span></span>
+<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a>                Button<span class="op">(</span>action <span class="op">:</span> <span class="op">{</span></span>
+<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a>                    number <span class="op">-=</span> <span class="dv">10</span></span>
+<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a>                <span class="op">})</span> <span class="op">{</span></span>
+<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a>                    Text<span class="op">(</span><span class="st">&quot;-10&quot;</span><span class="op">)</span></span>
+<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>font<span class="op">(.</span>headline<span class="op">)</span></span>
+<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>background<span class="op">(</span>Color<span class="op">.</span>red<span class="op">)</span></span>
+<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>foregroundColor<span class="op">(</span>Color<span class="op">.</span>white<span class="op">)</span></span>
+<span id="cb11-64"><a href="#cb11-64" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>cornerRadius<span class="op">(</span><span class="dv">10</span><span class="op">)</span></span>
+<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb11-66"><a href="#cb11-66" aria-hidden="true" tabindex="-1"></a>                Button<span class="op">(</span>action <span class="op">:</span> <span class="op">{</span></span>
+<span id="cb11-67"><a href="#cb11-67" aria-hidden="true" tabindex="-1"></a>                    number <span class="op">+=</span> <span class="dv">100</span></span>
+<span id="cb11-68"><a href="#cb11-68" aria-hidden="true" tabindex="-1"></a>                <span class="op">})</span> <span class="op">{</span></span>
+<span id="cb11-69"><a href="#cb11-69" aria-hidden="true" tabindex="-1"></a>                    Text<span class="op">(</span><span class="st">&quot;+100&quot;</span><span class="op">)</span></span>
+<span id="cb11-70"><a href="#cb11-70" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>font<span class="op">(.</span>headline<span class="op">)</span></span>
+<span id="cb11-71"><a href="#cb11-71" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb11-72"><a href="#cb11-72" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>background<span class="op">(</span>Color<span class="op">.</span>yellow<span class="op">)</span></span>
+<span id="cb11-73"><a href="#cb11-73" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>foregroundColor<span class="op">(</span>Color<span class="op">.</span>white<span class="op">)</span></span>
+<span id="cb11-74"><a href="#cb11-74" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>cornerRadius<span class="op">(</span><span class="dv">10</span><span class="op">)</span></span>
+<span id="cb11-75"><a href="#cb11-75" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb11-76"><a href="#cb11-76" aria-hidden="true" tabindex="-1"></a>                Button<span class="op">(</span>action <span class="op">:</span> <span class="op">{</span></span>
+<span id="cb11-77"><a href="#cb11-77" aria-hidden="true" tabindex="-1"></a>                    number <span class="op">-=</span> <span class="dv">100</span></span>
+<span id="cb11-78"><a href="#cb11-78" aria-hidden="true" tabindex="-1"></a>                <span class="op">})</span> <span class="op">{</span></span>
+<span id="cb11-79"><a href="#cb11-79" aria-hidden="true" tabindex="-1"></a>                    Text<span class="op">(</span><span class="st">&quot;-100&quot;</span><span class="op">)</span></span>
+<span id="cb11-80"><a href="#cb11-80" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>font<span class="op">(.</span>headline<span class="op">)</span></span>
+<span id="cb11-81"><a href="#cb11-81" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb11-82"><a href="#cb11-82" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>background<span class="op">(</span>Color<span class="op">.</span>blue<span class="op">)</span></span>
+<span id="cb11-83"><a href="#cb11-83" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>foregroundColor<span class="op">(</span>Color<span class="op">.</span>white<span class="op">)</span></span>
+<span id="cb11-84"><a href="#cb11-84" aria-hidden="true" tabindex="-1"></a>                        <span class="op">.</span>cornerRadius<span class="op">(</span><span class="dv">10</span><span class="op">)</span></span>
+<span id="cb11-85"><a href="#cb11-85" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb11-86"><a href="#cb11-86" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb11-87"><a href="#cb11-87" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb11-88"><a href="#cb11-88" aria-hidden="true" tabindex="-1"></a>        ScrollView <span class="op">{</span></span>
+<span id="cb11-89"><a href="#cb11-89" aria-hidden="true" tabindex="-1"></a>            VStack <span class="op">{</span></span>
+<span id="cb11-90"><a href="#cb11-90" aria-hidden="true" tabindex="-1"></a>                ForEach<span class="op">(</span><span class="fl">0.</span><span class="op">.&lt;</span><span class="dv">3</span><span class="op">)</span> <span class="op">{</span> row <span class="cf">in</span></span>
+<span id="cb11-91"><a href="#cb11-91" aria-hidden="true" tabindex="-1"></a>                    HStack <span class="op">{</span></span>
+<span id="cb11-92"><a href="#cb11-92" aria-hidden="true" tabindex="-1"></a>                        ForEach<span class="op">(</span><span class="fl">0.</span><span class="op">.&lt;</span><span class="dv">3</span><span class="op">)</span> <span class="op">{</span> column <span class="cf">in</span></span>
+<span id="cb11-93"><a href="#cb11-93" aria-hidden="true" tabindex="-1"></a>                            Button<span class="op">(</span>action<span class="op">:</span> <span class="op">{</span></span>
+<span id="cb11-94"><a href="#cb11-94" aria-hidden="true" tabindex="-1"></a>                                value <span class="op">=</span> <span class="dv">10</span> <span class="op">-</span> <span class="op">(</span>row <span class="op">*</span> <span class="dv">3</span> <span class="op">+</span> column <span class="op">+</span> <span class="dv">1</span><span class="op">)</span></span>
+<span id="cb11-95"><a href="#cb11-95" aria-hidden="true" tabindex="-1"></a>                                number <span class="op">+=</span> value</span>
+<span id="cb11-96"><a href="#cb11-96" aria-hidden="true" tabindex="-1"></a>                            <span class="op">})</span> <span class="op">{</span></span>
+<span id="cb11-97"><a href="#cb11-97" aria-hidden="true" tabindex="-1"></a>                                Text<span class="op">(</span><span class="st">&quot;+</span><span class="er">\(</span><span class="st">10 - (row * 3 + column + 1))&quot;</span><span class="op">)</span></span>
+<span id="cb11-98"><a href="#cb11-98" aria-hidden="true" tabindex="-1"></a>                                    <span class="op">.</span>bold<span class="op">()</span></span>
+<span id="cb11-99"><a href="#cb11-99" aria-hidden="true" tabindex="-1"></a>                                    <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb11-100"><a href="#cb11-100" aria-hidden="true" tabindex="-1"></a>                                    <span class="op">.</span>frame<span class="op">(</span>width<span class="op">:</span> <span class="dv">80</span><span class="op">,</span> height<span class="op">:</span> <span class="dv">80</span><span class="op">)</span></span>
+<span id="cb11-101"><a href="#cb11-101" aria-hidden="true" tabindex="-1"></a>                                    <span class="op">.</span>foregroundColor<span class="op">(</span>Color<span class="op">.</span>black<span class="op">)</span></span>
+<span id="cb11-102"><a href="#cb11-102" aria-hidden="true" tabindex="-1"></a>                                    <span class="op">.</span>overlay<span class="op">(</span></span>
+<span id="cb11-103"><a href="#cb11-103" aria-hidden="true" tabindex="-1"></a>                                        Circle<span class="op">()</span></span>
+<span id="cb11-104"><a href="#cb11-104" aria-hidden="true" tabindex="-1"></a>                                            <span class="op">.</span>stroke<span class="op">(</span>Color<span class="op">.</span>blue<span class="op">,</span> lineWidth<span class="op">:</span> <span class="dv">3</span><span class="op">)</span></span>
+<span id="cb11-105"><a href="#cb11-105" aria-hidden="true" tabindex="-1"></a>                                    <span class="op">)</span></span>
+<span id="cb11-106"><a href="#cb11-106" aria-hidden="true" tabindex="-1"></a>                            <span class="op">}</span></span>
+<span id="cb11-107"><a href="#cb11-107" aria-hidden="true" tabindex="-1"></a>                        <span class="op">}</span></span>
+<span id="cb11-108"><a href="#cb11-108" aria-hidden="true" tabindex="-1"></a>                    <span class="op">}</span></span>
+<span id="cb11-109"><a href="#cb11-109" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb11-110"><a href="#cb11-110" aria-hidden="true" tabindex="-1"></a>                ForEach<span class="op">(</span><span class="fl">0.</span><span class="op">.&lt;</span><span class="dv">3</span><span class="op">)</span> <span class="op">{</span> row <span class="cf">in</span></span>
+<span id="cb11-111"><a href="#cb11-111" aria-hidden="true" tabindex="-1"></a>                    HStack <span class="op">{</span></span>
+<span id="cb11-112"><a href="#cb11-112" aria-hidden="true" tabindex="-1"></a>                        ForEach<span class="op">(</span><span class="fl">0.</span><span class="op">.&lt;</span><span class="dv">3</span><span class="op">)</span> <span class="op">{</span> column <span class="cf">in</span></span>
+<span id="cb11-113"><a href="#cb11-113" aria-hidden="true" tabindex="-1"></a>                            Button<span class="op">(</span>action<span class="op">:</span> <span class="op">{</span></span>
+<span id="cb11-114"><a href="#cb11-114" aria-hidden="true" tabindex="-1"></a>                                value <span class="op">=</span> row <span class="op">*</span> <span class="dv">3</span> <span class="op">+</span> column <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb11-115"><a href="#cb11-115" aria-hidden="true" tabindex="-1"></a>                                number <span class="op">-=</span> value</span>
+<span id="cb11-116"><a href="#cb11-116" aria-hidden="true" tabindex="-1"></a>                            <span class="op">})</span> <span class="op">{</span></span>
+<span id="cb11-117"><a href="#cb11-117" aria-hidden="true" tabindex="-1"></a>                                Text<span class="op">(</span><span class="st">&quot;-</span><span class="er">\(</span><span class="st">row * 3 + column + 1)&quot;</span><span class="op">)</span></span>
+<span id="cb11-118"><a href="#cb11-118" aria-hidden="true" tabindex="-1"></a>                                    <span class="op">.</span>bold<span class="op">()</span></span>
+<span id="cb11-119"><a href="#cb11-119" aria-hidden="true" tabindex="-1"></a>                                    <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb11-120"><a href="#cb11-120" aria-hidden="true" tabindex="-1"></a>                                    <span class="op">.</span>frame<span class="op">(</span>width<span class="op">:</span> <span class="dv">80</span><span class="op">,</span> height<span class="op">:</span> <span class="dv">80</span><span class="op">)</span></span>
+<span id="cb11-121"><a href="#cb11-121" aria-hidden="true" tabindex="-1"></a>                                    <span class="op">.</span>foregroundColor<span class="op">(</span>Color<span class="op">.</span>black<span class="op">)</span></span>
+<span id="cb11-122"><a href="#cb11-122" aria-hidden="true" tabindex="-1"></a>                                    <span class="op">.</span>overlay<span class="op">(</span></span>
+<span id="cb11-123"><a href="#cb11-123" aria-hidden="true" tabindex="-1"></a>                                        Circle<span class="op">()</span></span>
+<span id="cb11-124"><a href="#cb11-124" aria-hidden="true" tabindex="-1"></a>                                            <span class="op">.</span>stroke<span class="op">(</span>Color<span class="op">.</span>red<span class="op">,</span> lineWidth<span class="op">:</span> <span class="dv">3</span><span class="op">)</span></span>
+<span id="cb11-125"><a href="#cb11-125" aria-hidden="true" tabindex="-1"></a>                                    <span class="op">)</span></span>
+<span id="cb11-126"><a href="#cb11-126" aria-hidden="true" tabindex="-1"></a>                            <span class="op">}</span></span>
+<span id="cb11-127"><a href="#cb11-127" aria-hidden="true" tabindex="-1"></a>                        <span class="op">}</span></span>
+<span id="cb11-128"><a href="#cb11-128" aria-hidden="true" tabindex="-1"></a>                    <span class="op">}</span></span>
+<span id="cb11-129"><a href="#cb11-129" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb11-130"><a href="#cb11-130" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb11-131"><a href="#cb11-131" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>padding<span class="op">()</span></span>
+<span id="cb11-132"><a href="#cb11-132" aria-hidden="true" tabindex="-1"></a>                <span class="op">.</span>navigationTitle<span class="op">(</span><span class="st">&quot;ボタンカウンター&quot;</span><span class="op">)</span></span>
+<span id="cb11-133"><a href="#cb11-133" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb11-134"><a href="#cb11-134" aria-hidden="true" tabindex="-1"></a>        Spacer<span class="op">()</span></span>
+<span id="cb11-135"><a href="#cb11-135" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb11-136"><a href="#cb11-136" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb11-137"><a href="#cb11-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-138"><a href="#cb11-138" aria-hidden="true" tabindex="-1"></a>#Preview <span class="op">{</span></span>
+<span id="cb11-139"><a href="#cb11-139" aria-hidden="true" tabindex="-1"></a>    ButtonCounterApp<span class="op">()</span></span>
+<span id="cb11-140"><a href="#cb11-140" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<li><p>HomeView.swiftの実装</p>
+<ol type="1">
+<li>AppInfo構造体のインスタンスを作成します。</li>
+<li><code>AppInfo(title: "ボタンカウンター", destination: AnyView(ButtonCounterApp())),</code></li>
+</ol></li>
+<li><p>動作確認</p>
+<ol type="1">
+<li><figure>
+<img src="9.gif" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+<li><p>ボタンカウンター (ButtonCounterApp) 作成完了</p></li>
+</ol>
+</details>
+<h2 id="シンプルメモ-simplememoapp">8. シンプルメモ (SimpleMemoApp)</h2>
+<details>
+<table>
+<colgroup>
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+</colgroup>
+<thead>
+<tr>
+<th>No</th>
+<th>アプリ名(日本語)</th>
+<th>物理名</th>
+<th>難易度(10段階)</th>
+<th>所要時間(日数)</th>
+<th>機能</th>
+<th>おすすめポイント</th>
+<th>その他必要なものや特記事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td>シンプルメモ</td>
+<td>SimpleMemoApp</td>
+<td>0</td>
+<td>1h</td>
+<td>メモを1つ保存</td>
+<td>簡単な文字列の保存方法を学べる</td>
+<td>UserDefaults利用</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><p>SimpleMemoApp.swiftの作成と実装</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode swift"><code class="sourceCode swift"></code></pre></div></li>
+<li><p>HomeView.swiftの実装</p>
+<ol type="1">
+<li>AppInfo構造体のインスタンスを作成します。</li>
+<li><code>AppInfo(title: "シンプルメモ", destination: AnyView(SimpleMemoApp())),</code></li>
+</ol></li>
+<li><p>動作確認</p>
+<ol type="1">
+<li><figure>
+<img src="10.gif" alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure></li>
+</ol></li>
+<li><ol start="8" type="1">
+<li>シンプルメモ (SimpleMemoApp) 作成完了</li>
+</ol></li>
+</ol>
+</details>
+</body>
+</html>

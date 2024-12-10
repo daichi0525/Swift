@@ -1,0 +1,3347 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      /* max-width: 180em; */
+      max-width: auto;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="swift学習一覧">1. Swift学習一覧</h1>
+<p>一緒にSwiftを効率的に学習していきましょう。</p>
+<h1 id="目次">2. 目次</h1>
+<details>
+<summary>
+目次の詳細はこちら
+</summary>
+<ul>
+<li><a href="#1-swift学習一覧">1. Swift学習一覧</a></li>
+<li><a href="#2-目次">2. 目次</a></li>
+<li><a href="#3-前提条件と学習範囲">3. 前提条件と学習範囲</a>
+<ul>
+<li><a href="#31-必要なもの">3.1. 必要なもの</a></li>
+<li><a href="#32-学習可能スキルswiftui関連">3.2.
+学習可能スキル（SwiftUI関連）</a></li>
+<li><a href="#33-実装で学べる基本的な要素">3.3.
+実装で学べる基本的な要素</a></li>
+</ul></li>
+<li><a href="#4-難易度02初級">4. 難易度0~2(初級)</a>
+<ul>
+<li><a href="#41-難易度0超初心者向けのアプリ50個">4.1.
+難易度0（超初心者向け）のアプリ（50個）</a></li>
+<li><a href="#42-難易度0超初心者向け応用">4.2.
+難易度0（超初心者向け）応用</a>
+<ul>
+<li><a
+href="#421-レイアウトやコンストレイントに関する理解auto-layoutの基礎">4.2.1.
+レイアウトやコンストレイントに関する理解（Auto Layoutの基礎）</a>
+<ul>
+<li><a href="#4211-概要">4.2.1.1. 概要</a></li>
+<li><a href="#4212-学習方法">4.2.1.2. 学習方法</a></li>
+<li><a href="#4213-学習リソース">4.2.1.3. 学習リソース</a></li>
+</ul></li>
+<li><a
+href="#422-ビューコントローラー間の遷移segueやnavigationcontrollerを使った画面遷移">4.2.2.
+ビューコントローラー間の遷移（segueやnavigationControllerを使った画面遷移）</a>
+<ul>
+<li><a href="#4221-概要">4.2.2.1. 概要</a></li>
+<li><a href="#4222-学習方法">4.2.2.2. 学習方法</a></li>
+<li><a href="#4223-学習リソース">4.2.2.3. 学習リソース</a></li>
+</ul></li>
+<li><a href="#423-データの保存方法coredataやsqliteなど">4.2.3.
+データの保存方法（CoreDataやSQLiteなど）</a>
+<ul>
+<li><a href="#4231-概要">4.2.3.1. 概要</a></li>
+<li><a href="#4232-学習方法">4.2.3.2. 学習方法</a></li>
+<li><a href="#4233-学習リソース">4.2.3.3. 学習リソース</a></li>
+</ul></li>
+<li><a href="#424-サマリー">4.2.4. サマリー</a></li>
+</ul></li>
+<li><a href="#43-難易度1初心者向けのアプリ20個">4.3.
+難易度1（初心者向け）のアプリ（20個）</a></li>
+<li><a href="#44-難易度2少し進んだ初級者向けのアプリ20個">4.4.
+難易度2（少し進んだ初級者向け）のアプリ（20個）</a></li>
+</ul></li>
+<li><a href="#5-難易度34中級">5. 難易度3~4(中級)</a>
+<ul>
+<li><a href="#51-難易度3中級者向けのアプリ20個">5.1.
+難易度3（中級者向け）のアプリ（20個）</a></li>
+<li><a href="#52-難易度4中級者から上級者向けのアプリ20個">5.2.
+難易度4（中級者から上級者向け）のアプリ（20個）</a></li>
+</ul></li>
+<li><a href="#6-難易度57上級">6. 難易度5~7(上級)</a>
+<ul>
+<li><a href="#61-難易度5上級者向けのアプリ20個">6.1.
+難易度5（上級者向け）のアプリ（20個）</a></li>
+<li><a href="#62-難易度6上級者向けアプリ20個">6.2.
+難易度6（上級者向け）アプリ（20個）</a></li>
+<li><a href="#63-難易度7上級者向けのアプリ20個">6.3.
+難易度7（上級者向け）のアプリ（20個）</a></li>
+</ul></li>
+<li><a href="#7-難易度810達人">7. 難易度8~10(達人)</a>
+<ul>
+<li><a href="#71-難易度8専門家向けのアプリ20個">7.1.
+難易度8（専門家向け）のアプリ（20個）</a></li>
+<li><a href="#72-難易度9非常に高度アプリ20個">7.2.
+難易度9（非常に高度）アプリ（20個）</a></li>
+<li><a href="#73-難易度10最上級のアプリ20個">7.3.
+難易度10（最上級）のアプリ（20個）</a></li>
+</ul></li>
+<li><a href="#8-終わりに">8. 終わりに</a></li>
+</ul>
+<p><a href="#2-目次">本章先頭</a></p>
+</details>
+<h1 id="前提条件と学習範囲">3. 前提条件と学習範囲</h1>
+<p><a href="#1-swift学習一覧">先頭</a></p>
+<h2 id="必要なもの">3.1. 必要なもの</h2>
+<details>
+<ol type="1">
+<li>Mac:
+<ol type="1">
+<li>iOSアプリの開発にはMacが必須です。Appleの開発環境であるXcodeを使用するためにはMacが必要です。</li>
+</ol></li>
+<li>VSCode（オプション）:
+<ol type="1">
+<li>VSCodeは、Swiftのコードを書くために使用することができますが、SwiftUIアプリの作成には、Xcodeが必須です。特に、インターフェイスビルダーやシミュレーター、デバッグ機能など、Xcodeの豊富なツールを利用するため、Xcodeを主に使用します。</li>
+<li>もしVSCodeを使う場合でも、Swiftのビルドと実行をXcodeで行うことになります。VSCodeはあくまでエディタとして、軽いコード編集をするために使用できます。</li>
+<li>本学習ではREADME.mdなどのMarkdownファイル閲覧で使用します。</li>
+</ol></li>
+<li>Xcode（必須）:
+<ol type="1">
+<li>SwiftUIでアプリを開発するためには、Xcodeが必要です。XcodeはAppleの公式IDE（統合開発環境）で、Swift言語やSwiftUIを使ったアプリ開発に必須です。</li>
+<li>Xcodeには、以下の機能が含まれています：
+<ol type="1">
+<li>インターフェイスビルダー：UI（ユーザーインターフェース）を視覚的に作成できる。</li>
+<li>シミュレーター：iPhoneやiPadなどの実機を使わずにアプリをテストできる。</li>
+<li>デバッグツール：アプリの動作を確認し、エラーを修正するためのツール。</li>
+</ol></li>
+</ol></li>
+<li>SwiftUI:
+<ol type="1">
+<li>SwiftUIは、Appleが提供するユーザーインターフェース構築用のフレームワークで、初心者にとって学びやすいです。宣言的な構文を使って、アプリのUIを素早く構築できます。</li>
+</ol></li>
+<li>Apple Developer Account（オプション）:
+<ol type="1">
+<li>Apple Developer
+Program（年間99ドル）に加入すれば、実機でのテストやApp
+Storeへの公開が可能ですが、初心者向けのアプリ開発や学習には、まずはXcode内でシミュレーターを使用するだけで十分です。</li>
+</ol></li>
+</ol>
+<p><a href="#3-前提条件と学習範囲">本章先頭</a></p>
+</details>
+<h2 id="学習可能スキルswiftui関連">3.2.
+学習可能スキル（SwiftUI関連）</h2>
+<details>
+<ol type="1">
+<li>Swiftプログラミング言語の基本：
+<ol type="1">
+<li>変数、定数、関数、条件分岐（if文）、ループ（for文など）などの基本的なプログラミングスキル。</li>
+</ol></li>
+<li>SwiftUIの基本的な使い方：
+<ol type="1">
+<li>ビュー（Text, Button, Image, VStack,
+HStackなど）を使ったUI構築。</li>
+<li>StateやBindingを使ったデータの管理。</li>
+<li>ListやNavigationViewを使った画面遷移やリスト表示。</li>
+</ol></li>
+<li>Auto Layoutやレイアウトの理解（基本的なレイアウトの調整）：
+<ol type="1">
+<li>SwiftUIは、デバイスの画面サイズに応じてレイアウトが自動調整されるため、基本的なレイアウトの概念を理解できる。</li>
+</ol></li>
+</ol>
+<p><a href="#3-前提条件と学習範囲">本章先頭</a></p>
+</details>
+<h2 id="実装で学べる基本的な要素">3.3. 実装で学べる基本的な要素</h2>
+<details>
+<ol type="1">
+<li>UIの作成（SwiftUIを使った基本的なUI作成）：
+<ol type="1">
+<li>ボタン、ラベル、テキストフィールド、画像などを配置して、シンプルな画面を作成。</li>
+</ol></li>
+<li>状態管理（StateやBinding）：
+<ol type="1">
+<li>ユーザーのアクション（ボタンタップやテキスト入力）に基づいて、アプリの状態を変更する方法を学ぶ。</li>
+</ol></li>
+<li>画面遷移（NavigationViewやNavigationLink）：
+<ol type="1">
+<li>複数の画面に遷移するための基本的な仕組みを学ぶ。</li>
+</ol></li>
+<li>リスト表示（List）：
+<ol type="1">
+<li>複数のデータをリスト表示する方法（配列やデータソースを利用）。</li>
+</ol></li>
+<li>簡単なデータ保存（UserDefaultsなど）：
+<ol type="1">
+<li>ユーザーの設定やデータを保存するための基本的な方法。</li>
+</ol></li>
+</ol>
+<p><a href="#3-前提条件と学習範囲">本章先頭</a></p>
+</details>
+<h1 id="難易度02初級">4. 難易度0~2(初級)</h1>
+<p><a href="#1-swift学習一覧">先頭</a></p>
+<h2 id="難易度0超初心者向けのアプリ50個">4.1.
+難易度0（超初心者向け）のアプリ（50個）</h2>
+<p><a href="./Level0/Level0.html#level0">Level0</a></p>
+<details>
+<table>
+<colgroup>
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+</colgroup>
+<thead>
+<tr>
+<th>No</th>
+<th>アプリ名(日本語)</th>
+<th>物理名</th>
+<th>難易度(10段階)</th>
+<th>所要時間(日数)</th>
+<th>機能</th>
+<th>おすすめポイント</th>
+<th>その他必要なものや特記事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>挨拶アプリ</td>
+<td>GreetingApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンを押すと挨拶を表示</td>
+<td>シンプルなUI操作を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2</td>
+<td>色変化アプリ</td>
+<td>ColorChangeApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンで背景色を変更</td>
+<td>基本的なUI操作とイベント処理を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>3</td>
+<td>名前表示アプリ</td>
+<td>NameDisplayApp</td>
+<td>0</td>
+<td>1h</td>
+<td>入力した名前を表示</td>
+<td>入力と表示の基本を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>4</td>
+<td>数字表示アプリ</td>
+<td>NumberDisplayApp</td>
+<td>0</td>
+<td>1h</td>
+<td>数字を表示</td>
+<td>画面に数値を表示する方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>5</td>
+<td>簡単な電卓</td>
+<td>SimpleCalculator</td>
+<td>0</td>
+<td>1h</td>
+<td>1+1などの基本的な計算</td>
+<td>基本的な計算機能を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>6</td>
+<td>日付表示アプリ</td>
+<td>DateDisplayApp</td>
+<td>0</td>
+<td>1h</td>
+<td>現在の日付を表示</td>
+<td>日付と時間の取得方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>7</td>
+<td>ボタンカウンター</td>
+<td>ButtonCounterApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンを押すとカウントアップ</td>
+<td>ボタンのイベント処理を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>8</td>
+<td>シンプルメモ</td>
+<td>SimpleMemoApp</td>
+<td>0</td>
+<td>1h</td>
+<td>メモを1つ保存</td>
+<td>簡単な文字列の保存方法を学べる</td>
+<td>UserDefaults利用</td>
+</tr>
+<tr>
+<td>9</td>
+<td>簡単なスライドショー</td>
+<td>SimpleSlideshowApp</td>
+<td>0</td>
+<td>1h</td>
+<td>画像をスライドショーで表示</td>
+<td>画像表示とスライド機能を学べる</td>
+<td>ローカル画像を使用</td>
+</tr>
+<tr>
+<td>10</td>
+<td>テキスト表示</td>
+<td>TextDisplayApp</td>
+<td>0</td>
+<td>1h</td>
+<td>指定されたテキストを表示</td>
+<td>テキスト表示の基本を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>11</td>
+<td>数字足し算</td>
+<td>SimpleAdditionApp</td>
+<td>0</td>
+<td>1h</td>
+<td>2つの数を足して表示</td>
+<td>数学的処理の基本を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>12</td>
+<td>簡単なカウントダウン</td>
+<td>SimpleCountdownApp</td>
+<td>0</td>
+<td>1h</td>
+<td>タイマーがカウントダウンする</td>
+<td>タイマー機能の使い方を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>13</td>
+<td>ボタン色変更</td>
+<td>ButtonColorChangeApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンの色を押すごとに変更</td>
+<td>UIの色変更を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>14</td>
+<td>ランダムな数字</td>
+<td>RandomNumberApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ランダムな数字を生成して表示</td>
+<td>ランダム処理の基礎を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>15</td>
+<td>簡単なメニュー</td>
+<td>SimpleMenuApp</td>
+<td>0</td>
+<td>1h</td>
+<td>メニューから選択肢を選ぶ</td>
+<td>メニュー画面の作成方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>16</td>
+<td>入力フォーム</td>
+<td>InputFormApp</td>
+<td>0</td>
+<td>1h</td>
+<td>テキスト入力フォームを作成</td>
+<td>入力フォーム作成とデータの取得方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>17</td>
+<td>画像表示</td>
+<td>ImageDisplayApp</td>
+<td>0</td>
+<td>1h</td>
+<td>画像を表示</td>
+<td>画像の表示方法を学べる</td>
+<td>ローカル画像を使用</td>
+</tr>
+<tr>
+<td>18</td>
+<td>タイトル変更</td>
+<td>TitleChangeApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンを押すとアプリのタイトルを変更</td>
+<td>アプリ名変更の基本を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>19</td>
+<td>数字減算</td>
+<td>SimpleSubtractionApp</td>
+<td>0</td>
+<td>1h</td>
+<td>2つの数を引き算して表示</td>
+<td>数学的処理の学習</td>
+<td>-</td>
+</tr>
+<tr>
+<td>20</td>
+<td>時間表示</td>
+<td>TimeDisplayApp</td>
+<td>0</td>
+<td>1h</td>
+<td>現在の時間を表示</td>
+<td>時間の取得方法と表示を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>21</td>
+<td>クリック音</td>
+<td>ClickSoundApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンをクリックすると音が鳴る</td>
+<td>音の再生方法を学べる</td>
+<td>AVFoundationの利用</td>
+</tr>
+<tr>
+<td>22</td>
+<td>単純な画像回転</td>
+<td>SimpleImageRotationApp</td>
+<td>0</td>
+<td>1h</td>
+<td>画像を回転させる</td>
+<td>画像処理の基礎を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>23</td>
+<td>アイコン変更</td>
+<td>IconChangeApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンを押すとアイコンを変更</td>
+<td>アイコンの変更方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>24</td>
+<td>スクロールビュー</td>
+<td>ScrollViewApp</td>
+<td>0</td>
+<td>1h</td>
+<td>複数の画像をスクロールできるようにする</td>
+<td>スクロール機能を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>25</td>
+<td>文字変更</td>
+<td>TextChangeApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンを押すと画面の文字が変わる</td>
+<td>文字の変更方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>26</td>
+<td>ランダム色</td>
+<td>RandomColorApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ランダムに背景色を変える</td>
+<td>ランダム処理とUIの連携を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>27</td>
+<td>ボタンカウント</td>
+<td>ButtonCountApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンが押されるたびにカウントアップ</td>
+<td>ボタン操作のカウントを学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>28</td>
+<td>シンプルタイマー</td>
+<td>SimpleTimerApp</td>
+<td>0</td>
+<td>1h</td>
+<td>タイマーをセットして経過時間を表示</td>
+<td>タイマーの設定と管理方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>29</td>
+<td>数字反転アプリ</td>
+<td>ReverseNumberApp</td>
+<td>0</td>
+<td>1h</td>
+<td>数字を反転して表示</td>
+<td>文字列処理と数字操作を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>30</td>
+<td>色の名前表示</td>
+<td>ColorNameDisplayApp</td>
+<td>0</td>
+<td>1h</td>
+<td>色の名前を入力してその色を表示</td>
+<td>色の名前とカラーコードの関係を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>31</td>
+<td>複数ボタン</td>
+<td>MultipleButtonApp</td>
+<td>0</td>
+<td>1h</td>
+<td>複数のボタンを表示し、それぞれ反応する</td>
+<td>複数ボタンの操作を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>32</td>
+<td>数字の順番</td>
+<td>NumberOrderApp</td>
+<td>0</td>
+<td>1h</td>
+<td>数字を並べ替えるゲーム</td>
+<td>数字操作とアルゴリズムの基礎を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>33</td>
+<td>画像隠しゲーム</td>
+<td>HideImageGame</td>
+<td>0</td>
+<td>1h</td>
+<td>画像をクリックして隠すゲーム</td>
+<td>イベント処理と画像操作を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>34</td>
+<td>ボタン押下回数</td>
+<td>ButtonPressCountApp</td>
+<td>0</td>
+<td>1h</td>
+<td>ボタンを押した回数を表示</td>
+<td>ボタンのイベント処理を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>35</td>
+<td>音声録音</td>
+<td>VoiceRecorderApp</td>
+<td>0</td>
+<td>1h</td>
+<td>音声を録音し再生する</td>
+<td>音声録音機能を学べる</td>
+<td>AVFoundation利用</td>
+</tr>
+<tr>
+<td>36</td>
+<td>タップ音</td>
+<td>TapSoundApp</td>
+<td>0</td>
+<td>1h</td>
+<td>画面をタップすると音が鳴る</td>
+<td>タップイベントと音再生を学べる</td>
+<td>AVFoundation利用</td>
+</tr>
+<tr>
+<td>37</td>
+<td>画像反転</td>
+<td>ImageInvertApp</td>
+<td>0</td>
+<td>1h</td>
+<td>画像を反転して表示</td>
+<td>画像操作の基本を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>38</td>
+<td>文字スクロール</td>
+<td>TextScrollApp</td>
+<td>0</td>
+<td>1h</td>
+<td>テキストをスクロールして表示</td>
+<td>スクロールの基本を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>39</td>
+<td>アイコン変更ゲーム</td>
+<td>IconChangeGame</td>
+<td>0</td>
+<td>1h</td>
+<td>アイコンが変わるゲーム</td>
+<td>アイコンの変更とゲームロジックを学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>40</td>
+<td>画像選択ゲーム</td>
+<td>ImageSelectGame</td>
+<td>0</td>
+<td>1h</td>
+<td>画像をクリックして正解を選ぶゲーム</td>
+<td>画像選択とロジックを学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>41</td>
+<td>シンプル掲示板</td>
+<td>SimpleBoardApp</td>
+<td>0</td>
+<td>1h</td>
+<td>入力したテキストを一覧で表示</td>
+<td>テキスト保存と表示の基礎を学べる</td>
+<td>UserDefaults利用</td>
+</tr>
+<tr>
+<td>42</td>
+<td>時計アプリ</td>
+<td>ClockApp</td>
+<td>0</td>
+<td>1h</td>
+<td>現在の時間を表示し更新する</td>
+<td>時計アプリの作成方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>43</td>
+<td>画像拡大アプリ</td>
+<td>ImageZoomApp</td>
+<td>0</td>
+<td>1h</td>
+<td>画像を拡大して表示</td>
+<td>画像の拡大縮小を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>44</td>
+<td>画像並べ替え</td>
+<td>ImageArrangeApp</td>
+<td>0</td>
+<td>1h</td>
+<td>画像を並べ替えるゲーム</td>
+<td>画像操作と並べ替えアルゴリズムを学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>45</td>
+<td>シンプルカレンダー</td>
+<td>SimpleCalendarApp</td>
+<td>0</td>
+<td>1h</td>
+<td>月表示のカレンダーを作成</td>
+<td>カレンダーUIの作成方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>46</td>
+<td>自動カウント</td>
+<td>AutoCounterApp</td>
+<td>0</td>
+<td>1h</td>
+<td>自動でカウントアップする</td>
+<td>自動カウントとタイマー処理を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>47</td>
+<td>数字計算機</td>
+<td>SimpleCalcApp</td>
+<td>0</td>
+<td>1h</td>
+<td>基本的な計算機能を持つ</td>
+<td>数学的計算の基本を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>48</td>
+<td>メッセージ送信</td>
+<td>MessageSendApp</td>
+<td>0</td>
+<td>1h</td>
+<td>メッセージを送信するボタン</td>
+<td>メッセージ送信機能を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>49</td>
+<td>動画再生</td>
+<td>VideoPlayerApp</td>
+<td>0</td>
+<td>1h</td>
+<td>動画を再生する機能</td>
+<td>動画再生機能を学べる</td>
+<td>AVKit利用</td>
+</tr>
+<tr>
+<td>50</td>
+<td>簡単なスライダー</td>
+<td>SimpleSliderApp</td>
+<td>0</td>
+<td>1h</td>
+<td>スライダーで数値を調整</td>
+<td>スライダーと数値の操作を学べる</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#4-難易度02初級">本章先頭</a></p>
+</details>
+<h2 id="難易度0超初心者向け応用">4.2. 難易度0（超初心者向け）応用</h2>
+<p>難易度0（超初心者向け）応用の項目について、詳細な学習方法を説明します。</p>
+<ol type="1">
+<li><a
+href="#421-レイアウトやコンストレイントに関する理解auto-layoutの基礎">レイアウトやコンストレイントに関する理解（Auto
+Layoutの基礎）</a></li>
+<li><a
+href="#422-ビューコントローラー間の遷移segueやnavigationcontrollerを使った画面遷移">ビューコントローラー間の遷移（segueやnavigationControllerを使った画面遷移）</a></li>
+<li><a
+href="#423-データの保存方法coredataやsqliteなど">データの保存方法（CoreDataやSQLiteなど）</a></li>
+</ol>
+<h3
+id="レイアウトやコンストレイントに関する理解auto-layoutの基礎">4.2.1.
+レイアウトやコンストレイントに関する理解（Auto Layoutの基礎）</h3>
+<details>
+<h4 id="概要">4.2.1.1. 概要</h4>
+<p>Auto
+Layoutは、iOSアプリのUI（ユーザーインターフェース）をデバイスの画面サイズや解像度に応じて動的に調整する仕組みです。これを使用することで、異なる画面サイズ（iPhone、iPad、横向き、縦向き）でもレイアウトが崩れずに表示されるようにできます。</p>
+<h4 id="学習方法">4.2.1.2. 学習方法</h4>
+<ul>
+<li>基本のAuto Layoutを学ぶ: XcodeのInterface
+Builderを使用して、ラベル、ボタン、画像などのUIコンポーネントに制約（constraint）を設定します。制約を使用して、要素の位置やサイズを相対的に決める方法を理解します。</li>
+<li>制約の種類:
+<ul>
+<li>位置の制約: 画面上でのコンポーネントの位置を指定（例:
+左から10px、上から20px）</li>
+<li>サイズの制約: コンポーネントの幅や高さを指定（例:
+幅200px、高さ50px）</li>
+<li>間隔の制約: 他のコンポーネントとの距離を指定（例:
+2つのボタンの間に10pxの間隔をあける）</li>
+</ul></li>
+<li>コンストレイントの活用:
+<ul>
+<li>例えば、中央揃えや左右の余白を自動で設定する方法を学びます。これにより、異なるデバイスで動的にレイアウトが調整されるようになります。</li>
+<li>Stack
+Viewを使って、簡単に縦または横のレイアウトを組む方法を学びます。</li>
+</ul></li>
+</ul>
+<h4 id="学習リソース">4.2.1.3. 学習リソース</h4>
+<ul>
+<li>Appleの公式ドキュメント「Auto
+Layout」や、Swift初心者向けのYouTubeチュートリアルを参照する。</li>
+<li>XcodeのInterface
+Builderを使って、簡単なレイアウト（複数のラベルやボタンを使った画面）を作成してみる。</li>
+</ul>
+</details>
+<h3
+id="ビューコントローラー間の遷移segueやnavigationcontrollerを使った画面遷移">4.2.2.
+ビューコントローラー間の遷移（segueやnavigationControllerを使った画面遷移）</h3>
+<details>
+<h4 id="概要-1">4.2.2.1. 概要</h4>
+<p>iOSアプリの画面遷移は、ユーザーのアクションに基づいて行われます。ビューコントローラー間の遷移を理解することで、アプリ内で複数の画面（ビュー）をつなげることができます。</p>
+<h4 id="学習方法-1">4.2.2.2. 学習方法</h4>
+<ul>
+<li>基本的なビューコントローラー間の遷移:
+<ul>
+<li>Storyboard
+Seguesを使用して、2つのビューコントローラー間を遷移させる方法を学びます。</li>
+<li>例えば、ボタンをタップすると次の画面に遷移する基本的な遷移を作成します。</li>
+<li>遷移の種類（モーダル遷移、プッシュ遷移）を理解します。</li>
+<li>NavigationControllerを使用して、ナビゲーションバーを持つ画面遷移を学びます。</li>
+<li>ナビゲーションバーを使って、ユーザーが「戻る」ボタンで前の画面に戻れるように設定します。</li>
+<li>pushとpopによるビューコントローラーの管理方法を学びます。</li>
+</ul></li>
+<li>データの受け渡し:
+<ul>
+<li>異なるビューコントローラー間でデータを受け渡す方法（例:
+prepare(for:sender:) メソッド）を学びます。</li>
+<li>次の画面に遷移する前に、遷移先のビューコントローラーにデータを渡す方法を理解します。</li>
+</ul></li>
+</ul>
+<h4 id="学習リソース-1">4.2.2.3. 学習リソース</h4>
+<ul>
+<li>「UIKit」フレームワークの公式ドキュメントで、UIViewControllerやsegue、NavigationControllerについて学ぶ。</li>
+<li>Swiftのチュートリアルを参考にして、実際に簡単な遷移を実装してみる。</li>
+<li>Storyboardを使って視覚的に画面遷移を作成して、遷移の動作を確認する。</li>
+</ul>
+</details>
+<h3 id="データの保存方法coredataやsqliteなど">4.2.3.
+データの保存方法（CoreDataやSQLiteなど）</h3>
+<details>
+<h4 id="概要-2">4.2.3.1. 概要</h4>
+<p>データの保存方法は、アプリにおける永続データの管理に関わる重要な部分です。iOSでは、アプリ内でデータを保存するためにいくつかの方法が用意されています。</p>
+<h4 id="学習方法-2">4.2.3.2. 学習方法</h4>
+<ul>
+<li>Core Data:
+<ul>
+<li>Core
+Dataは、iOSでデータの永続化を行うためのフレームワークです。オブジェクト指向のデータモデルを作成し、データの永続化を簡単に実現できます。</li>
+</ul></li>
+<li>基本的なセットアップ:
+<ul>
+<li>Core
+Dataの「エンティティ」や「属性」、「関連付け」を理解します。</li>
+<li>データの保存（save()）や取得（fetch()）の基本的な操作を学びます。</li>
+</ul></li>
+<li>実際に使ってみる:
+<ul>
+<li>簡単なデータ（例えば、ユーザーの名前や年齢）をCore
+Dataで保存し、後からそれを読み取って表示するアプリを作成します。</li>
+<li>NSManagedObjectとその操作方法（データの追加・削除・更新）について学びます。</li>
+</ul></li>
+<li>SQLite:
+<ul>
+<li>SQLiteは、軽量なデータベースで、Core
+Dataよりも低レベルで操作します。SQLを使ってデータの保存・取得を行います。</li>
+</ul></li>
+<li>SQLの基本を学ぶ:
+<ul>
+<li>CREATE, INSERT, SELECT, UPDATE,
+DELETEなど、SQL文を使ってデータを操作する方法を理解します。</li>
+<li>SQLiteデータベースのセットアップ:</li>
+<li>SQLiteのライブラリ（SQLite.swiftなど）を使ってデータベースを作成し、クエリを実行します。</li>
+</ul></li>
+</ul>
+<h4 id="学習リソース-2">4.2.3.3. 学習リソース</h4>
+<ul>
+<li>Apple公式ドキュメント: Core DataやSQLiteに関する詳細なガイド。</li>
+<li>Swiftでのデータベース操作に関する初心者向けのチュートリアル（YouTubeやブログ）。</li>
+<li>Core
+Dataのチュートリアルで、実際に簡単なアプリ（例えば、メモ帳アプリ）を作成してデータを永続化してみる。</li>
+</ul>
+</details>
+<h3 id="サマリー">4.2.4. サマリー</h3>
+<blockquote>
+<p>これらを学ぶことで、アプリがより実用的になり、ユーザーインターフェースの作成やデータ管理のスキルが向上します。最終的には、これらのスキルを組み合わせて、難易度1以上のアプリ開発が可能になります。</p>
+</blockquote>
+<p><a href="#4-難易度02初級">本章先頭</a></p>
+<h2 id="難易度1初心者向けのアプリ20個">4.3.
+難易度1（初心者向け）のアプリ（20個）</h2>
+<details>
+<table>
+<colgroup>
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+</colgroup>
+<thead>
+<tr>
+<th>No</th>
+<th>アプリ名(日本語)</th>
+<th>物理名</th>
+<th>難易度(10段階)</th>
+<th>所要時間(日数)</th>
+<th>機能</th>
+<th>おすすめポイント</th>
+<th>その他必要なものや特記事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>カウントダウン</td>
+<td>CountdownApp</td>
+<td>1</td>
+<td>2h (1日)</td>
+<td>タイマー表示、カウントダウン開始・停止</td>
+<td>シンプルで初心者に最適、タイマー操作を学べる</td>
+<td>アラーム音などの設定はなし</td>
+</tr>
+<tr>
+<td>2</td>
+<td>クリックカウンター</td>
+<td>ClickCounter</td>
+<td>1</td>
+<td>2h (1日)</td>
+<td>ボタンをクリックするとカウントが増える</td>
+<td>単純なインタラクションの学習</td>
+<td>-</td>
+</tr>
+<tr>
+<td>3</td>
+<td>時計</td>
+<td>ClockApp</td>
+<td>1</td>
+<td>2h (1日)</td>
+<td>現在の時間を表示する</td>
+<td>時間の表示方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>4</td>
+<td>メモ帳</td>
+<td>MemoApp</td>
+<td>1</td>
+<td>4h (1日)</td>
+<td>簡単なメモの作成、表示</td>
+<td>ユーザーが直接テキストを操作できる</td>
+<td>UserDefaultsに保存して再起動後も表示可能</td>
+</tr>
+<tr>
+<td>5</td>
+<td>ToDoリスト</td>
+<td>TodoListApp</td>
+<td>1</td>
+<td>4h (1日)</td>
+<td>アイテムの追加、削除</td>
+<td>タスク管理の基本的なUI設計を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>6</td>
+<td>単位換算</td>
+<td>UnitConverter</td>
+<td>1</td>
+<td>4h (1日)</td>
+<td>長さ、重さ、温度などの単位換算</td>
+<td>シンプルな計算式の処理を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>7</td>
+<td>メッセージ表示</td>
+<td>MessageApp</td>
+<td>2</td>
+<td>4h (1日)</td>
+<td>テキストを入力、表示</td>
+<td>UIの基本操作を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>8</td>
+<td>電卓</td>
+<td>CalculatorApp</td>
+<td>2</td>
+<td>6h (2日)</td>
+<td>基本的な四則演算ができる</td>
+<td>計算処理のロジックを学べる</td>
+<td>ボタン配置や数値入力のUI設計が必要</td>
+</tr>
+<tr>
+<td>9</td>
+<td>じゃんけん</td>
+<td>JankenApp</td>
+<td>2</td>
+<td>4h (1日)</td>
+<td>ユーザーがじゃんけんを選んで結果を表示</td>
+<td>じゃんけんのランダム性を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>10</td>
+<td>シンプルメモ</td>
+<td>SimpleMemoApp</td>
+<td>2</td>
+<td>4h (1日)</td>
+<td>メモの追加、削除、表示</td>
+<td>メモ帳機能を学ぶために最適</td>
+<td>-</td>
+</tr>
+<tr>
+<td>11</td>
+<td>画像ギャラリー</td>
+<td>ImageGallery</td>
+<td>2</td>
+<td>6h (2日)</td>
+<td>ローカル画像の表示、ギャラリー機能</td>
+<td>画像の表示とレイアウトに慣れることができる</td>
+<td>画像はローカルに保存したものを使用</td>
+</tr>
+<tr>
+<td>12</td>
+<td>ストップウォッチ</td>
+<td>StopwatchApp</td>
+<td>2</td>
+<td>6h (2日)</td>
+<td>タイマー開始・停止、経過時間表示</td>
+<td>基本的なタイマー操作を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>13</td>
+<td>目覚まし時計</td>
+<td>AlarmClockApp</td>
+<td>2</td>
+<td>6h (2日)</td>
+<td>時間設定、アラーム音の鳴動</td>
+<td>時計アプリにさらに機能を追加する方法を学べる</td>
+<td>ローカル通知を使う可能性あり</td>
+</tr>
+<tr>
+<td>14</td>
+<td>日付計算</td>
+<td>DateCalculator</td>
+<td>2</td>
+<td>4h (1日)</td>
+<td>2つの日付間の日数計算</td>
+<td>日付操作の基本を学ぶ</td>
+<td>-</td>
+</tr>
+<tr>
+<td>15</td>
+<td>ランダム名生成器</td>
+<td>RandomNameApp</td>
+<td>2</td>
+<td>4h (1日)</td>
+<td>ランダムな名前を生成して表示</td>
+<td>ランダム生成のロジックを学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>16</td>
+<td>電話番号フォーマット</td>
+<td>PhoneFormatter</td>
+<td>2</td>
+<td>4h (1日)</td>
+<td>電話番号のフォーマットを変換</td>
+<td>文字列操作を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>17</td>
+<td>ピアノシミュレーター</td>
+<td>PianoSimulator</td>
+<td>2</td>
+<td>6h (2日)</td>
+<td>キー入力で音を鳴らす</td>
+<td>音の再生とインタラクションを学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>18</td>
+<td>メモリゲーム</td>
+<td>MemoryGame</td>
+<td>2</td>
+<td>6h (2日)</td>
+<td>ペアのカードを合わせるゲーム</td>
+<td>ゲームロジックの基本を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>19</td>
+<td>カラーチェンジャー</td>
+<td>ColorChanger</td>
+<td>2</td>
+<td>4h (1日)</td>
+<td>ボタンを押すと画面の背景色が変わる</td>
+<td>UIの動的変更を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>20</td>
+<td>数字ゲーム</td>
+<td>NumberGame</td>
+<td>2</td>
+<td>4h (1日)</td>
+<td>ランダムな数字を表示して当たるか確認</td>
+<td>数字操作やランダム処理の基本を学べる</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#4-難易度02初級">本章先頭</a></p>
+</details>
+<h2 id="難易度2少し進んだ初級者向けのアプリ20個">4.4.
+難易度2（少し進んだ初級者向け）のアプリ（20個）</h2>
+<details>
+<table>
+<colgroup>
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+</colgroup>
+<thead>
+<tr>
+<th>No</th>
+<th>アプリ名(日本語)</th>
+<th>物理名</th>
+<th>難易度(10段階)</th>
+<th>所要時間(時間)</th>
+<th>機能</th>
+<th>おすすめポイント</th>
+<th>その他必要なものや特記事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>歩数計</td>
+<td>StepCounterApp</td>
+<td>2</td>
+<td>4h (1日)</td>
+<td>歩数のカウント、歩数の表示</td>
+<td>ヘルスケアデータの取り扱いを学べる</td>
+<td>CoreMotionライブラリの使用</td>
+</tr>
+<tr>
+<td>2</td>
+<td>タイムゾーン変換</td>
+<td>TimeZoneConverter</td>
+<td>2</td>
+<td>4h (1日)</td>
+<td>世界の異なるタイムゾーン間の時間を変換</td>
+<td>日付と時間の操作に慣れることができる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>3</td>
+<td>テキストカウンター</td>
+<td>TextCounterApp</td>
+<td>2</td>
+<td>4h (1日)</td>
+<td>文字列の文字数をカウントし、表示する</td>
+<td>文字列操作とカウント機能を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>4</td>
+<td>テンプレートノート</td>
+<td>TemplateNoteApp</td>
+<td>2</td>
+<td>4h (1日)</td>
+<td>あらかじめ用意されたテンプレートに沿ってメモを作成</td>
+<td>シンプルなUIでテンプレート設計を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>5</td>
+<td>簡易メモリゲーム</td>
+<td>SimpleMemoryGame</td>
+<td>2</td>
+<td>6h (2日)</td>
+<td>ペアを合わせるゲーム（カード記憶）</td>
+<td>ゲームロジックの設計を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>6</td>
+<td>通貨換算</td>
+<td>CurrencyConverter</td>
+<td>2</td>
+<td>4h (1日)</td>
+<td>為替レートを元に通貨換算を行う</td>
+<td>通貨変換のロジックを学べる</td>
+<td>為替レートデータは手動で入力または固定</td>
+</tr>
+<tr>
+<td>7</td>
+<td>小さなカレンダー</td>
+<td>MiniCalendarApp</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>現在月のカレンダーを表示、日付の選択</td>
+<td>カレンダーUI設計を学ぶ</td>
+<td>-</td>
+</tr>
+<tr>
+<td>8</td>
+<td>シンプル画像ギャラリー</td>
+<td>SimpleGalleryApp</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>画像を表示、スライドショーの再生</td>
+<td>画像の表示と管理機能を学べる</td>
+<td>画像はローカル保存</td>
+</tr>
+<tr>
+<td>9</td>
+<td>ニュースアプリ</td>
+<td>NewsApp</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>ニュースの見出しをリスト表示</td>
+<td>ユーザーインターフェース設計を学べる</td>
+<td>固定データまたは後の拡張でAPIを使う</td>
+</tr>
+<tr>
+<td>10</td>
+<td>音楽プレイヤー</td>
+<td>MusicPlayer</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>ローカル音楽ファイルを再生、停止</td>
+<td>音楽ファイル管理と再生ロジックを学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>11</td>
+<td>画像フィルター</td>
+<td>ImageFilterApp</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>画像に簡単なフィルターを適用</td>
+<td>画像処理の基礎を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>12</td>
+<td>QRコードスキャナー</td>
+<td>QRScannerApp</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>QRコードを読み取ってURLを表示</td>
+<td>カメラ機能とQRコード解析を学べる</td>
+<td>AVFoundationライブラリの使用</td>
+</tr>
+<tr>
+<td>13</td>
+<td>色名検索</td>
+<td>ColorNameApp</td>
+<td>3</td>
+<td>4h (1日)</td>
+<td>色を選んでその色名を表示</td>
+<td>色に関するデータ管理とUI設計を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>14</td>
+<td>電子書籍リーダー</td>
+<td>EbookReaderApp</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>ePubファイルを表示、ページめくり</td>
+<td>電子書籍の管理と表示方法を学べる</td>
+<td>ローカル保存されたePubファイルを使用</td>
+</tr>
+<tr>
+<td>15</td>
+<td>シンプルなカメラ</td>
+<td>SimpleCameraApp</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>写真を撮影、保存、表示</td>
+<td>カメラAPIと画像保存の基本を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>16</td>
+<td>数字を並べ替えゲーム</td>
+<td>NumberSortGame</td>
+<td>3</td>
+<td>4h (1日)</td>
+<td>数字を並べ替えて正しい順番にする</td>
+<td>数字操作とアルゴリズムを学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>17</td>
+<td>色彩感覚ゲーム</td>
+<td>ColorGameApp</td>
+<td>3</td>
+<td>4h (1日)</td>
+<td>色を合わせるゲーム</td>
+<td>色の理解とインタラクションを学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>18</td>
+<td>日記アプリ</td>
+<td>DiaryApp</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>日々の出来事をテキストで記録</td>
+<td>日記としてのメモ管理機能を学べる</td>
+<td>UserDefaultsでデータを保存</td>
+</tr>
+<tr>
+<td>19</td>
+<td>テンプレートカレンダー</td>
+<td>TemplateCalendar</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>テンプレートに沿ったカレンダー表示</td>
+<td>UIのテンプレート管理方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>20</td>
+<td>画像の回転アプリ</td>
+<td>ImageRotationApp</td>
+<td>3</td>
+<td>4h (1日)</td>
+<td>画像を回転させる機能</td>
+<td>画像操作の基礎を学べる</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#4-難易度02初級">本章先頭</a></p>
+</details>
+<h1 id="難易度34中級">5. 難易度3~4(中級)</h1>
+<p><a href="#1-swift学習一覧">先頭</a></p>
+<h2 id="難易度3中級者向けのアプリ20個">5.1.
+難易度3（中級者向け）のアプリ（20個）</h2>
+<details>
+<table>
+<colgroup>
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+</colgroup>
+<thead>
+<tr>
+<th>No</th>
+<th>アプリ名(日本語)</th>
+<th>物理名</th>
+<th>難易度(10段階)</th>
+<th>所要時間(時間)</th>
+<th>機能</th>
+<th>おすすめポイント</th>
+<th>その他必要なものや特記事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>歩数計</td>
+<td>StepCounterApp</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>歩数のカウント、グラフ表示</td>
+<td>ヘルスケアデータの利用を学べる</td>
+<td>CoreMotionライブラリ、グラフ描画機能</td>
+</tr>
+<tr>
+<td>2</td>
+<td>タイムゾーン変換</td>
+<td>TimeZoneConverter</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>世界のタイムゾーン間で時間を変換</td>
+<td>日付と時間に関するAPIの活用</td>
+<td>-</td>
+</tr>
+<tr>
+<td>3</td>
+<td>複数画像ギャラリー</td>
+<td>MultiImageGallery</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>画像をスライドショーで表示</td>
+<td>画像の取り扱いとスライドショー機能を学べる</td>
+<td>ローカル画像管理が必要</td>
+</tr>
+<tr>
+<td>4</td>
+<td>ヘルスケアアプリ</td>
+<td>HealthTracker</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>体調記録を管理し、グラフで表示</td>
+<td>ヘルスケアデータを管理し、グラフで可視化する方法を学べる</td>
+<td>CoreData、グラフ描画</td>
+</tr>
+<tr>
+<td>5</td>
+<td>ダイエット管理</td>
+<td>DietTracker</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>食品データの入力、カロリー計算、グラフ表示</td>
+<td>食品データベースの設計、カロリー管理の学習</td>
+<td>APIを使って食品情報を取得（後で拡張可能）</td>
+</tr>
+<tr>
+<td>6</td>
+<td>タスク管理アプリ</td>
+<td>TaskManager</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>タスクの追加、編集、削除、完了チェック</td>
+<td>タスク管理とデータ管理を学べる</td>
+<td>CoreDataでの保存</td>
+</tr>
+<tr>
+<td>7</td>
+<td>メールアプリ</td>
+<td>EmailApp</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>メールの送受信機能、一覧表示</td>
+<td>メール送受信の概念を学べる</td>
+<td>SMTPサーバーやPOP3/IMAPの設定（外部API利用）</td>
+</tr>
+<tr>
+<td>8</td>
+<td>地図アプリ</td>
+<td>MapApp</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>地図の表示、ユーザーの位置を表示</td>
+<td>MapKitを使用して位置情報を活用する方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>9</td>
+<td>ノートアプリ</td>
+<td>NoteApp</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>ノートの追加、編集、削除、検索機能</td>
+<td>ノートの検索機能と編集機能を学べる</td>
+<td>CoreDataまたはUserDefaults</td>
+</tr>
+<tr>
+<td>10</td>
+<td>チャットアプリ</td>
+<td>ChatApp</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>メッセージ送信、受信機能</td>
+<td>チャット機能を学べる</td>
+<td>Socket通信やFirebaseを使ったメッセージ機能（後で拡張可能）</td>
+</tr>
+<tr>
+<td>11</td>
+<td>ゲームスコア管理</td>
+<td>ScoreManager</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>ゲームのスコア記録、ランキング表示</td>
+<td>スコア管理とランキング表示を学べる</td>
+<td>CoreDataまたはFirestore使用</td>
+</tr>
+<tr>
+<td>12</td>
+<td>画像フィルター</td>
+<td>ImageFilterApp</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>画像にエフェクト（色調、モノクロなど）を追加</td>
+<td>画像処理やエフェクトの基礎を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>13</td>
+<td>PDFビューア</td>
+<td>PDFViewerApp</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>PDFファイルの表示、ページ送り</td>
+<td>PDFファイルの扱い方を学べる</td>
+<td>PDFKitライブラリの使用</td>
+</tr>
+<tr>
+<td>14</td>
+<td>テレビ番組表</td>
+<td>TVScheduleApp</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>番組表の表示、チャンネル別にフィルタリング</td>
+<td>番組データの管理方法を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>15</td>
+<td>料理レシピ管理</td>
+<td>RecipeManager</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>料理レシピの登録、検索、編集機能</td>
+<td>レシピデータベースの管理方法を学べる</td>
+<td>CoreDataまたはFirestoreを利用</td>
+</tr>
+<tr>
+<td>16</td>
+<td>計算機アプリ</td>
+<td>AdvancedCalculator</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>四則演算に加えて関数計算、メモリ機能追加</td>
+<td>高度な計算機能の実装を学べる</td>
+<td>-</td>
+</tr>
+<tr>
+<td>17</td>
+<td>プッシュ通知アプリ</td>
+<td>PushNotificationApp</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>プッシュ通知機能</td>
+<td>プッシュ通知の実装方法を学べる</td>
+<td>FirebaseやOneSignalを使用</td>
+</tr>
+<tr>
+<td>18</td>
+<td>自転車距離計算</td>
+<td>BikeDistanceApp</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>自転車の走行距離を記録、計算</td>
+<td>距離計算のロジックと位置情報利用方法を学べる</td>
+<td>CoreLocation利用</td>
+</tr>
+<tr>
+<td>19</td>
+<td>バーコードリーダー</td>
+<td>BarcodeScanner</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>バーコードをスキャンして商品情報を表示</td>
+<td>カメラAPIやバーコードスキャン機能を学べる</td>
+<td>AVFoundationを使用</td>
+</tr>
+<tr>
+<td>20</td>
+<td>体重管理アプリ</td>
+<td>WeightTracker</td>
+<td>3</td>
+<td>6h (2日)</td>
+<td>体重記録、グラフ表示</td>
+<td>体重管理とグラフ表示を学べる</td>
+<td>CoreDataまたはCloudKitを使用</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#5-難易度34中級">本章先頭</a></p>
+</details>
+<h2 id="難易度4中級者から上級者向けのアプリ20個">5.2.
+難易度4（中級者から上級者向け）のアプリ（20個）</h2>
+<details>
+<table>
+<colgroup>
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+</colgroup>
+<thead>
+<tr>
+<th>No</th>
+<th>アプリ名(日本語)</th>
+<th>物理名</th>
+<th>難易度(10段階)</th>
+<th>所要時間(時間)</th>
+<th>機能</th>
+<th>おすすめポイント</th>
+<th>その他必要なものや特記事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>プロジェクト管理</td>
+<td>ProjectManager</td>
+<td>4</td>
+<td>16h (4日)</td>
+<td>プロジェクトのタスク管理、進捗管理</td>
+<td>プロジェクト管理の基本を学べる</td>
+<td>CoreData、Firebase、進捗バーの実装</td>
+</tr>
+<tr>
+<td>2</td>
+<td>SNSクローン</td>
+<td>SocialMediaClone</td>
+<td>4</td>
+<td>16h (4日)</td>
+<td>ユーザーアカウント作成、投稿、コメント機能</td>
+<td>SNSの基本的な機能を実装する方法を学べる</td>
+<td>Firebase Authentication、Firestore使用</td>
+</tr>
+<tr>
+<td>3</td>
+<td>リアルタイムチャット</td>
+<td>RealTimeChatApp</td>
+<td>4</td>
+<td>16h (4日)</td>
+<td>チャットメッセージのリアルタイム送受信</td>
+<td>リアルタイムデータ通信を学べる</td>
+<td>Firebase Realtime Databaseを使用</td>
+</tr>
+<tr>
+<td>4</td>
+<td>オンラインストア</td>
+<td>OnlineStoreApp</td>
+<td>4</td>
+<td>16h (4日)</td>
+<td>商品のリスト表示、カート機能、注文確認</td>
+<td>ECサイト機能を学べる</td>
+<td>Firebaseや外部APIを利用</td>
+</tr>
+<tr>
+<td>5</td>
+<td>位置情報共有アプリ</td>
+<td>LocationShareApp</td>
+<td>4</td>
+<td>16h (4日)</td>
+<td>リアルタイムで位置情報を共有、地図表示</td>
+<td>位置情報共有の実装を学べる</td>
+<td>MapKit、CoreLocationを使用</td>
+</tr>
+<tr>
+<td>6</td>
+<td>スポーツ記録管理</td>
+<td>SportsTracker</td>
+<td>4</td>
+<td>16h (4日)</td>
+<td>スポーツの成績記録、統計表示</td>
+<td>統計管理とデータ分析を学べる</td>
+<td>CoreData、グラフ描画機能</td>
+</tr>
+<tr>
+<td>7</td>
+<td>音楽ストリーミング</td>
+<td>MusicStreamingApp</td>
+<td>4</td>
+<td>16h (4日)</td>
+<td>音楽のストリーミング再生、プレイリスト管理</td>
+<td>ストリーミング再生の実装を学べる</td>
+<td>AVFoundation、APIを利用</td>
+</tr>
+<tr>
+<td>8</td>
+<td>動画プレイヤー</td>
+<td>VideoPlayerApp</td>
+<td>4</td>
+<td>16h (4日)</td>
+<td>動画の再生、停止、シーク機能</td>
+<td>動画処理の基礎と再生機能を学べる</td>
+<td>AVPlayerを使用</td>
+</tr>
+<tr>
+<td>9</td>
+<td>チケット予約システム</td>
+<td>TicketBookingApp</td>
+<td>4</td>
+<td>16h (4日)</td>
+<td>チケットの予約、座席選択、支払い機能</td>
+<td>予約システムの設計と支払い処理を学べる</td>
+<td>Stripeなどの決済API、ユーザー管理</td>
+</tr>
+<tr>
+<td>10</td>
+<td>レシピ共有アプリ</td>
+<td>RecipeShareApp</td>
+<td>4</td>
+<td>16h (4日)</td>
+<td>料理レシピの投稿、評価、コメント機能</td>
+<td>レシピ投稿とレビューシステムを学べる</td>
+<td>Firebase、Firestore使用</td>
+</tr>
+<tr>
+<td>11</td>
+<td>株式トラッカー</td>
+<td>StockTracker</td>
+<td>4</td>
+<td>16h (4日)</td>
+<td>株式の価格取得、ポートフォリオ管理</td>
+<td>株価データの取得とポートフォリオ管理を学べる</td>
+<td>APIを使って株価情報を取得</td>
+</tr>
+<tr>
+<td>12</td>
+<td>電子書籍販売</td>
+<td>EbookStoreApp</td>
+<td>4</td>
+<td>16h (4日)</td>
+<td>電子書籍の販売、購入履歴の管理</td>
+<td>電子書籍販売と決済機能を学べる</td>
+<td>Firebase、決済API（Stripeなど）</td>
+</tr>
+<tr>
+<td>13</td>
+<td>ヘルスケアダッシュボード</td>
+<td>HealthDashboard</td>
+<td>4</td>
+<td>16h (4日)</td>
+<td>健康データを収集し、グラフで表示</td>
+<td>データ可視化とダッシュボード設計を学べる</td>
+<td>CoreData、グラフライブラリ（Chartsなど）</td>
+</tr>
+<tr>
+<td>14</td>
+<td>銀行アプリ</td>
+<td>BankApp</td>
+<td>4</td>
+<td>16h (4日)</td>
+<td>口座残高の確認、取引履歴管理、送金機能</td>
+<td>銀行取引のシミュレーションとデータ管理を学べる</td>
+<td>Firebase Authentication、Stripeなど</td>
+</tr>
+<tr>
+<td>15</td>
+<td>旅行計画アプリ</td>
+<td>TravelPlanner</td>
+<td>4</td>
+<td>16h (4日)</td>
+<td>旅行の予定作成、日程管理、地図表示</td>
+<td>旅行計画の管理と位置情報を学べる</td>
+<td>MapKit、CoreDataまたはFirebase</td>
+</tr>
+<tr>
+<td>16</td>
+<td>チームコラボアプリ</td>
+<td>TeamCollaborationApp</td>
+<td>4</td>
+<td>16h (4日)</td>
+<td>チームのタスク管理、進捗確認、メッセージ機能</td>
+<td>チームコラボレーションツールを学べる</td>
+<td>Firebase、Firestore、Push通知</td>
+</tr>
+<tr>
+<td>17</td>
+<td>照明制御アプリ</td>
+<td>LightControlApp</td>
+<td>4</td>
+<td>16h (4日)</td>
+<td>照明のON/OFF、色変更機能</td>
+<td>スマートホームの制御システムを学べる</td>
+<td>BluetoothやWi-Fiを使ったデバイス連携</td>
+</tr>
+<tr>
+<td>18</td>
+<td>時間追跡アプリ</td>
+<td>TimeTracker</td>
+<td>4</td>
+<td>16h (4日)</td>
+<td>タスクごとの時間計測、報告書作成</td>
+<td>タスク管理と時間管理を学べる</td>
+<td>CoreDataでのデータ保存</td>
+</tr>
+<tr>
+<td>19</td>
+<td>音声認識アプリ</td>
+<td>VoiceRecognitionApp</td>
+<td>4</td>
+<td>16h (4日)</td>
+<td>音声入力による文字変換、コマンド実行</td>
+<td>音声認識機能を活用したアプリ開発を学べる</td>
+<td>Speech Frameworkの利用</td>
+</tr>
+<tr>
+<td>20</td>
+<td>IoTホームオートメーション</td>
+<td>IoTHomeAutomation</td>
+<td>4</td>
+<td>16h (4日)</td>
+<td>スマートデバイスの制御、アラーム機能</td>
+<td>IoTデバイスとの連携、オートメーション学習を学べる</td>
+<td>Bluetooth、Wi-Fi、HomeKit API</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#5-難易度34中級">本章先頭</a></p>
+</details>
+<h1 id="難易度57上級">6. 難易度5~7(上級)</h1>
+<p><a href="#1-swift学習一覧">先頭</a></p>
+<h2 id="難易度5上級者向けのアプリ20個">6.1.
+難易度5（上級者向け）のアプリ（20個）</h2>
+<details>
+<table>
+<colgroup>
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+</colgroup>
+<thead>
+<tr>
+<th>No</th>
+<th>アプリ名(日本語)</th>
+<th>物理名</th>
+<th>難易度(10段階)</th>
+<th>所要時間(時間)</th>
+<th>機能</th>
+<th>おすすめポイント</th>
+<th>その他必要なものや特記事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>パーソナルトレーナー</td>
+<td>PersonalTrainer</td>
+<td>5</td>
+<td>40h (10日)</td>
+<td>ユーザーに合わせたトレーニングメニュー提供</td>
+<td>トレーニングメニューのカスタマイズを学べる</td>
+<td>CoreData、健康データの取得（HealthKit）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>顧客管理システム</td>
+<td>CRMSystem</td>
+<td>5</td>
+<td>50h (12日)</td>
+<td>顧客情報の管理、活動記録、タスク管理</td>
+<td>CRMシステムの設計とデータ管理を学べる</td>
+<td>CoreData、外部API（顧客データのインポート）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>医療診断サポート</td>
+<td>MedicalAssistant</td>
+<td>5</td>
+<td>60h (15日)</td>
+<td>症状を入力して診断結果を表示</td>
+<td>医療データの利用と診断アルゴリズムを学べる</td>
+<td>API（症状データ）やアルゴリズムの実装</td>
+</tr>
+<tr>
+<td>4</td>
+<td>クラウドストレージ</td>
+<td>CloudStorageApp</td>
+<td>5</td>
+<td>45h (11日)</td>
+<td>ファイルのアップロード、ダウンロード機能</td>
+<td>クラウドデータの操作を学べる</td>
+<td>Firebase Storage、CloudKitの使用</td>
+</tr>
+<tr>
+<td>5</td>
+<td>メール自動化ツール</td>
+<td>EmailAutomation</td>
+<td>5</td>
+<td>50h (12日)</td>
+<td>自動的に指定されたメール送信</td>
+<td>自動化ツールとしての設計と実装方法を学べる</td>
+<td>SMTPサーバー、スケジューリング機能</td>
+</tr>
+<tr>
+<td>6</td>
+<td>高度なスケジューラー</td>
+<td>AdvancedScheduler</td>
+<td>5</td>
+<td>55h (14日)</td>
+<td>イベントのスケジューリングとリマインダー機能</td>
+<td>イベント管理と通知システムを学べる</td>
+<td>Firebase、UserNotifications API</td>
+</tr>
+<tr>
+<td>7</td>
+<td>スマート家電制御</td>
+<td>SmartHomeControl</td>
+<td>5</td>
+<td>50h (12日)</td>
+<td>スマート家電の制御、状態表示</td>
+<td>スマート家電と連携するアプリの構築を学べる</td>
+<td>HomeKit、Bluetooth、Wi-Fi連携</td>
+</tr>
+<tr>
+<td>8</td>
+<td>音声制御アプリ</td>
+<td>VoiceControlApp</td>
+<td>5</td>
+<td>55h (14日)</td>
+<td>音声コマンドでデバイス制御</td>
+<td>音声認識とデバイス操作を学べる</td>
+<td>Speech Framework、HomeKit API</td>
+</tr>
+<tr>
+<td>9</td>
+<td>自動運転シミュレーション</td>
+<td>SelfDrivingSim</td>
+<td>5</td>
+<td>60h (15日)</td>
+<td>自動運転システムのシミュレーション</td>
+<td>自動運転技術の基礎とシミュレーションを学べる</td>
+<td>ARKit、CoreLocationを活用したマッピング</td>
+</tr>
+<tr>
+<td>10</td>
+<td>バイタルサインモニター</td>
+<td>VitalSignMonitor</td>
+<td>5</td>
+<td>60h (15日)</td>
+<td>バイタルサインの取得、モニタリング</td>
+<td>バイタルサインの計測とモニタリング技術を学べる</td>
+<td>HealthKit、CoreMotionを使用</td>
+</tr>
+<tr>
+<td>11</td>
+<td>動画編集アプリ</td>
+<td>VideoEditor</td>
+<td>5</td>
+<td>70h (18日)</td>
+<td>動画のカット、エフェクト、テキスト追加</td>
+<td>動画処理の高度な技術を学べる</td>
+<td>AVFoundation、CoreGraphics</td>
+</tr>
+<tr>
+<td>12</td>
+<td>オンライン支払い</td>
+<td>OnlinePaymentApp</td>
+<td>5</td>
+<td>50h (12日)</td>
+<td>商品購入、支払い処理</td>
+<td>支払いシステムの構築方法を学べる</td>
+<td>Stripe、PayPal API</td>
+</tr>
+<tr>
+<td>13</td>
+<td>自動化ワークフロー</td>
+<td>WorkflowAutomation</td>
+<td>5</td>
+<td>50h (12日)</td>
+<td>自動化されたタスクのワークフロー</td>
+<td>ワークフローの自動化技術を学べる</td>
+<td>IFTTT、Zapier APIとの連携</td>
+</tr>
+<tr>
+<td>14</td>
+<td>ヘルスケアダッシュボード</td>
+<td>HealthDashboard</td>
+<td>5</td>
+<td>60h (15日)</td>
+<td>健康管理データの収集とダッシュボード表示</td>
+<td>データ可視化と統計情報を扱う方法を学べる</td>
+<td>Chartsライブラリ、CoreData</td>
+</tr>
+<tr>
+<td>15</td>
+<td>リアルタイム交通情報</td>
+<td>TrafficInfoApp</td>
+<td>5</td>
+<td>55h (14日)</td>
+<td>交通情報の収集、リアルタイムで表示</td>
+<td>交通情報のAPI利用とリアルタイム更新を学べる</td>
+<td>地図API、リアルタイムデータ取得</td>
+</tr>
+<tr>
+<td>16</td>
+<td>天気予報アプリ</td>
+<td>WeatherApp</td>
+<td>5</td>
+<td>45h (11日)</td>
+<td>気象データの取得、天気予報表示</td>
+<td>気象データAPIを使用したアプリ開発を学べる</td>
+<td>OpenWeatherMap APIなど</td>
+</tr>
+<tr>
+<td>17</td>
+<td>ソーシャルネットワーク</td>
+<td>SocialNetworkApp</td>
+<td>5</td>
+<td>60h (15日)</td>
+<td>ユーザーの投稿、いいね機能、コメント機能</td>
+<td>SNS機能の実装方法を学べる</td>
+<td>Firebase、Firestore</td>
+</tr>
+<tr>
+<td>18</td>
+<td>画像認識アプリ</td>
+<td>ImageRecognitionApp</td>
+<td>5</td>
+<td>60h (15日)</td>
+<td>画像を解析して特徴を認識、分類</td>
+<td>画像認識技術を活用したアプリの開発を学べる</td>
+<td>CoreML、Vision Framework</td>
+</tr>
+<tr>
+<td>19</td>
+<td>音楽生成アプリ</td>
+<td>MusicGenerator</td>
+<td>5</td>
+<td>70h (18日)</td>
+<td>音楽を自動生成、音楽ファイルとして保存</td>
+<td>音楽生成アルゴリズムの実装方法を学べる</td>
+<td>CoreMIDI、AudioKit</td>
+</tr>
+<tr>
+<td>20</td>
+<td>フィットネスチャレンジ</td>
+<td>FitnessChallenge</td>
+<td>5</td>
+<td>60h (15日)</td>
+<td>トレーニングデータの管理とチャレンジ機能</td>
+<td>ユーザーのフィットネス目標達成を支援する方法を学べる</td>
+<td>CoreData、HealthKit</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#6-難易度57上級">本章先頭</a></p>
+</details>
+<h2 id="難易度6上級者向けアプリ20個">6.2.
+難易度6（上級者向け）アプリ（20個）</h2>
+<details>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr>
+<th>No</th>
+<th>アプリ名(日本語)</th>
+<th>物理名</th>
+<th>論理名</th>
+<th>難易度(10段階)</th>
+<th>所要時間(時間)</th>
+<th>機能</th>
+<th>おすすめポイント</th>
+<th>その他必要なものや特記事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>自律型ドローン制御</td>
+<td>AutonomousDrone</td>
+<td>AutonomousDrone</td>
+<td>6</td>
+<td>50h (12日)</td>
+<td>ドローンの自律飛行制御、障害物回避</td>
+<td>ドローンの制御技術とセンサー活用を学べる</td>
+<td>ARKit、CoreMotion、Bluetooth通信</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3Dモデリングアプリ</td>
+<td>3DModelingApp</td>
+<td>3DModelingApp</td>
+<td>6</td>
+<td>60h (15日)</td>
+<td>3Dオブジェクトの作成、表示</td>
+<td>3Dグラフィックスの基礎とモデリングを学べる</td>
+<td>SceneKit、RealityKit</td>
+</tr>
+<tr>
+<td>3</td>
+<td>VRショッピング体験</td>
+<td>VRShoppingApp</td>
+<td>VRShoppingApp</td>
+<td>6</td>
+<td>50h (12日)</td>
+<td>仮想現実空間でのショッピング体験</td>
+<td>VRとAR技術を使った体験型アプリを学べる</td>
+<td>ARKit、RealityKit</td>
+</tr>
+<tr>
+<td>4</td>
+<td>複数ユーザー同時対戦ゲーム</td>
+<td>MultiPlayerGame</td>
+<td>MultiPlayerGame</td>
+<td>6</td>
+<td>60h (15日)</td>
+<td>同時に複数プレイヤーが参加する対戦機能</td>
+<td>マルチプレイヤーゲームの設計と同期を学べる</td>
+<td>GameKit、Firebaseリアルタイムデータ同期</td>
+</tr>
+<tr>
+<td>5</td>
+<td>自動音声翻訳アプリ</td>
+<td>AutoTranslationApp</td>
+<td>AutoTranslationApp</td>
+<td>6</td>
+<td>70h (18日)</td>
+<td>音声の自動翻訳、リアルタイム翻訳機能</td>
+<td>リアルタイム翻訳と音声認識を活用するアプリ開発を学べる</td>
+<td>Speech Framework、Google Translate API</td>
+</tr>
+<tr>
+<td>6</td>
+<td>AIチャットボット</td>
+<td>AIChatBot</td>
+<td>AIChatBot</td>
+<td>6</td>
+<td>50h (12日)</td>
+<td>ユーザーと会話するAIチャットボット</td>
+<td>AIと機械学習を活用した会話型アプリの開発</td>
+<td>CoreML、OpenAI API</td>
+</tr>
+<tr>
+<td>7</td>
+<td>脳波計測アプリ</td>
+<td>EEGMonitorApp</td>
+<td>EEGMonitorApp</td>
+<td>6</td>
+<td>70h (18日)</td>
+<td>脳波の取得と解析、リアルタイムでフィードバック</td>
+<td>脳波技術を活用したインターフェース設計を学べる</td>
+<td>EEGデバイスとの連携</td>
+</tr>
+<tr>
+<td>8</td>
+<td>自動運転車両管理</td>
+<td>SelfDrivingCarApp</td>
+<td>SelfDrivingCarApp</td>
+<td>6</td>
+<td>80h (20日)</td>
+<td>自動運転車両の管理、リモート制御機能</td>
+<td>自動運転車両のシステムと連携を学べる</td>
+<td>LiDAR、GPS、カメラ、センサー連携</td>
+</tr>
+<tr>
+<td>9</td>
+<td>複合現実ショッピング</td>
+<td>MixedRealityShopping</td>
+<td>MixedRealityShopping</td>
+<td>6</td>
+<td>50h (12日)</td>
+<td>物理的な店舗と仮想アイテムの融合体験</td>
+<td>複合現実技術の使い方とショッピング体験を学べる</td>
+<td>ARKit、CoreML、CoreLocation</td>
+</tr>
+<tr>
+<td>10</td>
+<td>音楽演奏アプリ</td>
+<td>MusicPerformance</td>
+<td>MusicPerformance</td>
+<td>6</td>
+<td>60h (15日)</td>
+<td>音楽の演奏をリアルタイムで録音、分析</td>
+<td>音楽理論と実演をアプリで実現する方法を学べる</td>
+<td>AudioKit、CoreMIDI</td>
+</tr>
+<tr>
+<td>11</td>
+<td>リアルタイム画像処理</td>
+<td>RealTimeImageProcessing</td>
+<td>RealTimeImageProcessing</td>
+<td>6</td>
+<td>70h (18日)</td>
+<td>リアルタイムで画像を処理、変換</td>
+<td>高速画像処理とリアルタイム処理を学べる</td>
+<td>CoreImage、Metal</td>
+</tr>
+<tr>
+<td>12</td>
+<td>動画配信プラットフォーム</td>
+<td>VideoStreamingPlatform</td>
+<td>VideoStreamingPlatform</td>
+<td>6</td>
+<td>80h (20日)</td>
+<td>動画のアップロード、再生、コメント機能</td>
+<td>動画配信技術とストリーミングを学べる</td>
+<td>AVFoundation、Firebase、Cloud Storage</td>
+</tr>
+<tr>
+<td>13</td>
+<td>自動化農業システム</td>
+<td>AutomatedFarming</td>
+<td>AutomatedFarming</td>
+<td>6</td>
+<td>70h (18日)</td>
+<td>農業用の自動化システム、作物の育成管理</td>
+<td>IoTを利用した農業自動化を学べる</td>
+<td>Bluetooth、Wi-Fi、センサーデータ管理</td>
+</tr>
+<tr>
+<td>14</td>
+<td>バーチャルパーソナルアシスタント</td>
+<td>VirtualAssistant</td>
+<td>VirtualAssistant</td>
+<td>6</td>
+<td>50h (12日)</td>
+<td>ユーザーのタスクを管理し、音声でサポート</td>
+<td>AIを使った音声アシスタント開発を学べる</td>
+<td>Speech Framework、CoreML</td>
+</tr>
+<tr>
+<td>15</td>
+<td>精密医療データ管理</td>
+<td>PrecisionHealth</td>
+<td>PrecisionHealth</td>
+<td>6</td>
+<td>70h (18日)</td>
+<td>ヘルスケアデータを精密に管理、患者ごとの分析</td>
+<td>個別化医療のアプリ開発とデータ処理を学べる</td>
+<td>CoreData、HealthKit、FireStore</td>
+</tr>
+<tr>
+<td>16</td>
+<td>リアルタイム翻訳アプリ</td>
+<td>RealTimeTranslator</td>
+<td>RealTimeTranslator</td>
+<td>6</td>
+<td>50h (12日)</td>
+<td>リアルタイム音声翻訳、テキスト翻訳</td>
+<td>翻訳技術とリアルタイム音声解析を学べる</td>
+<td>Google Translate API、Speech Framework</td>
+</tr>
+<tr>
+<td>17</td>
+<td>高度な暗号通貨ウォレット</td>
+<td>CryptoWallet</td>
+<td>CryptoWallet</td>
+<td>6</td>
+<td>80h (20日)</td>
+<td>暗号通貨の管理、送受信、取引履歴</td>
+<td>セキュリティを意識した暗号通貨管理を学べる</td>
+<td>Web3、Crypto SDK、Blockchain技術</td>
+</tr>
+<tr>
+<td>18</td>
+<td>3Dスキャンアプリ</td>
+<td>3DScannerApp</td>
+<td>3DScannerApp</td>
+<td>6</td>
+<td>70h (18日)</td>
+<td>物体の3Dスキャンとモデル化</td>
+<td>3Dスキャン技術とリアルタイム処理を学べる</td>
+<td>ARKit、RealityKit</td>
+</tr>
+<tr>
+<td>19</td>
+<td>自動化イベントプランナー</td>
+<td>AutomatedEventPlanner</td>
+<td>AutomatedEventPlanner</td>
+<td>6</td>
+<td>60h (15日)</td>
+<td>イベントスケジューリングの自動化</td>
+<td>イベント管理の効率化と自動化を学べる</td>
+<td>Firebase、UserNotifications API</td>
+</tr>
+<tr>
+<td>20</td>
+<td>バーチャルファッションショー</td>
+<td>VirtualFashionShow</td>
+<td>VirtualFashionShow</td>
+<td>6</td>
+<td>70h (18日)</td>
+<td>仮想空間でのファッションショー</td>
+<td>仮想現実とファッション業界を結びつける技術を学べる</td>
+<td>ARKit、RealityKit</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#6-難易度57上級">本章先頭</a></p>
+</details>
+<h2 id="難易度7上級者向けのアプリ20個">6.3.
+難易度7（上級者向け）のアプリ（20個）</h2>
+<details>
+<table>
+<colgroup>
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+</colgroup>
+<thead>
+<tr>
+<th>No</th>
+<th>アプリ名(日本語)</th>
+<th>物理名</th>
+<th>難易度(10段階)</th>
+<th>所要時間(時間)</th>
+<th>機能</th>
+<th>おすすめポイント</th>
+<th>その他必要なものや特記事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>自動化された財務管理</td>
+<td>AutomatedFinance</td>
+<td>7</td>
+<td>15h (4日)</td>
+<td>財務データの追跡、予算管理、自動支払い</td>
+<td>自動化された財務計画と管理を学べる</td>
+<td>Firebase、API（金融データ）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>拡張現実スポーツ観戦</td>
+<td>ARSportsViewer</td>
+<td>7</td>
+<td>18h (5日)</td>
+<td>スポーツの試合をARで表示、観客視点の変更</td>
+<td>拡張現実技術を使った新しい体験の設計を学べる</td>
+<td>ARKit、CoreLocation</td>
+</tr>
+<tr>
+<td>3</td>
+<td>医療画像解析システム</td>
+<td>MedicalImageAnalyzer</td>
+<td>7</td>
+<td>20h (5日)</td>
+<td>医療用画像の解析、疾患の予測</td>
+<td>画像解析と機械学習を組み合わせた高度な技術を学べる</td>
+<td>CoreML、Vision Framework</td>
+</tr>
+<tr>
+<td>4</td>
+<td>高度なAI音楽作成</td>
+<td>AIComposer</td>
+<td>7</td>
+<td>20h (5日)</td>
+<td>AIによる音楽の作成と編集</td>
+<td>AIによる創造的な音楽作成技術を学べる</td>
+<td>CoreML、AudioKit</td>
+</tr>
+<tr>
+<td>5</td>
+<td>ロボット制御システム</td>
+<td>RobotControlSystem</td>
+<td>7</td>
+<td>20h (5日)</td>
+<td>ロボットの動作制御、センサー処理</td>
+<td>ロボット制御技術とセンサー処理を学べる</td>
+<td>Bluetooth、センサーデバイス、ロボットAPI</td>
+</tr>
+<tr>
+<td>6</td>
+<td>仮想医療診断システム</td>
+<td>VirtualMedicalDiagnosis</td>
+<td>7</td>
+<td>18h (5日)</td>
+<td>患者の症状を入力して仮想的に診断</td>
+<td>医療診断のシステム設計とデータ解析を学べる</td>
+<td>MLモデル、Google API、Symptom Checker API</td>
+</tr>
+<tr>
+<td>7</td>
+<td>自動運転車シミュレーション</td>
+<td>AutonomousCarSim</td>
+<td>7</td>
+<td>25h (6日)</td>
+<td>自動運転車の動作シミュレーション、障害物回避</td>
+<td>自動運転システムとシミュレーション技術を学べる</td>
+<td>ARKit、CoreLocation、センサー連携</td>
+</tr>
+<tr>
+<td>8</td>
+<td>IoT医療機器管理システム</td>
+<td>IoTMedicalDeviceManager</td>
+<td>7</td>
+<td>18h (5日)</td>
+<td>医療機器の状態監視、データ収集</td>
+<td>IoTデバイスの連携と医療機器の管理を学べる</td>
+<td>Bluetooth、Wi-Fi、HealthKit、CoreData</td>
+</tr>
+<tr>
+<td>9</td>
+<td>バーチャル旅行体験</td>
+<td>VirtualTravelExperience</td>
+<td>7</td>
+<td>20h (5日)</td>
+<td>仮想現実での旅行体験、観光地の紹介</td>
+<td>VRとARを使った観光体験システムを学べる</td>
+<td>ARKit、CoreLocation、VRHeadsets</td>
+</tr>
+<tr>
+<td>10</td>
+<td>自動化された家計簿</td>
+<td>AutomatedBudgetTracker</td>
+<td>7</td>
+<td>15h (4日)</td>
+<td>支出の自動分類、月別予算管理</td>
+<td>財務データの管理と自動化された支出トラッキングを学べる</td>
+<td>Firebase、AIによる支出予測</td>
+</tr>
+<tr>
+<td>11</td>
+<td>バーチャルペット管理</td>
+<td>VirtualPetManager</td>
+<td>7</td>
+<td>20h (5日)</td>
+<td>バーチャルペットの育成、世話</td>
+<td>バーチャルペットのシミュレーション技術を学べる</td>
+<td>CoreData、ARKit</td>
+</tr>
+<tr>
+<td>12</td>
+<td>自動化健康管理システム</td>
+<td>AutomatedHealthTracker</td>
+<td>7</td>
+<td>20h (5日)</td>
+<td>ヘルスケアデータの自動トラッキング、レポート作成</td>
+<td>ヘルスケア管理を自動化する方法を学べる</td>
+<td>HealthKit、CoreData</td>
+</tr>
+<tr>
+<td>13</td>
+<td>音楽ストリーミングサービス</td>
+<td>MusicStreamingService</td>
+<td>7</td>
+<td>25h (6日)</td>
+<td>音楽のアップロード、ストリーミング再生、プレイリスト作成</td>
+<td>ストリーミング技術とユーザー管理を学べる</td>
+<td>Firebase、AVFoundation、Cloud Storage</td>
+</tr>
+<tr>
+<td>14</td>
+<td>スマートシティ管理システム</td>
+<td>SmartCityManagement</td>
+<td>7</td>
+<td>25h (6日)</td>
+<td>都市インフラのデータ収集と管理</td>
+<td>スマートシティシステム設計を学べる</td>
+<td>IoT、センサー、Big Data解析</td>
+</tr>
+<tr>
+<td>15</td>
+<td>深層学習による画像分類</td>
+<td>DeepLearningImageClassifier</td>
+<td>7</td>
+<td>25h (6日)</td>
+<td>深層学習を用いた画像分類</td>
+<td>AIと機械学習を使った画像処理技術を学べる</td>
+<td>CoreML、TensorFlow</td>
+</tr>
+<tr>
+<td>16</td>
+<td>自動翻訳システム</td>
+<td>AutoTranslationSystem</td>
+<td>7</td>
+<td>20h (5日)</td>
+<td>音声、テキストの自動翻訳</td>
+<td>自動翻訳技術を応用したシステム設計を学べる</td>
+<td>Google Translate API、Speech Framework</td>
+</tr>
+<tr>
+<td>17</td>
+<td>VRトレーニングプラットフォーム</td>
+<td>VRTrainingPlatform</td>
+<td>7</td>
+<td>25h (6日)</td>
+<td>VRを使った教育用トレーニング、シミュレーション</td>
+<td>VR技術を利用した教育の新しい形を学べる</td>
+<td>VRHeadsets、ARKit、CoreGraphics</td>
+</tr>
+<tr>
+<td>18</td>
+<td>高度なフィットネスアプリ</td>
+<td>AdvancedFitnessApp</td>
+<td>7</td>
+<td>20h (5日)</td>
+<td>高度なトレーニングプラン、健康データ分析</td>
+<td>高度なフィットネスアプリの開発を学べる</td>
+<td>CoreData、HealthKit、Charts</td>
+</tr>
+<tr>
+<td>19</td>
+<td>自動車運転アシスタント</td>
+<td>CarDrivingAssistant</td>
+<td>7</td>
+<td>25h (6日)</td>
+<td>車の運転支援システム（音声、ナビゲーション）</td>
+<td>運転支援技術とナビゲーションを学べる</td>
+<td>CoreLocation、ARKit、Bluetooth</td>
+</tr>
+<tr>
+<td>20</td>
+<td>自動化された文章作成ツール</td>
+<td>AutomatedContentCreator</td>
+<td>7</td>
+<td>20h (5日)</td>
+<td>自動化された記事やブログ投稿の作成</td>
+<td>AIを利用した文章生成技術を学べる</td>
+<td>OpenAI GPT-3 API、Natural Language Processing</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#6-難易度57上級">本章先頭</a></p>
+</details>
+<h1 id="難易度810達人">7. 難易度8~10(達人)</h1>
+<p><a href="#1-swift学習一覧">先頭</a></p>
+<h2 id="難易度8専門家向けのアプリ20個">7.1.
+難易度8（専門家向け）のアプリ（20個）</h2>
+<details>
+<table>
+<colgroup>
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+</colgroup>
+<thead>
+<tr>
+<th>No</th>
+<th>アプリ名(日本語)</th>
+<th>物理名</th>
+<th>難易度(10段階)</th>
+<th>所要時間(時間)</th>
+<th>機能</th>
+<th>おすすめポイント</th>
+<th>その他必要なものや特記事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>高度な自動運転車システム</td>
+<td>AdvancedSelfDrivingCar</td>
+<td>8</td>
+<td>300h (75日)</td>
+<td>自動運転車の運転支援、障害物回避、ナビゲーション</td>
+<td>自動運転技術とAIを駆使した車両制御を学べる</td>
+<td>LiDAR、GPS、カメラ、AIモデル</td>
+</tr>
+<tr>
+<td>2</td>
+<td>人工知能による自動絵画作成</td>
+<td>AIArtGenerator</td>
+<td>8</td>
+<td>200h (50日)</td>
+<td>AIによる絵画の生成とカスタマイズ</td>
+<td>AIを利用したアート作成技術を学べる</td>
+<td>CoreML、TensorFlow</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ヘルスケアデータ解析プラットフォーム</td>
+<td>HealthcareDataAnalysisPlatform</td>
+<td>8</td>
+<td>250h (62日)</td>
+<td>健康データの統計解析、予測分析</td>
+<td>ビッグデータ解析と機械学習を用いた解析方法を学べる</td>
+<td>TensorFlow、CoreData、Firebase</td>
+</tr>
+<tr>
+<td>4</td>
+<td>VRを使ったリモート操作システム</td>
+<td>RemoteVRControl</td>
+<td>8</td>
+<td>200h (50日)</td>
+<td>VRデバイスを使った遠隔操作システム</td>
+<td>VRとリモート操作技術の融合を学べる</td>
+<td>VRHeadsets、Bluetooth、センサー</td>
+</tr>
+<tr>
+<td>5</td>
+<td>高度な音声認識システム</td>
+<td>AdvancedSpeechRecognition</td>
+<td>8</td>
+<td>180h (45日)</td>
+<td>高精度な音声認識、ユーザーインターフェース</td>
+<td>音声認識技術を駆使したインターフェース設計を学べる</td>
+<td>Speech Framework、CoreML、SiriKit</td>
+</tr>
+<tr>
+<td>6</td>
+<td>リアルタイム株価分析ツール</td>
+<td>RealTimeStockAnalyzer</td>
+<td>8</td>
+<td>160h (40日)</td>
+<td>株価データのリアルタイム分析と予測</td>
+<td>金融市場とリアルタイムデータ解析を学べる</td>
+<td>API（株価データ）、CoreData</td>
+</tr>
+<tr>
+<td>7</td>
+<td>脳波を使ったインターフェース</td>
+<td>BrainwaveInterface</td>
+<td>8</td>
+<td>220h (55日)</td>
+<td>脳波を使ったアプリ制御、ユーザー体験の最適化</td>
+<td>脳波を利用したインターフェース設計技術を学べる</td>
+<td>EEGセンサー、CoreML</td>
+</tr>
+<tr>
+<td>8</td>
+<td>高精度ドローン制御システム</td>
+<td>DroneControlSystem</td>
+<td>8</td>
+<td>200h (50日)</td>
+<td>ドローンの飛行経路計算、障害物回避</td>
+<td>ドローン制御技術とセンサー連携を学べる</td>
+<td>Bluetooth、GPS、センサー</td>
+</tr>
+<tr>
+<td>9</td>
+<td>バーチャルヘルスケア診断</td>
+<td>VirtualHealthcareDiagnosis</td>
+<td>8</td>
+<td>240h (60日)</td>
+<td>ヘルスケアデータを使った診断システム</td>
+<td>ヘルスケア分野でのAI診断技術を学べる</td>
+<td>TensorFlow、CoreML、Firebase</td>
+</tr>
+<tr>
+<td>10</td>
+<td>音楽制作AIプラットフォーム</td>
+<td>MusicCreationAI</td>
+<td>8</td>
+<td>210h (53日)</td>
+<td>AIによる音楽作成、アレンジ、ミキシング</td>
+<td>AIと音楽理論を組み合わせたクリエイティブ制作を学べる</td>
+<td>AudioKit、CoreML</td>
+</tr>
+<tr>
+<td>11</td>
+<td>ディープフェイクアプリ</td>
+<td>DeepFakeApp</td>
+<td>8</td>
+<td>180h (45日)</td>
+<td>画像や映像のディープフェイク技術</td>
+<td>ディープフェイク技術を利用した映像編集を学べる</td>
+<td>TensorFlow、CoreML、DeepFake SDK</td>
+</tr>
+<tr>
+<td>12</td>
+<td>高度なARエンターテイメント</td>
+<td>AdvancedAREntertainment</td>
+<td>8</td>
+<td>250h (62日)</td>
+<td>AR空間でのインタラクティブなエンタメ体験</td>
+<td>ARKitを駆使したインタラクティブ体験の設計を学べる</td>
+<td>ARKit、RealityKit</td>
+</tr>
+<tr>
+<td>13</td>
+<td>自然言語処理によるカスタマーサポート</td>
+<td>NLPCustomerSupport</td>
+<td>8</td>
+<td>220h (55日)</td>
+<td>NLPを用いたカスタマーサポート、FAQ管理</td>
+<td>自然言語処理を使ったカスタマーサポートシステムを学べる</td>
+<td>OpenAI GPT-3、CoreML</td>
+</tr>
+<tr>
+<td>14</td>
+<td>自動化されたニュース集約アプリ</td>
+<td>AutomatedNewsAggregator</td>
+<td>8</td>
+<td>180h (45日)</td>
+<td>ニュースの集約と配信、ユーザーカスタマイズ</td>
+<td>自動化されたコンテンツ集約とフィルタリング技術を学べる</td>
+<td>RSS、API（ニュースデータ）</td>
+</tr>
+<tr>
+<td>15</td>
+<td>量子コンピュータシミュレーション</td>
+<td>QuantumComputationSim</td>
+<td>8</td>
+<td>250h (62日)</td>
+<td>量子コンピュータのシミュレーション</td>
+<td>量子コンピュータの基礎とシミュレーション技術を学べる</td>
+<td>TensorFlow Quantum、Qiskit</td>
+</tr>
+<tr>
+<td>16</td>
+<td>高度な自動化された製造システム</td>
+<td>AutomatedManufacturingSystem</td>
+<td>8</td>
+<td>280h (70日)</td>
+<td>生産ラインの自動化、効率的な管理</td>
+<td>IoTとロボティクスを使った製造業の効率化を学べる</td>
+<td>IoTデバイス、センサー、API</td>
+</tr>
+<tr>
+<td>17</td>
+<td>生体認証システム</td>
+<td>BiometricAuthentication</td>
+<td>8</td>
+<td>200h (50日)</td>
+<td>顔認識、指紋認証などの生体認証</td>
+<td>セキュリティ分野での高度な認証システム設計を学べる</td>
+<td>CoreML、FaceID、TouchID</td>
+</tr>
+<tr>
+<td>18</td>
+<td>高精度3Dモデリングツール</td>
+<td>HighPrecision3DModeling</td>
+<td>8</td>
+<td>260h (65日)</td>
+<td>高精度な3Dモデルの作成、リアルタイム表示</td>
+<td>高度な3Dモデリング技術とリアルタイム表示を学べる</td>
+<td>ARKit、RealityKit、SceneKit</td>
+</tr>
+<tr>
+<td>19</td>
+<td>仮想現実の生産ライン監視</td>
+<td>VRProductionLineMonitor</td>
+<td>8</td>
+<td>250h (62日)</td>
+<td>VRを使った生産ラインの監視と分析</td>
+<td>VRとIoTを活用した製造ラインの監視を学べる</td>
+<td>VRHeadsets、IoT、ARKit</td>
+</tr>
+<tr>
+<td>20</td>
+<td>AIによる文学作品生成</td>
+<td>AITextGeneration</td>
+<td>8</td>
+<td>200h (50日)</td>
+<td>自動で文学作品を生成、ユーザーからのテーマで作成</td>
+<td>AIと自然言語生成を駆使したクリエイティブな文章作成を学べる</td>
+<td>OpenAI GPT-3、CoreML</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#7-難易度810達人">本章先頭</a></p>
+</details>
+<h2 id="難易度9非常に高度アプリ20個">7.2.
+難易度9（非常に高度）アプリ（20個）</h2>
+<details>
+<table>
+<colgroup>
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+</colgroup>
+<thead>
+<tr>
+<th>No</th>
+<th>アプリ名(日本語)</th>
+<th>物理名</th>
+<th>難易度(10段階)</th>
+<th>所要時間(時間)</th>
+<th>機能</th>
+<th>おすすめポイント</th>
+<th>その他必要なものや特記事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>高度な量子暗号通信システム</td>
+<td>QuantumEncryptionSystem</td>
+<td>9</td>
+<td>150 (37日)</td>
+<td>量子暗号によるデータの安全な通信</td>
+<td>量子コンピュータと量子暗号の理論を学べる</td>
+<td>Qiskit、量子コンピュータ関連ライブラリ</td>
+</tr>
+<tr>
+<td>2</td>
+<td>自律型AI戦闘ロボットシステム</td>
+<td>AutonomousCombatRobot</td>
+<td>9</td>
+<td>150 (37日)</td>
+<td>戦闘ロボットの自律制御、戦術的判断</td>
+<td>高度なAIとロボティクスを学べる</td>
+<td>AI、機械学習、ROS（ロボットオペレーティングシステム）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>高度なバーチャルヒューマンシミュレーション</td>
+<td>AdvancedVirtualHumanSim</td>
+<td>9</td>
+<td>150 (37日)</td>
+<td>高精度な人間の動作や思考をシミュレート</td>
+<td>バーチャルヒューマンとAIを駆使したシミュレーションを学べる</td>
+<td>Unreal Engine、Deep Learning</td>
+</tr>
+<tr>
+<td>4</td>
+<td>高度なAIによる動画編集システム</td>
+<td>AIVideoEditingSystem</td>
+<td>9</td>
+<td>150 (37日)</td>
+<td>自動動画編集、エフェクト追加、カット、編集</td>
+<td>動画編集とAIを組み合わせた最先端技術を学べる</td>
+<td>TensorFlow、Deep Learning、OpenCV</td>
+</tr>
+<tr>
+<td>5</td>
+<td>高度なスマートシティデータ解析</td>
+<td>SmartCityDataAnalysis</td>
+<td>9</td>
+<td>150 (37日)</td>
+<td>都市インフラデータの高度な解析、予測、最適化</td>
+<td>ビッグデータ解析と都市開発技術を学べる</td>
+<td>Hadoop、Spark、IoTデバイス</td>
+</tr>
+<tr>
+<td>6</td>
+<td>VRを利用した遠隔手術システム</td>
+<td>RemoteSurgeryVR</td>
+<td>9</td>
+<td>150 (37日)</td>
+<td>VRを用いた遠隔手術、リアルタイムの手術サポート</td>
+<td>医療とVR技術を融合した革新的なシステム設計を学べる</td>
+<td>Oculus、VRシミュレーション、医療API</td>
+</tr>
+<tr>
+<td>7</td>
+<td>自動化されたビジュアルコンテンツ生成</td>
+<td>AutomatedVisualContentGen</td>
+<td>9</td>
+<td>150 (37日)</td>
+<td>高度なAIによる画像・動画コンテンツの自動生成</td>
+<td>生成AIを活用したコンテンツ制作技術を学べる</td>
+<td>OpenAI、DALL·E、Deep Learning</td>
+</tr>
+<tr>
+<td>8</td>
+<td>高度な自然言語生成システム</td>
+<td>AdvancedNLPSystem</td>
+<td>9</td>
+<td>150 (37日)</td>
+<td>高度な自然言語理解と生成、文章作成、対話型AI</td>
+<td>NLP技術と生成モデルの最新技術を学べる</td>
+<td>OpenAI GPT-4、BERT、Transformers</td>
+</tr>
+<tr>
+<td>9</td>
+<td>自動化された先進的農業管理システム</td>
+<td>AutomatedAgriTech</td>
+<td>9</td>
+<td>150 (37日)</td>
+<td>センサーとAIを利用した農業生産管理の最適化</td>
+<td>IoTとAIを使った農業の最前線技術を学べる</td>
+<td>IoTセンサー、AI、データ解析技術</td>
+</tr>
+<tr>
+<td>10</td>
+<td>自動運転飛行機制御システム</td>
+<td>AutonomousAirplaneControl</td>
+<td>9</td>
+<td>150 (37日)</td>
+<td>飛行機の自動運転、障害物回避、ルート最適化</td>
+<td>自動運転航空技術の最先端技術を学べる</td>
+<td>GPS、AI、飛行機制御システム</td>
+</tr>
+<tr>
+<td>11</td>
+<td>高精度な顔認証と感情分析システム</td>
+<td>FacialRecognitionEmotionAnalysis</td>
+<td>9</td>
+<td>150 (37日)</td>
+<td>顔認識と感情分析を用いたユーザー体験の向上</td>
+<td>顔認証と感情解析技術を活用したシステム開発を学べる</td>
+<td>CoreML、Vision API、Deep Learning</td>
+</tr>
+<tr>
+<td>12</td>
+<td>AIによる音声合成システム</td>
+<td>AISpeechSynthesis</td>
+<td>9</td>
+<td>150 (37日)</td>
+<td>高精度な音声合成、感情表現の追加</td>
+<td>音声合成技術とAIの進化を学べる</td>
+<td>TensorFlow、Tacotron、Speech Synthesis</td>
+</tr>
+<tr>
+<td>13</td>
+<td>AIによる予知・予測システム</td>
+<td>PredictiveAISystem</td>
+<td>9</td>
+<td>150 (37日)</td>
+<td>ビッグデータ解析を用いた未来の予測、予知</td>
+<td>AIと予測アルゴリズムの高度な応用を学べる</td>
+<td>TensorFlow、PyTorch、Big Data</td>
+</tr>
+<tr>
+<td>14</td>
+<td>自動化された金融リスク分析システム</td>
+<td>AutomatedFinancialRiskAnalysis</td>
+<td>9</td>
+<td>150 (37日)</td>
+<td>高度な金融リスクの予測、投資分析</td>
+<td>金融業界でのAIとリスク分析技術を学べる</td>
+<td>MLモデル、Finance API、データ解析</td>
+</tr>
+<tr>
+<td>15</td>
+<td>自動化された建設現場監視システム</td>
+<td>AutomatedConstructionSiteMonitor</td>
+<td>9</td>
+<td>150 (37日)</td>
+<td>AIによる建設現場の監視、事故予測と管理</td>
+<td>AIとロボティクスを利用した建設業務の革新を学べる</td>
+<td>IoTセンサー、AI、映像解析技術</td>
+</tr>
+<tr>
+<td>16</td>
+<td>VRによる自律型教育システム</td>
+<td>VRAutonomousEducation</td>
+<td>9</td>
+<td>150 (37日)</td>
+<td>VRとAIを使った自律型学習システムの開発</td>
+<td>VRとAIを活用した教育革命を学べる</td>
+<td>Oculus、AI、VRシミュレーション</td>
+</tr>
+<tr>
+<td>17</td>
+<td>深層学習による薬物開発支援システム</td>
+<td>DeepLearningDrugDevelopment</td>
+<td>9</td>
+<td>150 (37日)</td>
+<td>薬物の効能予測、薬品デザインの最適化</td>
+<td>バイオテクノロジーとAIを使った革新的な薬物開発を学べる</td>
+<td>TensorFlow、Deep Learning、Chemoinformatics</td>
+</tr>
+<tr>
+<td>18</td>
+<td>高度な自律型AI音楽パフォーマンス</td>
+<td>AutonomousAIMusicPerformance</td>
+<td>9</td>
+<td>150 (37日)</td>
+<td>AIによる音楽の即興パフォーマンス</td>
+<td>AIと音楽の融合による革新的なパフォーマンスを学べる</td>
+<td>AudioKit、AI、Music Theory</td>
+</tr>
+<tr>
+<td>19</td>
+<td>超高精度地震予知システム</td>
+<td>UltraPreciseEarthquakePrediction</td>
+<td>9</td>
+<td>150 (37日)</td>
+<td>地震データの解析と予測モデルの構築</td>
+<td>自然災害予測技術を利用したシステム設計を学べる</td>
+<td>Machine Learning、Big Data、Geophysical Data</td>
+</tr>
+<tr>
+<td>20</td>
+<td>高度なスマートヘルスケア予測システム</td>
+<td>AdvancedSmartHealthPrediction</td>
+<td>9</td>
+<td>150 (37日)</td>
+<td>健康データを基にした高度な健康予測と管理</td>
+<td>ヘルスケアデータの解析と予測技術を学べる</td>
+<td>HealthKit、Machine Learning、Firebase</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#7-難易度810達人">本章先頭</a></p>
+</details>
+<h2 id="難易度10最上級のアプリ20個">7.3.
+難易度10（最上級）のアプリ（20個）</h2>
+<details>
+<table>
+<colgroup>
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+<col style="width: auto" />
+</colgroup>
+<thead>
+<tr>
+<th>No</th>
+<th>アプリ名(日本語)</th>
+<th>物理名</th>
+<th>難易度(10段階)</th>
+<th>所要時間(時間)</th>
+<th>機能</th>
+<th>おすすめポイント</th>
+<th>その他必要なものや特記事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>完全自律型都市管理システム</td>
+<td>AutonomousCityManagement</td>
+<td>10</td>
+<td>500h (125日)</td>
+<td>完全自律的に管理される都市インフラ</td>
+<td>自律型都市の最先端技術を学べる</td>
+<td>IoT、AI、データ解析技術、都市インフラデータ</td>
+</tr>
+<tr>
+<td>2</td>
+<td>仮想現実空間の完全自律型経済</td>
+<td>VirtualRealityEconomy</td>
+<td>10</td>
+<td>500h (125日)</td>
+<td>仮想現実で動作する自律型経済システム</td>
+<td>VRと経済学の融合を学べる</td>
+<td>VRHeadsets、経済モデル、AI</td>
+</tr>
+<tr>
+<td>3</td>
+<td>超高度AIによる個人化された教育システム</td>
+<td>AdvancedAIPersonalizedEducation</td>
+<td>10</td>
+<td>500h (125日)</td>
+<td>AIによる完全個別指導、学習効果の最大化</td>
+<td>AI教育の未来を体験できる</td>
+<td>AI、Machine Learning、教育データ</td>
+</tr>
+<tr>
+<td>4</td>
+<td>脳波を基にした完全AI制御システム</td>
+<td>BrainwaveControlledAI</td>
+<td>10</td>
+<td>500h (125日)</td>
+<td>脳波を使ってAIを制御し、リアルタイムで動作</td>
+<td>脳波技術とAIを融合させた最先端のインターフェース技術</td>
+<td>EEGセンサー、AI、深層学習</td>
+</tr>
+<tr>
+<td>5</td>
+<td>人工意識を持つAIシステム</td>
+<td>ArtificialConsciousnessAI</td>
+<td>10</td>
+<td>500h (125日)</td>
+<td>自我を持つAIシステム、自己改善、意思決定能力</td>
+<td>人工意識の開発に必要な倫理と技術を学べる</td>
+<td>AI、Deep Learning、倫理的考慮</td>
+</tr>
+<tr>
+<td>6</td>
+<td>完全自律型医療診断AI</td>
+<td>AutonomousMedicalDiagnosisAI</td>
+<td>10</td>
+<td>500h (125日)</td>
+<td>自律的に医療診断を行うAIシステム</td>
+<td>最先端の医療診断AI技術を学べる</td>
+<td>TensorFlow、Healthcareデータ、CoreML</td>
+</tr>
+<tr>
+<td>7</td>
+<td>高度なナノテクノロジーシステム</td>
+<td>AdvancedNanotechSystem</td>
+<td>10</td>
+<td>500h (125日)</td>
+<td>ナノテクノロジーによる材料操作、物質の改良</td>
+<td>ナノテクノロジーとAIの組み合わせを学べる</td>
+<td>物理学、AI、ナノマテリアル</td>
+</tr>
+<tr>
+<td>8</td>
+<td>完全自動運転社会システム</td>
+<td>FullyAutonomousSociety</td>
+<td>10</td>
+<td>500h (125日)</td>
+<td>完全自動運転による社会全体の運営管理</td>
+<td>自動運転車と社会的システム設計の革新を学べる</td>
+<td>自動運転車、AI、IoT</td>
+</tr>
+<tr>
+<td>9</td>
+<td>超高精度な気象予測システム</td>
+<td>HyperPreciseWeatherForecast</td>
+<td>10</td>
+<td>500h (125日)</td>
+<td>超高精度な気象データの予測、災害予測</td>
+<td>気象学とAI予測技術を駆使したシステム設計を学べる</td>
+<td>Deep Learning、気象データ、Big Data</td>
+</tr>
+<tr>
+<td>10</td>
+<td>意識と身体を統合するAIシステム</td>
+<td>ConsciousnessIntegrationAI</td>
+<td>10</td>
+<td>500h (125日)</td>
+<td>人間の意識と身体を完全に統合したAIシステム</td>
+<td>脳科学とAI技術の融合を学べる</td>
+<td>EEGセンサー、AI、Deep Learning</td>
+</tr>
+<tr>
+<td>11</td>
+<td>宇宙開発支援システム</td>
+<td>SpaceExplorationAI</td>
+<td>10</td>
+<td>500h (125日)</td>
+<td>AIを使った宇宙開発、惑星探査の最適化</td>
+<td>宇宙開発とAIを融合させたシステム設計を学べる</td>
+<td>AI、宇宙データ、ロケット技術</td>
+</tr>
+<tr>
+<td>12</td>
+<td>自律型宇宙探査機</td>
+<td>AutonomousSpaceProbe</td>
+<td>10</td>
+<td>500h (125日)</td>
+<td>完全自律型で動作する宇宙探査機、惑星調査</td>
+<td>宇宙探査とロボティクス技術を学べる</td>
+<td>AI、ロボティクス、宇宙探査技術</td>
+</tr>
+<tr>
+<td>13</td>
+<td>高度な超音波治療システム</td>
+<td>AdvancedUltrasoundTherapy</td>
+<td>10</td>
+<td>500h (125日)</td>
+<td>高度な超音波技術による治療の最適化</td>
+<td>医療と超音波技術を融合したシステム設計を学べる</td>
+<td>超音波機器、AI、医療データ</td>
+</tr>
+<tr>
+<td>14</td>
+<td>脳波とAIによる完全無人オフィス</td>
+<td>BrainwaveAIOffice</td>
+<td>10</td>
+<td>500h (125日)</td>
+<td>脳波を基にした無人オフィスの管理、AIで作業効率化</td>
+<td>脳波とAIの融合を使った生産性向上を学べる</td>
+<td>EEGセンサー、AI、スマートオフィス技術</td>
+</tr>
+<tr>
+<td>15</td>
+<td>自律型遺伝子編集システム</td>
+<td>AutonomousGeneEditing</td>
+<td>10</td>
+<td>500h (125日)</td>
+<td>AIによる遺伝子編集、疾患治療の最適化</td>
+<td>バイオテクノロジーとAI技術の組み合わせを学べる</td>
+<td>AI、遺伝子編集技術、CRISPR</td>
+</tr>
+<tr>
+<td>16</td>
+<td>高度な機械学習による株式市場予測</td>
+<td>AdvancedMLStockMarketPrediction</td>
+<td>10</td>
+<td>500h (125日)</td>
+<td>高度な機械学習による株式市場予測と最適化</td>
+<td>株式市場のデータ分析と機械学習技術を学べる</td>
+<td>Big Data、機械学習、株式市場データ</td>
+</tr>
+<tr>
+<td>17</td>
+<td>超高精度ロボット製造システム</td>
+<td>UltraPreciseRobotManufacturing</td>
+<td>10</td>
+<td>500h (125日)</td>
+<td>ロボットによる超高精度な製造プロセス管理</td>
+<td>ロボティクスと精密製造技術の最新技術を学べる</td>
+<td>ロボット技術、IoT、AI</td>
+</tr>
+<tr>
+<td>18</td>
+<td>生体インターフェースによるAI制御</td>
+<td>BioInterfaceAIControl</td>
+<td>10</td>
+<td>500h (125日)</td>
+<td>生体データを元にAIを制御するインターフェース</td>
+<td>生体データとAIの融合を使った先端技術を学べる</td>
+<td>AI、EEGセンサー、バイオセンサー</td>
+</tr>
+<tr>
+<td>19</td>
+<td>自律型深海探査ロボット</td>
+<td>AutonomousDeepSeaProbe</td>
+<td>10</td>
+<td>500h (125日)</td>
+<td>自律型深海探査ロボットによる海洋調査</td>
+<td>海洋探査とロボティクスを駆使した技術を学べる</td>
+<td>AI、深海探査機、ロボティクス技術</td>
+</tr>
+<tr>
+<td>20</td>
+<td>完全自律型医療支援ロボット</td>
+<td>AutonomousMedicalRobot</td>
+<td>10</td>
+<td>500h (125日)</td>
+<td>完全自律型医療支援ロボットによる救急対応</td>
+<td>ロボティクスと医療支援技術の革新を学べる</td>
+<td>AI、医療ロボット技術、Deep Learning</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#7-難易度810達人">本章先頭</a></p>
+</details>
+<h1 id="終わりに">8. 終わりに</h1>
+<p>ここまで見てくださりありがとうございました。</p>
+<p><a href="#1-swift学習一覧">先頭</a></p>
+</body>
+</html>
