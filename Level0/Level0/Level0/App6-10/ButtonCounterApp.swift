@@ -105,7 +105,7 @@ struct ButtonCounterApp: View {
                                     .bold()
                                     .padding()
                                     .frame(width: 80, height: 80)
-                                    .foregroundColor(Color.black)
+                                    .foregroundColor(Color.red)
                                     .overlay(
                                         Circle()
                                             .stroke(Color.blue, lineWidth: 3)
@@ -125,7 +125,7 @@ struct ButtonCounterApp: View {
                                     .bold()
                                     .padding()
                                     .frame(width: 80, height: 80)
-                                    .foregroundColor(Color.black)
+                                    .foregroundColor(Color.blue)
                                     .overlay(
                                         Circle()
                                             .stroke(Color.red, lineWidth: 3)

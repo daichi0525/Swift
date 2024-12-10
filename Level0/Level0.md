@@ -9,17 +9,28 @@
 - [Level0](#level0)
 - [目次](#目次)
 - [構築手順](#構築手順)
-	- [プロジェクト作成](#プロジェクト作成)
-	- [Home画面作成](#home画面作成)
+  - [プロジェクト作成](#プロジェクト作成)
+  - [Home画面作成](#home画面作成)
 - [アプリ機能の作成](#アプリ機能の作成)
-	- [挨拶アプリ (GreetingApp)](#挨拶アプリ-greetingapp)
-	- [色変化アプリ (ColorChangeApp)](#色変化アプリ-colorchangeapp)
-	- [名前表示アプリ (NameDisplayApp)](#名前表示アプリ-namedisplayapp)
-	- [数字表示アプリ (NumberDisplayApp)](#数字表示アプリ-numberdisplayapp)
-	- [簡単な電卓 (SimpleCalculator)](#簡単な電卓-simplecalculator)
-	- [日付表示アプリ (DateDisplayApp)](#日付表示アプリ-datedisplayapp)
-	- [ボタンカウンター (ButtonCounterApp)](#ボタンカウンター-buttoncounterapp)
-	- [8. シンプルメモ (SimpleMemoApp)](#8-シンプルメモ-simplememoapp)
+  - [挨拶アプリ (GreetingApp)](#挨拶アプリ-greetingapp)
+  - [色変化アプリ (ColorChangeApp)](#色変化アプリ-colorchangeapp)
+  - [名前表示アプリ (NameDisplayApp)](#名前表示アプリ-namedisplayapp)
+  - [数字表示アプリ (NumberDisplayApp)](#数字表示アプリ-numberdisplayapp)
+  - [簡単な電卓 (SimpleCalculator)](#簡単な電卓-simplecalculator)
+  - [日付表示アプリ (DateDisplayApp)](#日付表示アプリ-datedisplayapp)
+  - [ボタンカウンター (ButtonCounterApp)](#ボタンカウンター-buttoncounterapp)
+  - [シンプルメモ (SimpleMemoApp)](#シンプルメモ-simplememoapp)
+  - [簡単なスライドショー (SimpleSlideshowApp)](#簡単なスライドショー-simpleslideshowapp)
+  - [テキスト表示アプリ (TextDisplayApp)](#テキスト表示アプリ-textdisplayapp)
+  - [シンプルメモ (SimpleMemoApp)](#シンプルメモ-simplememoapp-1)
+  - [シンプルメモ (SimpleMemoApp)](#シンプルメモ-simplememoapp-2)
+  - [シンプルメモ (SimpleMemoApp)](#シンプルメモ-simplememoapp-3)
+  - [シンプルメモ (SimpleMemoApp)](#シンプルメモ-simplememoapp-4)
+  - [シンプルメモ (SimpleMemoApp)](#シンプルメモ-simplememoapp-5)
+  - [シンプルメモ (SimpleMemoApp)](#シンプルメモ-simplememoapp-6)
+  - [シンプルメモ (SimpleMemoApp)](#シンプルメモ-simplememoapp-7)
+  - [シンプルメモ (SimpleMemoApp)](#シンプルメモ-simplememoapp-8)
+  - [シンプルメモ (SimpleMemoApp)](#シンプルメモ-simplememoapp-9)
 
 </details>
 
@@ -701,7 +712,236 @@
 
 </details>
 
-## 8. シンプルメモ (SimpleMemoApp)
+## シンプルメモ (SimpleMemoApp)
+
+<details>
+
+| No | アプリ名(日本語) | 物理名 | 難易度(10段階) | 所要時間(日数) | 機能 | おすすめポイント | その他必要なものや特記事項 |
+|---|---|---|---|---|---|---|---|
+| 8 | シンプルメモ | SimpleMemoApp | 0 | 1h | メモを1つ保存 | 簡単な文字列の保存方法を学べる | UserDefaults利用 |
+
+1. SimpleMemoApp.swiftの作成と実装
+   ```swift
+
+   ```
+2. HomeView.swiftの実装
+   1. AppInfo構造体のインスタンスを作成します。
+   2. `AppInfo(title: "シンプルメモ", destination: AnyView(SimpleMemoApp())),`
+3. 動作確認
+   1. ![alt text](10.gif)
+4. シンプルメモ (SimpleMemoApp) 作成完了
+
+</details>
+
+## 簡単なスライドショー (SimpleSlideshowApp)
+
+<details>
+
+
+
+1. SimpleSlideshowApp.swiftの作成と実装
+   ```swift
+
+   ```
+2. HomeView.swiftの実装
+   1. AppInfo構造体のインスタンスを作成します。
+   2. `AppInfo(title: "簡単なスライドショー", destination: AnyView(SimpleSlideshowApp())),`
+3. 動作確認
+   1. ![alt text](11.gif)
+4. 簡単なスライドショー (SimpleSlideshowApp) 作成完了
+
+</details>
+
+## テキスト表示アプリ (TextDisplayApp)
+
+<details>
+
+| No | アプリ名(日本語) | 物理名 | 難易度(10段階) | 所要時間(日数) | 機能 | おすすめポイント | その他必要なものや特記事項 |
+|---|---|---|---|---|---|---|---|
+| 8 | シンプルメモ | SimpleMemoApp | 0 | 1h | メモを1つ保存 | 簡単な文字列の保存方法を学べる | UserDefaults利用 |
+
+1. TextDisplayApp.swiftの作成と実装
+   ```swift
+
+   ```
+2. HomeView.swiftの実装
+   1. AppInfo構造体のインスタンスを作成します。
+   2. `AppInfo(title: "テキスト表示アプリ", destination: AnyView(TextDisplayApp())),`
+3. 動作確認
+   1. ![alt text](10.gif)
+4. テキスト表示アプリ (TextDisplayApp) 作成完了
+
+</details>
+
+## シンプルメモ (SimpleMemoApp)
+
+<details>
+
+| No | アプリ名(日本語) | 物理名 | 難易度(10段階) | 所要時間(日数) | 機能 | おすすめポイント | その他必要なものや特記事項 |
+|---|---|---|---|---|---|---|---|
+| 8 | シンプルメモ | SimpleMemoApp | 0 | 1h | メモを1つ保存 | 簡単な文字列の保存方法を学べる | UserDefaults利用 |
+
+1. SimpleMemoApp.swiftの作成と実装
+   ```swift
+
+   ```
+2. HomeView.swiftの実装
+   1. AppInfo構造体のインスタンスを作成します。
+   2. `AppInfo(title: "シンプルメモ", destination: AnyView(SimpleMemoApp())),`
+3. 動作確認
+   1. ![alt text](10.gif)
+4. 8. シンプルメモ (SimpleMemoApp) 作成完了
+
+</details>
+
+## シンプルメモ (SimpleMemoApp)
+
+<details>
+
+| No | アプリ名(日本語) | 物理名 | 難易度(10段階) | 所要時間(日数) | 機能 | おすすめポイント | その他必要なものや特記事項 |
+|---|---|---|---|---|---|---|---|
+| 8 | シンプルメモ | SimpleMemoApp | 0 | 1h | メモを1つ保存 | 簡単な文字列の保存方法を学べる | UserDefaults利用 |
+
+1. SimpleMemoApp.swiftの作成と実装
+   ```swift
+
+   ```
+2. HomeView.swiftの実装
+   1. AppInfo構造体のインスタンスを作成します。
+   2. `AppInfo(title: "シンプルメモ", destination: AnyView(SimpleMemoApp())),`
+3. 動作確認
+   1. ![alt text](10.gif)
+4. 8. シンプルメモ (SimpleMemoApp) 作成完了
+
+</details>
+
+## シンプルメモ (SimpleMemoApp)
+
+<details>
+
+| No | アプリ名(日本語) | 物理名 | 難易度(10段階) | 所要時間(日数) | 機能 | おすすめポイント | その他必要なものや特記事項 |
+|---|---|---|---|---|---|---|---|
+| 8 | シンプルメモ | SimpleMemoApp | 0 | 1h | メモを1つ保存 | 簡単な文字列の保存方法を学べる | UserDefaults利用 |
+
+1. SimpleMemoApp.swiftの作成と実装
+   ```swift
+
+   ```
+2. HomeView.swiftの実装
+   1. AppInfo構造体のインスタンスを作成します。
+   2. `AppInfo(title: "シンプルメモ", destination: AnyView(SimpleMemoApp())),`
+3. 動作確認
+   1. ![alt text](10.gif)
+4. 8. シンプルメモ (SimpleMemoApp) 作成完了
+
+</details>
+
+## シンプルメモ (SimpleMemoApp)
+
+<details>
+
+| No | アプリ名(日本語) | 物理名 | 難易度(10段階) | 所要時間(日数) | 機能 | おすすめポイント | その他必要なものや特記事項 |
+|---|---|---|---|---|---|---|---|
+| 8 | シンプルメモ | SimpleMemoApp | 0 | 1h | メモを1つ保存 | 簡単な文字列の保存方法を学べる | UserDefaults利用 |
+
+1. SimpleMemoApp.swiftの作成と実装
+   ```swift
+
+   ```
+2. HomeView.swiftの実装
+   1. AppInfo構造体のインスタンスを作成します。
+   2. `AppInfo(title: "シンプルメモ", destination: AnyView(SimpleMemoApp())),`
+3. 動作確認
+   1. ![alt text](10.gif)
+4. 8. シンプルメモ (SimpleMemoApp) 作成完了
+
+</details>
+
+## シンプルメモ (SimpleMemoApp)
+
+<details>
+
+| No | アプリ名(日本語) | 物理名 | 難易度(10段階) | 所要時間(日数) | 機能 | おすすめポイント | その他必要なものや特記事項 |
+|---|---|---|---|---|---|---|---|
+| 8 | シンプルメモ | SimpleMemoApp | 0 | 1h | メモを1つ保存 | 簡単な文字列の保存方法を学べる | UserDefaults利用 |
+
+1. SimpleMemoApp.swiftの作成と実装
+   ```swift
+
+   ```
+2. HomeView.swiftの実装
+   1. AppInfo構造体のインスタンスを作成します。
+   2. `AppInfo(title: "シンプルメモ", destination: AnyView(SimpleMemoApp())),`
+3. 動作確認
+   1. ![alt text](10.gif)
+4. 8. シンプルメモ (SimpleMemoApp) 作成完了
+
+</details>
+
+## シンプルメモ (SimpleMemoApp)
+
+<details>
+
+| No | アプリ名(日本語) | 物理名 | 難易度(10段階) | 所要時間(日数) | 機能 | おすすめポイント | その他必要なものや特記事項 |
+|---|---|---|---|---|---|---|---|
+| 8 | シンプルメモ | SimpleMemoApp | 0 | 1h | メモを1つ保存 | 簡単な文字列の保存方法を学べる | UserDefaults利用 |
+
+1. SimpleMemoApp.swiftの作成と実装
+   ```swift
+
+   ```
+2. HomeView.swiftの実装
+   1. AppInfo構造体のインスタンスを作成します。
+   2. `AppInfo(title: "シンプルメモ", destination: AnyView(SimpleMemoApp())),`
+3. 動作確認
+   1. ![alt text](10.gif)
+4. 8. シンプルメモ (SimpleMemoApp) 作成完了
+
+</details>
+
+## シンプルメモ (SimpleMemoApp)
+
+<details>
+
+| No | アプリ名(日本語) | 物理名 | 難易度(10段階) | 所要時間(日数) | 機能 | おすすめポイント | その他必要なものや特記事項 |
+|---|---|---|---|---|---|---|---|
+| 8 | シンプルメモ | SimpleMemoApp | 0 | 1h | メモを1つ保存 | 簡単な文字列の保存方法を学べる | UserDefaults利用 |
+
+1. SimpleMemoApp.swiftの作成と実装
+   ```swift
+
+   ```
+2. HomeView.swiftの実装
+   1. AppInfo構造体のインスタンスを作成します。
+   2. `AppInfo(title: "シンプルメモ", destination: AnyView(SimpleMemoApp())),`
+3. 動作確認
+   1. ![alt text](10.gif)
+4. 8. シンプルメモ (SimpleMemoApp) 作成完了
+
+</details>
+
+## シンプルメモ (SimpleMemoApp)
+
+<details>
+
+| No | アプリ名(日本語) | 物理名 | 難易度(10段階) | 所要時間(日数) | 機能 | おすすめポイント | その他必要なものや特記事項 |
+|---|---|---|---|---|---|---|---|
+| 8 | シンプルメモ | SimpleMemoApp | 0 | 1h | メモを1つ保存 | 簡単な文字列の保存方法を学べる | UserDefaults利用 |
+
+1. SimpleMemoApp.swiftの作成と実装
+   ```swift
+
+   ```
+2. HomeView.swiftの実装
+   1. AppInfo構造体のインスタンスを作成します。
+   2. `AppInfo(title: "シンプルメモ", destination: AnyView(SimpleMemoApp())),`
+3. 動作確認
+   1. ![alt text](10.gif)
+4. 8. シンプルメモ (SimpleMemoApp) 作成完了
+
+</details>
+
+## シンプルメモ (SimpleMemoApp)
 
 <details>
 
