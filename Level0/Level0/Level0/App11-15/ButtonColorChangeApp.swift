@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct ButtonColorChangeApp: View {
+    @State private var buttonColor = Color.blue
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button("ボタンの色を変更") {
+            buttonColor = buttonColor == .blue ? .green : .blue
+        }
+        .padding()
+        .background(buttonColor)
+        .foregroundColor(.white)
+        .cornerRadius(10)
+        .font(.title)
+        .navigationTitle("ボタン色変更アプリ")
     }
 }
 

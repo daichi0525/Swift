@@ -8,8 +8,40 @@
 import SwiftUI
 
 struct SimpleCountdownApp: View {
+    @State private var countdown = 10
+    @State private var timerActive = false
+    @State private var timer: Timer?
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("カウントダウン: \(countdown)")
+                .font(.largeTitle)
+                .padding()
+
+            Button("開始") {
+                startCountdown()
+            }
+            .padding()
+            .background(Color.red)
+            .foregroundColor(.white)
+            .cornerRadius(100)
+        }
+        .navigationTitle("簡単なカウントダウン")
+    }
+
+    func startCountdown() {
+        timer?.invalidate()
+        countdown = 10
+        timerActive = true
+
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            if countdown > 0 {
+                countdown -= 1
+            } else {
+                timer?.invalidate()
+                timerActive = false
+            }
+        }
     }
 }
 
