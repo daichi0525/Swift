@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct InputFormApp: View {
+    @State private var username = ""
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            TextField("名前を入力", text: $username)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+
+            Text("こんにちは、\(username)!")
+                .font(.title)
+                .padding()
+        }
+        .navigationBarTitle("入力フォームアプリ")
     }
 }
 

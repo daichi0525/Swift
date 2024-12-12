@@ -7,6 +7,8 @@
 
 import SwiftUI
 import AVFoundation
+//備考:
+//click.mp3 ファイルをプロジェクトの Assets に追加してください。
 
 struct ClickSoundApp: View {
     @State private var audioPlayer: AVAudioPlayer?
@@ -19,6 +21,7 @@ struct ClickSoundApp: View {
         .background(Color.orange)
         .foregroundColor(.white)
         .cornerRadius(10)
+        .navigationTitle("クリック音アプリ")
     }
 
     func playSound() {

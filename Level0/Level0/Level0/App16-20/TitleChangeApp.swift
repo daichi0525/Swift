@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct TitleChangeApp: View {
+    @State private var title = "初期タイトル"
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(title)
+                .font(.largeTitle)
+                .padding()
+
+            Button("タイトルを変更") {
+                title = "新しいタイトル"
+            }
+            .padding()
+            .background(Color.orange)
+            .foregroundColor(.white)
+            .cornerRadius(10)
+        }
+        .navigationTitle("タイトル変更アプリ")
     }
 }
 
