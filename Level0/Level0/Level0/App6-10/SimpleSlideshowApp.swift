@@ -14,25 +14,28 @@ struct SimpleSlideshowApp: View {
 //    @State private var currentImageIndex = 0
     
     var body: some View {
-        VStack {
-            Text(imagesTitle[currentImageTitleIndex])
-            Image(images[currentImageTitleIndex])
-                .resizable()
-                .scaledToFit()
-                .frame(height: 300)
-                .padding()
-            
-            Button(action: {
-                currentImageTitleIndex = (currentImageTitleIndex + 1) % imagesTitle.count
-            }) {
-                Text("次の画像")
+//        ScrollView {
+            VStack {
+                Text(imagesTitle[currentImageTitleIndex])
                     .font(.title)
+                Image(images[currentImageTitleIndex])
+                    .resizable()
+                    .scaledToFit()
+                //                .frame(height: 300)
                     .padding()
-                    .background(Color.purple)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+                
+                Button(action: {
+                    currentImageTitleIndex = (currentImageTitleIndex + 1) % imagesTitle.count
+                }) {
+                    Text("次の画像")
+                        .font(.title)
+                        .padding()
+                        .background(Color.purple)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
             }
-        }
+//        }
         .navigationTitle("簡単なスライドショー")
     }
 }
