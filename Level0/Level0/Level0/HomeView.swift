@@ -20,7 +20,7 @@ struct HomeView: View {
         AppInfo(title: "シンプルメモ", destination: AnyView(SimpleMemoApp())),
         AppInfo(title: "簡単なスライドショー", destination: AnyView(SimpleSlideshowApp())),
         AppInfo(title: "テキスト表示", destination: AnyView(TextDisplayApp())),
-        AppInfo(title: "数字足し算", destination: AnyView(NumberDisplayApp())),
+        AppInfo(title: "数字足し算", destination: AnyView(SimpleAdditionApp())),
         AppInfo(title: "簡単なカウントダウン", destination: AnyView(NumberDisplayApp())),
         AppInfo(title: "ボタン色変更", destination: AnyView(NumberDisplayApp())),
     ]
