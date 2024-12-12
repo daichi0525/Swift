@@ -9,7 +9,13 @@ import SwiftUI
 
 struct ImageDisplayApp: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Image("dog1")  // Assetsに"sampleImage"という名前で画像を追加してください
+                .resizable()
+                .scaledToFit()
+                .frame(width: 200, height: 200)
+                .padding()
+        }
     }
 }
 
