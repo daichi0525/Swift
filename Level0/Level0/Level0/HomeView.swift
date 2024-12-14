@@ -60,7 +60,7 @@ struct HomeView: View {
         AppInfo(title: "画像拡大アプリ", destination: AnyView(ImageZoomApp())),
         AppInfo(title: "画像並べ替えアプリ", destination: AnyView(ImageArrangeApp())),
         AppInfo(title: "シンプルカレンダーアプリ", destination: AnyView(SimpleCalendarApp())),
-        AppInfo(title: "自動カウントアプリ", destination: AnyView(ContentView())),
+        AppInfo(title: "自動カウントアプリ", destination: AnyView(AutoCounterApp())),
         AppInfo(title: "数字計算機アプリ", destination: AnyView(ContentView())),
         AppInfo(title: "メッセージ送信アプリ", destination: AnyView(ContentView())),
         AppInfo(title: "動画再生アプリ", destination: AnyView(ContentView())),
