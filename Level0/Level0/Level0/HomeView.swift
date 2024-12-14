@@ -64,7 +64,7 @@ struct HomeView: View {
         AppInfo(title: "数字計算機アプリ", destination: AnyView(SimpleCalcApp())),
         AppInfo(title: "メッセージ送信アプリ", destination: AnyView(MessageSendApp())),
         AppInfo(title: "動画再生アプリ", destination: AnyView(VideoPlayerApp())),
-        AppInfo(title: "簡単なスライダーアプリ", destination: AnyView(ContentView())),
+        AppInfo(title: "簡単なスライダーアプリ", destination: AnyView(SimpleSliderApp())),
 
         AppInfo(title: "マップアプリ", destination: AnyView(MapApp())),
     ]
