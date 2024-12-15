@@ -7,105 +7,89 @@
 
 import SwiftUI
 
+struct Flashcard: Identifiable {
+    let id = UUID()
+    let title: String
+    let content: String
+}
+
 struct FlashCardView: View {
-    @State private var currentIndex = 0
-    @State private var isFlipped = false
-    
-    let flashCards: [(question: String, answer: String)] = [
-        ("1+1=", "2"),
-        ("1+2=", "3"),
-        ("1+3=", "4")
+    @State private var flashcards = [
+        Flashcard(title: "コーヒーショップの場所", content: "Where is the coffee shop after exiting the station?"),
+        Flashcard(title: "レストランの予約", content: "I'd like to make a reservation for dinner."),
+        Flashcard(title: "電車の乗り方", content: "How do I take the train to the city center?"),
+        Flashcard(title: "観光スポットの推薦", content: "Can you recommend some popular tourist attractions?"),
+        Flashcard(title: "ホテルのチェックイン時間", content: "What time is check-in at the hotel?")
     ]
     
+    @State private var currentIndex = 0
+    @State private var offset: CGSize = .zero
+    @State private var backgroundColor = Color.random
+    
     var body: some View {
-        HStack(spacing: 20) {
-            // 左側のカード（問題）
+        VStack {
+            Spacer()
             ZStack {
-                if currentIndex < flashCards.count {
-                    CardView(text: flashCards[currentIndex].question, backgroundColor: .green, hasRingHole: true)
-                } else {
-                    CardView(text: "", backgroundColor: .gray, hasRingHole: true, showRestartButton: true, onRestart: restart)
-                }
-            }
-            
-            // 右側のカード（解答）
-            ZStack {
-                if isFlipped {
-                    if currentIndex > 0 {
-                        CardView(text: "\(flashCards[currentIndex - 1].question)\n\(flashCards[currentIndex - 1].answer)", backgroundColor: .blue, hasRingHole: false)
+                ForEach(0..<flashcards.count) { index in
+                    if index == currentIndex {
+                        flashcardView(for: index)
+                            .offset(offset)
+                            .rotationEffect(.degrees(Double(offset.width / 5)))
+                            .gesture(
+                                DragGesture()
+                                    .onChanged { gesture in
+                                        offset = gesture.translation
+                                    }
+                                    .onEnded { gesture in
+                                        withAnimation(.spring()) {
+                                            if abs(gesture.translation.width) > 100 {
+                                                offset = CGSize(width: gesture.translation.width > 0 ? 1000 : -1000, height: 0)
+                                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                                                    changeCard(gesture.translation.width > 0 ? -1 : 1)
+                                                }
+                                            } else {
+                                                offset = .zero
+                                            }
+                                        }
+                                    }
+                            )
                     }
-                } else {
-                    CardView(text: "", backgroundColor: .gray, hasRingHole: false)
                 }
             }
-        }
-        .padding()
-        .onTapGesture {
-            withAnimation(.easeInOut(duration: 0.6)) {
-                flipCard()
-            }
+            Spacer()
         }
     }
     
-    // カードをめくる動作
-    func flipCard() {
-        if isFlipped {
-            currentIndex += 1
+    func flashcardView(for index: Int) -> some View {
+        VStack {
+            Text(flashcards[index].title)
+                .font(.headline)
+                .padding()
+            
+            Text(flashcards[index].content)
+                .font(.body)
+                .padding()
         }
-        isFlipped.toggle()
+        .frame(width: 300, height: 200)
+        .background(backgroundColor)
+        .cornerRadius(10)
+        .shadow(radius: 5)
     }
     
-    // 最初からやり直す
-    func restart() {
-        currentIndex = 0
-        isFlipped = false
+    func changeCard(_ direction: Int) {
+        currentIndex = (currentIndex + direction + flashcards.count) % flashcards.count
+        offset = .zero
+        backgroundColor = Color.random
     }
 }
 
-struct CardView: View {
-    let text: String
-    let backgroundColor: Color
-    var hasRingHole: Bool = false
-    var showRestartButton: Bool = false
-    var onRestart: (() -> Void)? = nil
-    
-    var body: some View {
-        ZStack {
-            backgroundColor
-                .frame(width: 150, height: 200)
-                .cornerRadius(15)
-                .shadow(radius: 5)
-            
-            if hasRingHole {
-                // 右側のリング穴
-                Circle()
-                    .fill(Color.white)
-                    .frame(width: 15, height: 15)
-                    .position(x: 135, y: 25)
-                    .shadow(radius: 2)
-            }
-            
-            if showRestartButton {
-                VStack {
-                    Text("最初から")
-                        .foregroundColor(.white)
-                        .bold()
-                        .padding()
-                        .background(Color.red)
-                        .cornerRadius(10)
-                        .onTapGesture {
-                            onRestart?()
-                        }
-                }
-            } else {
-                Text(text)
-                    .font(.title2)
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-                    .padding()
-            }
-        }
-        .frame(width: 150, height: 200)
+extension Color {
+    static var random: Color {
+        return Color(
+            red: .random(in: 0...1),
+            green: .random(in: 0...1),
+            blue: .random(in: 0...1)
+        )
     }
 }
 
