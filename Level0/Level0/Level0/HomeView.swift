@@ -67,6 +67,7 @@ struct HomeView: View {
         AppInfo(title: "簡単なスライダーアプリ", destination: AnyView(SimpleSliderApp())),
 
         AppInfo(title: "マップアプリ", destination: AnyView(MapApp())),
+        AppInfo(title: "単語カード", destination: AnyView(FlashCardView(word: "", meaning: "")))
     ]
 
     var body: some View {
